@@ -29,6 +29,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="UHC-Kk-j8c">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="C3d-g3-Lmx" id="sLa-sb-s1a"/>
+                            </connections>
+                        </searchBar>
                         <sections>
                             <tableViewSection id="WxF-8o-GIb">
                                 <cells>
@@ -135,8 +143,20 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Groups" image="glyphicons-44-group.png" id="rXR-V7-0j7"/>
                     <navigationItem key="navigationItem" title="Team-Up" id="lzn-Gb-exP"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="KQz-yF-CO7" id="2KM-81-rAT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yB-LB-QIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="KQz-yF-CO7">
+                    <connections>
+                        <outlet property="delegate" destination="C3d-g3-Lmx" id="Mgi-W2-kRA"/>
+                        <outlet property="searchBar" destination="UHC-Kk-j8c" id="ZcU-S9-qNM"/>
+                        <outlet property="searchContentsController" destination="C3d-g3-Lmx" id="fcz-zX-xmM"/>
+                        <outlet property="searchResultsDataSource" destination="C3d-g3-Lmx" id="eGD-2v-jSQ"/>
+                        <outlet property="searchResultsDelegate" destination="C3d-g3-Lmx" id="zh1-c6-hWl"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="127" y="818"/>
         </scene>
@@ -806,13 +826,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="My Groups" image="glyphicons-500-family.png" id="by9-UT-R4M"/>
-                    <navigationItem key="navigationItem" title="My Groups" id="am5-CS-i8K">
-                        <barButtonItem key="rightBarButtonItem" image="glyphicons-246-chat.png" id="IG8-QU-e9L">
-                            <connections>
-                                <segue destination="GSk-Gr-DwH" kind="push" id="af4-Gw-GPC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Groups" id="am5-CS-i8K"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="bQh-w3-73L" id="j7R-YH-wik"/>
                     </connections>
@@ -856,6 +870,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsH-p3-VEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-32" y="2960"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="y3F-FO-Ajx">
+            <objects>
+                <navigationController id="jrW-ZC-MvZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" image="glyphicons-246-chat.png" id="Zan-y9-QnD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YKX-Hg-yrK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GSk-Gr-DwH" kind="relationship" relationship="rootViewController" id="Qvp-Uk-D7x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gp-OQ-hZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="2242"/>
         </scene>
         <!--Profile-->
         <scene sceneID="28B-p1-Tgx">
@@ -1027,6 +1058,7 @@
                     <connections>
                         <segue destination="nvM-Ml-KQU" kind="relationship" relationship="viewControllers" id="xcL-yI-F7Q"/>
                         <segue destination="Hkd-Ae-joJ" kind="relationship" relationship="viewControllers" id="VDJ-Ae-jwL"/>
+                        <segue destination="jrW-ZC-MvZ" kind="relationship" relationship="viewControllers" id="wc8-kh-TIV"/>
                         <segue destination="3Bj-09-H5w" kind="relationship" relationship="viewControllers" id="LTZ-R1-VF6"/>
                         <segue destination="Yag-a8-sbm" kind="relationship" relationship="viewControllers" id="zHD-82-hCm"/>
                     </connections>
