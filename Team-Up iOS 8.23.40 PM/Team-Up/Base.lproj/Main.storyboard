@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -514,6 +514,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2H9-vr-GSt" kind="push" id="Dud-2d-iqt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="F8p-cC-N5k" style="IBUITableViewCellStyleDefault" id="1Ch-KX-xv4">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -755,6 +758,41 @@
             </objects>
             <point key="canvasLocation" x="-1494" y="3808"/>
         </scene>
+        <!--Delete Account-->
+        <scene sceneID="dCy-jP-reM">
+            <objects>
+                <viewController id="2H9-vr-GSt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IBN-Os-n6P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="zX2-Hj-zdN">
+                                <rect key="frame" x="16" y="185" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VHK-oQ-fx6">
+                                <rect key="frame" x="16" y="308" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signup:" destination="aeB-gh-IAP" eventType="touchUpInside" id="bwL-Kf-d0r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Delete Account" id="5CJ-pD-i8v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zc-m3-Qek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1494" y="4563"/>
+        </scene>
         <!--My Groups-->
         <scene sceneID="VTQ-81-YvU">
             <objects>
@@ -985,26 +1023,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="utA-5X-gnC">
-                                <rect key="frame" x="16" y="121" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" minimumFontSize="17" id="CjU-S8-Rw6">
+                                <rect key="frame" x="16" y="231" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="CjU-S8-Rw6">
-                                <rect key="frame" x="16" y="180" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="2EU-6t-245">
+                                <rect key="frame" x="16" y="193" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate (MMDDYYYY)" minimumFontSize="17" id="LcP-TA-pEf">
-                                <rect key="frame" x="16" y="236" width="288" height="30"/>
+                                <rect key="frame" x="16" y="269" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" id="56e-43-7Np">
-                                <rect key="frame" x="16" y="290" width="288" height="30"/>
+                                <rect key="frame" x="16" y="310" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1027,6 +1065,12 @@
                                     <segue destination="wEQ-V9-atz" kind="modal" id="d7v-sx-dJc"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="utA-5X-gnC">
+                                <rect key="frame" x="16" y="155" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1035,6 +1079,7 @@
                         <outlet property="bd" destination="LcP-TA-pEf" id="GwR-NF-Zgi"/>
                         <outlet property="em" destination="56e-43-7Np" id="ekN-Mr-Uov"/>
                         <outlet property="loc" destination="WN7-hy-hoA" id="dk5-2n-Jdj"/>
+                        <outlet property="newpw" destination="2EU-6t-245" id="gUm-rn-JnK"/>
                         <outlet property="pw" destination="CjU-S8-Rw6" id="ofB-CV-4An"/>
                         <outlet property="signup" destination="jzA-XK-KuL" id="ZtY-dv-j3x"/>
                         <outlet property="un" destination="utA-5X-gnC" id="gcd-qo-ngz"/>
@@ -1536,6 +1581,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="d7v-sx-dJc"/>
-        <segue reference="Q0K-Un-Hqo"/>
+        <segue reference="ymR-1f-a2p"/>
     </inferredMetricsTieBreakers>
 </document>
