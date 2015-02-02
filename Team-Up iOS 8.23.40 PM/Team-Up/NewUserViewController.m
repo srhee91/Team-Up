@@ -24,7 +24,9 @@
 }
 
 -(IBAction)signup:(id)sender {
+   NSString *username = self.un.text;
    
+ // NSInteger
 }
 
 /*
