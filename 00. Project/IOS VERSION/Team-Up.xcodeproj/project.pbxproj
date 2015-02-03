@@ -651,6 +651,13 @@
 		7C66344F1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631EB1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png */; };
 		7C6634501A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631EC1A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png */; };
 		7C6634511A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631ED1A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png */; };
+		7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */; };
+		7CC7E5221A818746001869DE /* PS4PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */; };
+		7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */; };
+		7CC7E5281A818759001869DE /* Xbox360PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5271A818759001869DE /* Xbox360PrefTableViewController.m */; };
+		7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */; };
+		7CC7E52E1A818775001869DE /* WiiUPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */; };
+		7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */; };
 		7CD9C2621A80BF560038196C /* PCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2611A80BF560038196C /* PCTableViewController.m */; };
 		7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2641A80C2480038196C /* PS3TableViewController.m */; };
 		7CD9C2681A80C2540038196C /* PS4TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2671A80C2540038196C /* PS4TableViewController.m */; };
@@ -1327,6 +1334,20 @@
 		7C6631EB1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-97-vector-path-polygon.png"; sourceTree = "<group>"; };
 		7C6631EC1A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-98-vector-path-line.png"; sourceTree = "<group>"; };
 		7C6631ED1A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-99-vector-path-curve.png"; sourceTree = "<group>"; };
+		7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS4PrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PS4PrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E5231A81874F001869DE /* PS3PrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS3PrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PS3PrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E5261A818759001869DE /* Xbox360PrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xbox360PrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E5271A818759001869DE /* Xbox360PrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Xbox360PrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E5291A818766001869DE /* XboxOnePrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XboxOnePrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XboxOnePrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E52C1A818775001869DE /* WiiUPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiUPrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiUPrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E52F1A81877F001869DE /* 3DSPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 3DSPrefTableViewController.h; sourceTree = "<group>"; };
+		7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 3DSPrefTableViewController.m; sourceTree = "<group>"; };
 		7CD9C2601A80BF560038196C /* PCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTableViewController.h; sourceTree = "<group>"; };
 		7CD9C2611A80BF560038196C /* PCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTableViewController.m; sourceTree = "<group>"; };
 		7CD9C2631A80C2480038196C /* PS3TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS3TableViewController.h; sourceTree = "<group>"; };
@@ -1461,6 +1482,20 @@
 				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
 				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */,
+				7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */,
+				7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */,
+				7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */,
+				7CC7E5231A81874F001869DE /* PS3PrefTableViewController.h */,
+				7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */,
+				7CC7E5261A818759001869DE /* Xbox360PrefTableViewController.h */,
+				7CC7E5271A818759001869DE /* Xbox360PrefTableViewController.m */,
+				7CC7E5291A818766001869DE /* XboxOnePrefTableViewController.h */,
+				7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */,
+				7CC7E52C1A818775001869DE /* WiiUPrefTableViewController.h */,
+				7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */,
+				7CC7E52F1A81877F001869DE /* 3DSPrefTableViewController.h */,
+				7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */,
 				7CD9C27B1A8150330038196C /* ChangePasswordViewController.h */,
 				7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */,
 				7CD9C2781A814FDB0038196C /* DeleteAccountViewController.h */,
@@ -2869,17 +2904,24 @@
 				7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */,
 				7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */,
 				7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */,
+				7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */,
+				7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */,
 				7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */,
 				7C662F6A1A7335350074FEE9 /* ViewController.m in Sources */,
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
 				7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */,
+				7CC7E5221A818746001869DE /* PS4PrefTableViewController.m in Sources */,
+				7CC7E52E1A818775001869DE /* WiiUPrefTableViewController.m in Sources */,
+				7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */,
 				7C662F671A7335350074FEE9 /* AppDelegate.m in Sources */,
 				7C662F641A7335350074FEE9 /* main.m in Sources */,
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
+				7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */,
 				7CD9C2711A80C2780038196C /* WiiUTableViewController.m in Sources */,
 				7CD9C2681A80C2540038196C /* PS4TableViewController.m in Sources */,
+				7CC7E5281A818759001869DE /* Xbox360PrefTableViewController.m in Sources */,
 				7CD9C2621A80BF560038196C /* PCTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

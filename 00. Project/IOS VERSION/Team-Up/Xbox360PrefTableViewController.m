@@ -1,18 +1,18 @@
 //
-//  Xbox360TableViewController.m
+//  Xbox360PrefTableViewController.m
 //  Team-Up
 //
 //  Created by Kartik Sawant on 2/3/15.
 //  Copyright (c) 2015 Kartik Sawant. All rights reserved.
 //
 
-#import "Xbox360TableViewController.h"
+#import "Xbox360PrefTableViewController.h"
 
-@interface Xbox360TableViewController ()
+@interface Xbox360PrefTableViewController ()
 
 @end
 
-@implementation Xbox360TableViewController
+@implementation Xbox360PrefTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,13 +33,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -60,7 +60,7 @@
     // Configure the cell.
     cell.textLabel.text = [self.groups
                            objectAtIndex: [indexPath row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSLog(@"%i",indexPath.row);
     return cell;
 }

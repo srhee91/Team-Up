@@ -1,23 +1,23 @@
 //
-//  Xbox360TableViewController.m
+//  PCPrefTableViewController.m
 //  Team-Up
 //
 //  Created by Kartik Sawant on 2/3/15.
 //  Copyright (c) 2015 Kartik Sawant. All rights reserved.
 //
 
-#import "Xbox360TableViewController.h"
+#import "PCPrefTableViewController.h"
 
-@interface Xbox360TableViewController ()
+@interface PCPrefTableViewController ()
 
 @end
 
-@implementation Xbox360TableViewController
+@implementation PCPrefTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
-                   initWithObjects:@"Assassin's Creed",@"Destiny", @"FIFA 15", @"Grand Theft Auto V", @"Minecraft", nil];
+                   initWithObjects:@"Counter-Strike: Global Offensive",@"Diablo III", @"Dota 2", @"League of Legends", @"Minecraft", @"Starcraft 2", @"World of Warcraft", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,13 +33,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -60,7 +60,7 @@
     // Configure the cell.
     cell.textLabel.text = [self.groups
                            objectAtIndex: [indexPath row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSLog(@"%i",indexPath.row);
     return cell;
 }
