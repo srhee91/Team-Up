@@ -34,26 +34,31 @@
     NSString *password2 = self.newpw.text;
     NSString *birthdate = self.bd.text;
     NSString *email = self.em.text;
-    if(username == nil || password == nil){
-        NSLog(@"something went wrong re input ");
-    }
-    else {
-        NSLog(@"SDFSJNFS ");
-       [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                //The registration was successful, go to the wall
-                NSLog(@"successfull");
-                [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
-                
-            } else {
-                //Something bad has occurred
-                NSString *errorString = [[error userInfo] objectForKey:@"error"];
-                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                [errorAlertView show];
+    user.email = email;
+    if ([password compare:password2 options:NSCaseInsensitiveSearch] == NSOrderedSame){
+            if(username.length!=0&&password.length!=0&&password2.length!=0&&birthdate.length!=0&&email.length!=0){
+                [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!error) {
+                        NSLog(@"successfull");
+                        // Now Sign Up successful, continue to onto next page
+                    } else {
+                        // Sign Up failed, ask for re-input of user information
+                        NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                        UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                        [errorAlertView show];
+                    }
+                }];
             }
-        }];
+            else{
+                NSLog(@"Missing information");
+                //Do not move onto next Page, ask for re-input of information
+            }
     }
-   
+    else{
+        NSLog(@"pass not equal");
+        //Do not move onto next Page, ask for re-input of passwords
+    }
+    
 }
 
 
