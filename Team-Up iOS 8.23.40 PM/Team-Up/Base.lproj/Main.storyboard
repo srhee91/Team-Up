@@ -938,20 +938,14 @@
             </objects>
             <point key="canvasLocation" x="-522" y="1642"/>
         </scene>
-        <!--View Controller-->
+        <!--New User View Controller-->
         <scene sceneID="Acd-rF-Viv">
             <objects>
-                <viewController id="qdG-59-cQS" sceneMemberID="viewController">
+                <viewController id="qdG-59-cQS" customClass="NewUserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sPz-5g-UvQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="oAG-ZV-lHb">
-                                <rect key="frame" x="16" y="152" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="uLy-mV-w9h">
                                 <rect key="frame" x="16" y="190" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -993,10 +987,25 @@
                                     <segue destination="wEQ-V9-atz" kind="modal" id="qjh-VE-XAN"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="oAG-ZV-lHb">
+                                <rect key="frame" x="16" y="152" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8lS-Nw-ce6"/>
+                    <connections>
+                        <outlet property="bd" destination="8ic-36-KFk" id="4t3-sc-4iD"/>
+                        <outlet property="em" destination="56e-43-7Np" id="E9q-s2-Blu"/>
+                        <outlet property="loc" destination="I9c-st-GZO" id="keW-pa-IMQ"/>
+                        <outlet property="newpw" destination="eZu-Oe-VF7" id="eTF-ok-Aur"/>
+                        <outlet property="pw" destination="uLy-mV-w9h" id="WqH-Yj-5RS"/>
+                        <outlet property="signup" destination="LoB-N9-rdL" id="4A4-8P-EbU"/>
+                        <outlet property="un" destination="oAG-ZV-lHb" id="e4A-Mf-0iv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEy-4o-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
