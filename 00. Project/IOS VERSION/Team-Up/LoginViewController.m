@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Parse/parse.h"
 
 @interface LoginViewController ()
 
@@ -48,6 +49,29 @@
     UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    
+}
+-(IBAction)signin:(id)sender{
+    PFUser *user = [PFUser user];
+    NSString *username = self.username.text;
+    NSString *password = self.password.text;
+    if(username==nil || password == nil){
+        NSLog(@"Missing information");
+    }
+    else{
+        user.username = username;
+        user.password = password;
+        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+            if(user){
+                NSLog(@"login successful");
+                // Now application displays the MyGroup Page
+            }
+            else{
+                // Ask for re-input of either username or password
+            }
+        }];
+
+    }
 }
 
 -(void) dismissKeyboard {
