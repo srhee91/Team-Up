@@ -36,12 +36,14 @@
     NSString *email = self.em.text;
     NSString *location = self.loc.text;
     if(username == nil || password == nil){
-        printf("something went wrong re input ");
+        NSLog(@"something went wrong re input ");
     }
     else {
-     /*   [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"SDFSJNFS ");
+       [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
                 //The registration was successful, go to the wall
+                NSLog(@"successfull");
                 [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
                 
             } else {
@@ -50,7 +52,7 @@
                 UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                 [errorAlertView show];
             }
-        }];*/
+        }];
     }
    
 }
