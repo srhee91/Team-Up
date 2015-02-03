@@ -988,7 +988,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6gc-63-9AO" kind="modal" id="oTd-Co-U64"/>
+                                    <segue destination="6gc-63-9AO" kind="modal" id="o5S-Tp-5sK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1013,7 +1013,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiR-1r-f0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2124" y="2874"/>
+            <point key="canvasLocation" x="-2073" y="2874"/>
         </scene>
         <!--New User-->
         <scene sceneID="jex-Sa-A1N">

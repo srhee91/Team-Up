@@ -14,7 +14,7 @@
 @end
 
 @implementation NewUserViewController
-
+NSString * username;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
