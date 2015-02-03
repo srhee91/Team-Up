@@ -34,7 +34,6 @@
     NSString *password2 = self.newpw.text;
     NSString *birthdate = self.bd.text;
     NSString *email = self.em.text;
-    NSString *location = self.loc.text;
     if(username == nil || password == nil){
         NSLog(@"something went wrong re input ");
     }

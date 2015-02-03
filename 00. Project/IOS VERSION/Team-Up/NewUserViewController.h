@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *pw;
 @property (weak, nonatomic) IBOutlet UITextField *bd;
 @property (weak, nonatomic) IBOutlet UITextField *em;
-@property (weak, nonatomic) IBOutlet UITextField *loc;
 @property (weak, nonatomic) IBOutlet UIButton *signup;
 @property (weak, nonatomic) IBOutlet UITextField *newpw;
 
