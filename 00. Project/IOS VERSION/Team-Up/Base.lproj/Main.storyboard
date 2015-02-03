@@ -543,12 +543,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" id="dhs-Yx-7lH">
-                                <rect key="frame" x="16" y="147" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" id="Cai-OM-sa3">
                                 <rect key="frame" x="16" y="213" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -556,20 +550,29 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" minimumFontSize="17" id="kDH-Cy-jfp">
-                                <rect key="frame" x="16" y="280" width="288" height="30"/>
+                                <rect key="frame" x="16" y="242" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FEV-h9-qJI">
-                                <rect key="frame" x="16" y="378" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" id="dhs-Yx-7lH">
+                                <rect key="frame" x="16" y="184" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Krj-vc-HhC">
+                                <rect key="frame" x="16" y="280" width="288" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hco-ni-qTf" kind="modal" id="Q0K-Un-Hqo"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="ZvQ-oM-za7"/>
+                                    <segue destination="wEQ-V9-atz" kind="modal" id="ssV-im-2tJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -580,7 +583,7 @@
                         <outlet property="conpw" destination="kDH-Cy-jfp" id="8mQ-ct-Op8"/>
                         <outlet property="newpw" destination="Cai-OM-sa3" id="XAw-Jn-02N"/>
                         <outlet property="oldpw" destination="dhs-Yx-7lH" id="9bq-ta-JdL"/>
-                        <outlet property="reset" destination="FEV-h9-qJI" id="l78-Gh-sMD"/>
+                        <outlet property="reset" destination="Krj-vc-HhC" id="0ve-C3-DI6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrs-9W-ETb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,21 +765,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="zX2-Hj-zdN">
-                                <rect key="frame" x="16" y="185" width="288" height="30"/>
+                                <rect key="frame" x="16" y="236" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VHK-oQ-fx6">
-                                <rect key="frame" x="16" y="308" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FxD-Sa-Rk1">
+                                <rect key="frame" x="16" y="274" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="delete:" destination="2H9-vr-GSt" eventType="touchUpInside" id="I0R-9n-vSP"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="iGe-WZ-Oxc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -784,8 +788,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Delete Account" id="5CJ-pD-i8v"/>
                     <connections>
-                        <outlet property="delete" destination="VHK-oQ-fx6" id="bkA-YF-r9V"/>
-                        <outlet property="password" destination="zX2-Hj-zdN" id="6zb-cj-Rjh"/>
+                        <outlet property="deleteaccount" destination="FxD-Sa-Rk1" id="81c-5z-9qy"/>
+                        <outlet property="password" destination="zX2-Hj-zdN" id="mrO-Ri-fJN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zc-m3-Qek" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -926,6 +930,23 @@
             <point key="canvasLocation" x="-32" y="2242"/>
         </scene>
         <!--Profile-->
+        <scene sceneID="BTt-Hu-raJ">
+            <objects>
+                <navigationController id="rsP-lS-tAK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="glyphicons-4-user.png" id="cXz-3L-EaR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3lT-EF-UIe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3Bj-09-H5w" kind="relationship" relationship="rootViewController" id="ibJ-dG-ZdG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHI-Jq-upZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522" y="1642"/>
+        </scene>
+        <!--Profile-->
         <scene sceneID="28B-p1-Tgx">
             <objects>
                 <viewController id="3Bj-09-H5w" sceneMemberID="viewController">
@@ -935,10 +956,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="glyphicons-4-user.png" id="ULc-xG-H2l"/>
+                    <navigationItem key="navigationItem" title="Profile" id="eFn-TM-KSH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ki-JS-gHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-522" y="1642"/>
+            <point key="canvasLocation" x="-112" y="1642"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5oM-XL-ppL">
@@ -965,19 +987,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="uLy-mV-w9h">
-                                <rect key="frame" x="16" y="190" width="288" height="30"/>
+                                <rect key="frame" x="16" y="217" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" minimumFontSize="17" id="eZu-Oe-VF7">
-                                <rect key="frame" x="16" y="228" width="288" height="30"/>
+                                <rect key="frame" x="16" y="246" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate (MMDDYYYY)" minimumFontSize="17" id="8ic-36-KFk">
-                                <rect key="frame" x="16" y="266" width="288" height="30"/>
+                                <rect key="frame" x="16" y="275" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -989,21 +1011,23 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="oAG-ZV-lHb">
-                                <rect key="frame" x="16" y="152" width="288" height="30"/>
+                                <rect key="frame" x="16" y="188" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LoB-N9-rdL">
-                                <rect key="frame" x="16" y="429" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vl3-02-2gx">
+                                <rect key="frame" x="16" y="342" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Sign-Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signup:" destination="qdG-59-cQS" eventType="touchUpInside" id="QAE-Og-XZ1"/>
-                                    <segue destination="wEQ-V9-atz" kind="modal" id="qjh-VE-XAN"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="HMq-8H-iqB"/>
+                                    <segue destination="wEQ-V9-atz" kind="modal" id="5SN-3F-sbK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1021,7 +1045,7 @@
                         <outlet property="em" destination="56e-43-7Np" id="E9q-s2-Blu"/>
                         <outlet property="newpw" destination="eZu-Oe-VF7" id="eTF-ok-Aur"/>
                         <outlet property="pw" destination="uLy-mV-w9h" id="WqH-Yj-5RS"/>
-                        <outlet property="signup" destination="LoB-N9-rdL" id="4A4-8P-EbU"/>
+                        <outlet property="signup" destination="Vl3-02-2gx" id="WxX-UA-SbK"/>
                         <outlet property="un" destination="oAG-ZV-lHb" id="e4A-Mf-0iv"/>
                     </connections>
                 </viewController>
@@ -1125,7 +1149,7 @@
                         <segue destination="nvM-Ml-KQU" kind="relationship" relationship="viewControllers" id="xcL-yI-F7Q"/>
                         <segue destination="Hkd-Ae-joJ" kind="relationship" relationship="viewControllers" id="VDJ-Ae-jwL"/>
                         <segue destination="jrW-ZC-MvZ" kind="relationship" relationship="viewControllers" id="wc8-kh-TIV"/>
-                        <segue destination="3Bj-09-H5w" kind="relationship" relationship="viewControllers" id="LTZ-R1-VF6"/>
+                        <segue destination="rsP-lS-tAK" kind="relationship" relationship="viewControllers" id="VHK-SP-Qvh"/>
                         <segue destination="Yag-a8-sbm" kind="relationship" relationship="viewControllers" id="zHD-82-hCm"/>
                     </connections>
                 </tabBarController>
@@ -1337,7 +1361,7 @@
         <!--Sports-->
         <scene sceneID="MHS-45-iTH">
             <objects>
-                <tableViewController id="0Kf-sf-Myu" customClass="ChangePrefTableViewControllerMain" sceneMemberID="viewController">
+                <tableViewController id="0Kf-sf-Myu" customClass="SportsPrefTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gjz-oN-aEd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1754,7 +1778,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rgv-u2-0lK"/>
-        <segue reference="Q0K-Un-Hqo"/>
+        <segue reference="ssV-im-2tJ"/>
+        <segue reference="zf7-Ta-Gao"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,23 +1,23 @@
 //
-//  ChangePrefTableViewControllerMain.m
+//  SportsPrefTableViewController.m
 //  Team-Up
 //
-//  Created by Kartik Sawant on 1/29/15.
+//  Created by Kartik Sawant on 2/3/15.
 //  Copyright (c) 2015 Kartik Sawant. All rights reserved.
 //
 
-#import "ChangePrefTableViewControllerMain.h"
+#import "SportsPrefTableViewController.h"
 
-@interface ChangePrefTableViewControllerMain ()
+@interface SportsPrefTableViewController ()
 
 @end
 
-@implementation ChangePrefTableViewControllerMain
-@synthesize groups;
+@implementation SportsPrefTableViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
-                       initWithObjects:@"Basketball",@"Bowling", @"Dance", @"Football", @"Golf", @"Hockey", @"Lifting", @"Running", @"Soccer", @"Tennis", @"Volleyball", nil];
+                   initWithObjects:@"Basketball",@"Bowling", @"Dance", @"Football", @"Golf", @"Hockey", @"Lifting", @"Running", @"Soccer", @"Tennis", @"Volleyball", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -75,6 +75,16 @@
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
 }
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.
