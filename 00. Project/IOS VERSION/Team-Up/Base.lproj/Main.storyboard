@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -938,7 +938,23 @@
             </objects>
             <point key="canvasLocation" x="-522" y="1642"/>
         </scene>
-        <!--New User View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="5oM-XL-ppL">
+            <objects>
+                <navigationController id="nFG-ED-y9z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KjR-a1-FQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qdG-59-cQS" kind="relationship" relationship="rootViewController" id="uTC-bU-RHn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIK-aw-J87" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2093" y="2847"/>
+        </scene>
+        <!--New User-->
         <scene sceneID="Acd-rF-Viv">
             <objects>
                 <viewController id="qdG-59-cQS" customClass="NewUserViewController" sceneMemberID="viewController">
@@ -997,7 +1013,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8lS-Nw-ce6"/>
+                    <navigationItem key="navigationItem" title="New User" id="8lS-Nw-ce6">
+                        <barButtonItem key="leftBarButtonItem" title="Login" id="K9C-Oz-Tyw">
+                            <connections>
+                                <segue destination="hco-ni-qTf" kind="modal" id="zf7-Ta-Gao"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bd" destination="8ic-36-KFk" id="4t3-sc-4iD"/>
                         <outlet property="em" destination="56e-43-7Np" id="E9q-s2-Blu"/>
@@ -1010,7 +1032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEy-4o-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1462" y="2393"/>
+            <point key="canvasLocation" x="-1613" y="2847"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cJ4-FG-1Is">
@@ -1043,7 +1065,7 @@
                                 <rect key="frame" x="16" y="404" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="LOGIN">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1053,14 +1075,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Zn-Vs-G3f">
                                 <rect key="frame" x="16" y="453" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="New User">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="NEW USER">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qdG-59-cQS" kind="modal" id="5Sn-1j-wtB"/>
+                                    <segue destination="nFG-ED-y9z" kind="modal" id="6nq-5i-8Mh"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pK1-BJ-PCR">
+                                <rect key="frame" x="16" y="475" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" red="0.70896464646464641" green="0.05247804982884096" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1560,7 +1591,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qjh-VE-XAN"/>
-        <segue reference="ymR-1f-a2p"/>
+        <segue reference="rgv-u2-0lK"/>
+        <segue reference="zf7-Ta-Gao"/>
     </inferredMetricsTieBreakers>
 </document>

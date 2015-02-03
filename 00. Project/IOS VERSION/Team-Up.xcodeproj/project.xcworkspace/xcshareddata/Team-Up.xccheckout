@@ -14,11 +14,11 @@
 		<string>https://github.com/srhee91/Team-Up.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Team-Up iOS 8.23.40 PM/Team-Up.xcodeproj</string>
+	<string>00. Project/IOS VERSION/Team-Up.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7530C872E1FF5E834CEB755862FFBDBB366467A2</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/srhee91/Team-Up.git</string>
