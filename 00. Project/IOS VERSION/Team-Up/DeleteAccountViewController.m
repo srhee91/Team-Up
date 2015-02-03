@@ -7,6 +7,7 @@
 //
 
 #import "DeleteAccountViewController.h"
+#import "Parse/parse.h"
 
 @interface DeleteAccountViewController ()
 
@@ -22,6 +23,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)delete:(id)sender{
+    PFUser *user = [PFUser user];
+    
 }
 
 /*

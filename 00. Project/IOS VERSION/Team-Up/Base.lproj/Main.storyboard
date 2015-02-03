@@ -775,13 +775,16 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="delete:" destination="2H9-vr-GSt" eventType="touchUpInside" id="I0R-9n-vSP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Delete Account" id="5CJ-pD-i8v"/>
                     <connections>
-                        <outlet property="delete" destination="VHK-oQ-fx6" id="XoY-of-UNV"/>
+                        <outlet property="delete" destination="VHK-oQ-fx6" id="bkA-YF-r9V"/>
                         <outlet property="password" destination="zX2-Hj-zdN" id="6zb-cj-Rjh"/>
                     </connections>
                 </viewController>
