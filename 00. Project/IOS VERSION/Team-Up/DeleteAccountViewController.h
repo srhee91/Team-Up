@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DeleteAccountViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *delete;
 
