@@ -51,12 +51,14 @@
     [self.view addGestureRecognizer:tap];
     
 }
+//Sign In Action Button method
 -(IBAction)signin:(id)sender{
     PFUser *user = [PFUser user];
     NSString *username = self.username.text;
     NSString *password = self.password.text;
-    if(username==nil || password == nil){
+    if(username.length == 0 || password.length == 0){
         NSLog(@"Missing information");
+        // Do not move onto next Page,
     }
     else{
         user.username = username;
@@ -67,6 +69,7 @@
                 // Now application displays the MyGroup Page
             }
             else{
+                NSLog(@"Log in failed");
                 // Ask for re-input of either username or password
             }
         }];
