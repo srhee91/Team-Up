@@ -17,8 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
-                       initWithObjects:@"Basketball", @"Soccer",
-                       @"Football", @"Golf", @"Running", @"Cycling", @"Hockey", @"Weightlifting", @"Dance", @"Volleyball", @"Tennis", nil];
+                       initWithObjects:@"Basketball",@"Bowling", @"Dance", @"Football", @"Golf", @"Hockey", @"Lifting", @"Running", @"Soccer", @"Tennis", @"Volleyball", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
