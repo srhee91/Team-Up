@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -780,9 +780,6 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="signup:" destination="aeB-gh-IAP" eventType="touchUpInside" id="bwL-Kf-d0r"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -942,6 +939,70 @@
             <point key="canvasLocation" x="-522" y="1642"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Acd-rF-Viv">
+            <objects>
+                <viewController id="qdG-59-cQS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sPz-5g-UvQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="oAG-ZV-lHb">
+                                <rect key="frame" x="16" y="152" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="uLy-mV-w9h">
+                                <rect key="frame" x="16" y="190" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" minimumFontSize="17" id="eZu-Oe-VF7">
+                                <rect key="frame" x="16" y="228" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate (MMDDYYYY)" minimumFontSize="17" id="8ic-36-KFk">
+                                <rect key="frame" x="16" y="266" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" id="56e-43-7Np">
+                                <rect key="frame" x="16" y="304" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" id="I9c-st-GZO">
+                                <rect key="frame" x="16" y="342" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LoB-N9-rdL">
+                                <rect key="frame" x="16" y="425" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Sign-Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wEQ-V9-atz" kind="modal" id="qjh-VE-XAN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8lS-Nw-ce6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEy-4o-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1462" y="2393"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="cJ4-FG-1Is">
             <objects>
                 <viewController id="hco-ni-qTf" sceneMemberID="viewController">
@@ -988,7 +1049,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6gc-63-9AO" kind="modal" id="o5S-Tp-5sK"/>
+                                    <segue destination="qdG-59-cQS" kind="modal" id="5Sn-1j-wtB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -998,97 +1059,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEZ-aM-W5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1613" y="1954"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="SwN-pi-TFe">
-            <objects>
-                <navigationController id="6gc-63-9AO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sWU-gD-0ME">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="aeB-gh-IAP" kind="relationship" relationship="rootViewController" id="WhY-ew-KPg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BiR-1r-f0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2073" y="2874"/>
-        </scene>
-        <!--New User-->
-        <scene sceneID="jex-Sa-A1N">
-            <objects>
-                <viewController id="aeB-gh-IAP" customClass="NewUserViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v8c-eI-4gZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" minimumFontSize="17" id="CjU-S8-Rw6">
-                                <rect key="frame" x="16" y="231" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="2EU-6t-245">
-                                <rect key="frame" x="16" y="193" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate (MMDDYYYY)" minimumFontSize="17" id="LcP-TA-pEf">
-                                <rect key="frame" x="16" y="269" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" id="56e-43-7Np">
-                                <rect key="frame" x="16" y="310" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" id="WN7-hy-hoA">
-                                <rect key="frame" x="16" y="348" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jzA-XK-KuL">
-                                <rect key="frame" x="16" y="436" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.82504111840000005" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Sign-Up">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signup:" destination="aeB-gh-IAP" eventType="touchUpInside" id="xxd-bB-QmN"/>
-                                    <segue destination="wEQ-V9-atz" kind="modal" id="d7v-sx-dJc"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="utA-5X-gnC">
-                                <rect key="frame" x="16" y="155" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="New User" id="fw5-Fq-rfY"/>
-                    <connections>
-                        <outlet property="bd" destination="LcP-TA-pEf" id="GwR-NF-Zgi"/>
-                        <outlet property="em" destination="56e-43-7Np" id="ekN-Mr-Uov"/>
-                        <outlet property="loc" destination="WN7-hy-hoA" id="dk5-2n-Jdj"/>
-                        <outlet property="newpw" destination="2EU-6t-245" id="gUm-rn-JnK"/>
-                        <outlet property="pw" destination="CjU-S8-Rw6" id="ofB-CV-4An"/>
-                        <outlet property="signup" destination="jzA-XK-KuL" id="ZtY-dv-j3x"/>
-                        <outlet property="un" destination="utA-5X-gnC" id="gcd-qo-ngz"/>
-                        <outlet property="username" destination="utA-5X-gnC" id="raF-1i-xAw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q49-fp-PtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1613" y="2874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vxU-c1-ev9">
@@ -1580,7 +1550,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rgv-u2-0lK"/>
+        <segue reference="qjh-VE-XAN"/>
         <segue reference="ymR-1f-a2p"/>
     </inferredMetricsTieBreakers>
 </document>
