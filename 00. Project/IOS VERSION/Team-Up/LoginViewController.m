@@ -16,8 +16,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"iphone-5-wallpaper17.jpg"]];
+    CGRect frameRect = self.username.frame;
+    frameRect.size.height = 45;
+    self.username.frame = frameRect;
+    frameRect = self.password.frame;
+    frameRect.size.height = 45;
+    self.password.frame = frameRect;
+    self.username.borderStyle = UITextBorderStyleNone;
+    self.password.borderStyle = UITextBorderStyleNone;
+    //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
+    //self.username.leftView = paddingView;
+    //self.username.leftViewMode = UITextFieldViewModeAlways;
+    //UIView *paddingView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
+    UIImageView *arrows = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"glyphicons-4-user.png"]];
+    arrows.frame = CGRectMake(0.0, 0.0, arrows.image.size.width+10.0, arrows.image.size.height);
+    arrows.contentMode = UIViewContentModeCenter;
+    
+    self.username.leftView = arrows;
+    self.username.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"glyphicons-204-lock.png"]];
+    arrow.frame = CGRectMake(0.0, 0.0, arrow.image.size.width+10.0, arrow.image.size.height);
+    arrow.contentMode = UIViewContentModeCenter;
+    
+    self.password.leftView = arrow;
+    self.password.leftViewMode = UITextFieldViewModeAlways;
+    //self.password.leftView = paddingView2;
+    //self.password.leftViewMode = UITextFieldViewModeAlways;
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void) dismissKeyboard {
+    [self.username resignFirstResponder];
+    [self.password resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

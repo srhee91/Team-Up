@@ -652,6 +652,14 @@
 		7C66344F1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631EB1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png */; };
 		7C6634501A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631EC1A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png */; };
 		7C6634511A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631ED1A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png */; };
+		7CD9C2621A80BF560038196C /* PCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2611A80BF560038196C /* PCTableViewController.m */; };
+		7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2641A80C2480038196C /* PS3TableViewController.m */; };
+		7CD9C2681A80C2540038196C /* PS4TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2671A80C2540038196C /* PS4TableViewController.m */; };
+		7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C26A1A80C2670038196C /* Xbox360TableViewController.m */; };
+		7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */; };
+		7CD9C2711A80C2780038196C /* WiiUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2701A80C2780038196C /* WiiUTableViewController.m */; };
+		7CD9C2741A80C2930038196C /* 3DSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2731A80C2930038196C /* 3DSTableViewController.m */; };
+		7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2761A80C6850038196C /* SportsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1319,6 +1327,22 @@
 		7C6631EB1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-97-vector-path-polygon.png"; sourceTree = "<group>"; };
 		7C6631EC1A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-98-vector-path-line.png"; sourceTree = "<group>"; };
 		7C6631ED1A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-99-vector-path-curve.png"; sourceTree = "<group>"; };
+		7CD9C2601A80BF560038196C /* PCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTableViewController.h; sourceTree = "<group>"; };
+		7CD9C2611A80BF560038196C /* PCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTableViewController.m; sourceTree = "<group>"; };
+		7CD9C2631A80C2480038196C /* PS3TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS3TableViewController.h; sourceTree = "<group>"; };
+		7CD9C2641A80C2480038196C /* PS3TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PS3TableViewController.m; sourceTree = "<group>"; };
+		7CD9C2661A80C2540038196C /* PS4TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS4TableViewController.h; sourceTree = "<group>"; };
+		7CD9C2671A80C2540038196C /* PS4TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PS4TableViewController.m; sourceTree = "<group>"; };
+		7CD9C2691A80C2670038196C /* Xbox360TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xbox360TableViewController.h; sourceTree = "<group>"; };
+		7CD9C26A1A80C2670038196C /* Xbox360TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Xbox360TableViewController.m; sourceTree = "<group>"; };
+		7CD9C26C1A80C2700038196C /* XboxOneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XboxOneTableViewController.h; sourceTree = "<group>"; };
+		7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XboxOneTableViewController.m; sourceTree = "<group>"; };
+		7CD9C26F1A80C2780038196C /* WiiUTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiUTableViewController.h; sourceTree = "<group>"; };
+		7CD9C2701A80C2780038196C /* WiiUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiUTableViewController.m; sourceTree = "<group>"; };
+		7CD9C2721A80C2930038196C /* 3DSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 3DSTableViewController.h; sourceTree = "<group>"; };
+		7CD9C2731A80C2930038196C /* 3DSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 3DSTableViewController.m; sourceTree = "<group>"; };
+		7CD9C2751A80C6850038196C /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
+		7CD9C2761A80C6850038196C /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1431,6 +1455,22 @@
 				7C3ABDFC1A7A0DC40069D53D /* ChangePrefTableViewControllerMain.h */,
 				7C3ABDFD1A7A0DC40069D53D /* ChangePrefTableViewControllerMain.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7CD9C2751A80C6850038196C /* SportsTableViewController.h */,
+				7CD9C2761A80C6850038196C /* SportsTableViewController.m */,
+				7CD9C2631A80C2480038196C /* PS3TableViewController.h */,
+				7CD9C2641A80C2480038196C /* PS3TableViewController.m */,
+				7CD9C2661A80C2540038196C /* PS4TableViewController.h */,
+				7CD9C2671A80C2540038196C /* PS4TableViewController.m */,
+				7CD9C2691A80C2670038196C /* Xbox360TableViewController.h */,
+				7CD9C26A1A80C2670038196C /* Xbox360TableViewController.m */,
+				7CD9C26C1A80C2700038196C /* XboxOneTableViewController.h */,
+				7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */,
+				7CD9C26F1A80C2780038196C /* WiiUTableViewController.h */,
+				7CD9C2701A80C2780038196C /* WiiUTableViewController.m */,
+				7CD9C2721A80C2930038196C /* 3DSTableViewController.h */,
+				7CD9C2731A80C2930038196C /* 3DSTableViewController.m */,
+				7CD9C2601A80BF560038196C /* PCTableViewController.h */,
+				7CD9C2611A80BF560038196C /* PCTableViewController.m */,
 				7C418ADF1A807B8800219F6A /* LoginViewController.h */,
 				7C418AE01A807B8800219F6A /* LoginViewController.m */,
 				7C662F6E1A7335350074FEE9 /* Images.xcassets */,
@@ -2815,12 +2855,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD9C2741A80C2930038196C /* 3DSTableViewController.m in Sources */,
+				7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */,
+				7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */,
 				7C662F6A1A7335350074FEE9 /* ViewController.m in Sources */,
 				7C3ABDFE1A7A0DC40069D53D /* ChangePrefTableViewControllerMain.m in Sources */,
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
 				7C662F671A7335350074FEE9 /* AppDelegate.m in Sources */,
 				7C662F641A7335350074FEE9 /* main.m in Sources */,
+				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
+				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
+				7CD9C2711A80C2780038196C /* WiiUTableViewController.m in Sources */,
+				7CD9C2681A80C2540038196C /* PS4TableViewController.m in Sources */,
+				7CD9C2621A80BF560038196C /* PCTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
