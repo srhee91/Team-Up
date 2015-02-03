@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ChangePasswordViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *oldpw;
 @property (weak, nonatomic) IBOutlet UITextField *newpw;
 @property (weak, nonatomic) IBOutlet UITextField *conpw;
