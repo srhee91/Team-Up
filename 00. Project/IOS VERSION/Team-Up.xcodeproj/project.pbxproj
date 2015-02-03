@@ -660,6 +660,8 @@
 		7CD9C2711A80C2780038196C /* WiiUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2701A80C2780038196C /* WiiUTableViewController.m */; };
 		7CD9C2741A80C2930038196C /* 3DSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2731A80C2930038196C /* 3DSTableViewController.m */; };
 		7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2761A80C6850038196C /* SportsTableViewController.m */; };
+		7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */; };
+		7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1343,6 +1345,10 @@
 		7CD9C2731A80C2930038196C /* 3DSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 3DSTableViewController.m; sourceTree = "<group>"; };
 		7CD9C2751A80C6850038196C /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
 		7CD9C2761A80C6850038196C /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
+		7CD9C2781A814FDB0038196C /* DeleteAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteAccountViewController.h; sourceTree = "<group>"; };
+		7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteAccountViewController.m; sourceTree = "<group>"; };
+		7CD9C27B1A8150330038196C /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1455,6 +1461,10 @@
 				7C3ABDFC1A7A0DC40069D53D /* ChangePrefTableViewControllerMain.h */,
 				7C3ABDFD1A7A0DC40069D53D /* ChangePrefTableViewControllerMain.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7CD9C27B1A8150330038196C /* ChangePasswordViewController.h */,
+				7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */,
+				7CD9C2781A814FDB0038196C /* DeleteAccountViewController.h */,
+				7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */,
 				7CD9C2751A80C6850038196C /* SportsTableViewController.h */,
 				7CD9C2761A80C6850038196C /* SportsTableViewController.m */,
 				7CD9C2631A80C2480038196C /* PS3TableViewController.h */,
@@ -2856,11 +2866,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CD9C2741A80C2930038196C /* 3DSTableViewController.m in Sources */,
+				7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */,
 				7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */,
 				7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */,
 				7C662F6A1A7335350074FEE9 /* ViewController.m in Sources */,
 				7C3ABDFE1A7A0DC40069D53D /* ChangePrefTableViewControllerMain.m in Sources */,
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
+				7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */,
 				7C662F671A7335350074FEE9 /* AppDelegate.m in Sources */,
 				7C662F641A7335350074FEE9 /* main.m in Sources */,
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,

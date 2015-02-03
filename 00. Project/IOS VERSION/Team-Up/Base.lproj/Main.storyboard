@@ -538,7 +538,7 @@
         <!--Change Password-->
         <scene sceneID="hHK-XE-qd5">
             <objects>
-                <viewController id="j6q-gu-zzE" sceneMemberID="viewController">
+                <viewController id="j6q-gu-zzE" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jtG-cl-ngK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -576,6 +576,12 @@
                         <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="iva-vq-Wwz"/>
+                    <connections>
+                        <outlet property="conpw" destination="kDH-Cy-jfp" id="8mQ-ct-Op8"/>
+                        <outlet property="newpw" destination="Cai-OM-sa3" id="XAw-Jn-02N"/>
+                        <outlet property="oldpw" destination="dhs-Yx-7lH" id="9bq-ta-JdL"/>
+                        <outlet property="reset" destination="FEV-h9-qJI" id="l78-Gh-sMD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrs-9W-ETb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -750,7 +756,7 @@
         <!--Delete Account-->
         <scene sceneID="dCy-jP-reM">
             <objects>
-                <viewController id="2H9-vr-GSt" sceneMemberID="viewController">
+                <viewController id="2H9-vr-GSt" customClass="DeleteAccountViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBN-Os-n6P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -774,6 +780,10 @@
                         <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Delete Account" id="5CJ-pD-i8v"/>
+                    <connections>
+                        <outlet property="delete" destination="VHK-oQ-fx6" id="XoY-of-UNV"/>
+                        <outlet property="password" destination="zX2-Hj-zdN" id="6zb-cj-Rjh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zc-m3-Qek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
