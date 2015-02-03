@@ -7,6 +7,8 @@
 //
 
 #import "NewUserViewController.h"
+#import "Parse/parse.h"//;
+
 @interface NewUserViewController ()
 
 @end
@@ -24,19 +26,35 @@
 }
 
 -(IBAction)signup:(id)sender {
-   NSString *username = self.un.text;
+    PFUser *user = [PFUser user];
+
+    NSString *username = self.un.text;
+    user.username = username;
+    NSString *password = self.pw.text;
+    user.password = password;
+    NSString *password2 = self.newpw.text;
+    NSString *birthdate = self.bd.text;
+    NSString *email = self.em.text;
+    NSString *location = self.loc.text;
+    if(username == nil || password == nil){
+        printf("something went wrong re input ");
+    }
+    else {
+     /*   [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                //The registration was successful, go to the wall
+                [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
+                
+            } else {
+                //Something bad has occurred
+                NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                [errorAlertView show];
+            }
+        }];*/
+    }
    
- // NSInteger
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
