@@ -10,9 +10,9 @@
 
 @interface ProfileViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *birthdate;
+@property (weak, nonatomic) IBOutlet UITextField *un;
+@property (weak, nonatomic) IBOutlet UITextField *em;
+@property (weak, nonatomic) IBOutlet UITextField *bd;
 @property (weak, nonatomic) IBOutlet UITextView *des;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
 

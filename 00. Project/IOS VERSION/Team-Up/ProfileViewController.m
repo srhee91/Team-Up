@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
 
 @interface ProfileViewController ()
 
@@ -20,12 +21,17 @@
     
     [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
+    PFUser *currentUser = [PFUser currentUser];
+    self.un.text = currentUser.username;
+    self.em.text = currentUser.email;
+    self.bd.text = currentUser[@"birthday"];
+    self.des.text = currentUser[@"Description"];
 }
 
 -(void) dismissKeyboard {
-    [self.username resignFirstResponder];
-    [self.email resignFirstResponder];
-    [self.birthdate resignFirstResponder];
+    [self.un resignFirstResponder];
+    [self.em resignFirstResponder];
+    [self.bd resignFirstResponder];
     [self.des resignFirstResponder];
     [self.submit resignFirstResponder];
 }

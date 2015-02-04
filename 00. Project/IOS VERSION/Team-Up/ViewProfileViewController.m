@@ -21,6 +21,7 @@
     self.un.text = currentUser.username;
     self.em.text = currentUser.email;
     self.bd.text = currentUser[@"birthday"];
+    self.des.text = currentUser[@"Description"];
 }
 
 - (void)didReceiveMemoryWarning {
