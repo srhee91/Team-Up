@@ -939,7 +939,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3Bj-09-H5w" kind="relationship" relationship="rootViewController" id="ibJ-dG-ZdG"/>
+                        <segue destination="oGB-G3-MNg" kind="relationship" relationship="rootViewController" id="Tgg-Hd-qVU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHI-Jq-upZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -947,6 +947,100 @@
             <point key="canvasLocation" x="-522" y="1612"/>
         </scene>
         <!--Profile-->
+        <scene sceneID="CiI-XB-O02">
+            <objects>
+                <viewController id="oGB-G3-MNg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="90u-mf-pjk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-279-birthday-cake.png" id="GDi-04-bh2">
+                                <rect key="frame" x="19" y="135" width="26" height="29"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-4-user.png" id="Ud6-1j-eO6">
+                                <rect key="frame" x="21" y="79" width="23" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-11-envelope.png" id="BzG-AL-4ba">
+                                <rect key="frame" x="20" y="110" width="24" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="m3K-47-dKn">
+                                <rect key="frame" x="241" y="79" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B3h-p3-Phy">
+                                <rect key="frame" x="52" y="79" width="181" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wFf-j2-fhi">
+                                <rect key="frame" x="52" y="109" width="181" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate (MMDDYYYY)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="htd-Zq-b5Z">
+                                <rect key="frame" x="52" y="135" width="249" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEA-kz-9ct">
+                                <rect key="frame" x="52" y="172" width="249" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zdo-Dk-4TC">
+                                <rect key="frame" x="0.0" y="210" width="320" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="kAh-Jj-3ZD" style="IBUITableViewCellStyleDefault" id="wfc-1k-Szg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wfc-1k-Szg" id="Q48-5j-gvf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Groups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kAh-Jj-3ZD">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="hA5-Nb-jrh">
+                                <rect key="frame" x="19" y="171" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="tkP-ya-dht">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="zOy-61-5qx">
+                            <connections>
+                                <segue destination="3Bj-09-H5w" kind="push" id="Rcc-0w-d3B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qJY-N2-rNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="1612"/>
+        </scene>
+        <!--Edit Profile-->
         <scene sceneID="28B-p1-Tgx">
             <objects>
                 <viewController id="3Bj-09-H5w" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -955,45 +1049,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="QxK-o9-vLX">
-                                <rect key="frame" x="27" y="340" width="26" height="26"/>
+                                <rect key="frame" x="14" y="191" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-279-birthday-cake.png" id="Lbl-2l-Kmp">
-                                <rect key="frame" x="27" y="303" width="26" height="29"/>
+                                <rect key="frame" x="14" y="148" width="26" height="29"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-4-user.png" id="OSM-gz-u12">
-                                <rect key="frame" x="29" y="231" width="23" height="22"/>
+                                <rect key="frame" x="16" y="76" width="23" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-11-envelope.png" id="PFP-sq-miu">
-                                <rect key="frame" x="28" y="272" width="24" height="16"/>
+                                <rect key="frame" x="15" y="117" width="24" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="fiW-7R-Qbb">
-                                <rect key="frame" x="95" y="75" width="130" height="130"/>
+                                <rect key="frame" x="236" y="76" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" id="KGw-cG-Xx8">
-                                <rect key="frame" x="60" y="227" width="244" height="30"/>
+                                <rect key="frame" x="47" y="72" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" id="KFL-8b-VLj">
-                                <rect key="frame" x="61" y="265" width="244" height="30"/>
+                                <rect key="frame" x="47" y="110" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthdate (MMDDYYYY)" minimumFontSize="17" id="6Jf-Wl-dI7">
-                                <rect key="frame" x="60" y="303" width="244" height="30"/>
+                                <rect key="frame" x="48" y="148" width="180" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" id="iGc-Ou-wde">
-                                <rect key="frame" x="56" y="337" width="240" height="92"/>
+                                <rect key="frame" x="43" y="187" width="240" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
@@ -1006,8 +1100,16 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5hA-BC-Osq">
+                                <rect key="frame" x="236" y="134" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Edit Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CNy-93-2sL">
-                                <rect key="frame" x="16" y="437" width="288" height="41"/>
+                                <rect key="frame" x="16" y="282" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1019,19 +1121,11 @@
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="WGu-vE-UCv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5hA-BC-Osq">
-                                <rect key="frame" x="130" y="202" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="Edit Picture">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="glyphicons-4-user.png" id="ULc-xG-H2l"/>
-                    <navigationItem key="navigationItem" title="Profile" id="eFn-TM-KSH"/>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="eFn-TM-KSH"/>
                     <connections>
                         <outlet property="birthdate" destination="6Jf-Wl-dI7" id="H8v-HC-gYF"/>
                         <outlet property="des" destination="iGc-Ou-wde" id="eOK-pc-zBN"/>
@@ -1042,7 +1136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ki-JS-gHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="1612"/>
+            <point key="canvasLocation" x="174" y="1612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5oM-XL-ppL">
@@ -1228,10 +1322,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nvM-Ml-KQU" kind="relationship" relationship="viewControllers" id="xcL-yI-F7Q"/>
+                        <segue destination="rsP-lS-tAK" kind="relationship" relationship="viewControllers" id="8sy-UB-wzQ"/>
                         <segue destination="Hkd-Ae-joJ" kind="relationship" relationship="viewControllers" id="VDJ-Ae-jwL"/>
                         <segue destination="jrW-ZC-MvZ" kind="relationship" relationship="viewControllers" id="wc8-kh-TIV"/>
-                        <segue destination="rsP-lS-tAK" kind="relationship" relationship="viewControllers" id="8sy-UB-wzQ"/>
                         <segue destination="Yag-a8-sbm" kind="relationship" relationship="viewControllers" id="zHD-82-hCm"/>
                     </connections>
                 </tabBarController>

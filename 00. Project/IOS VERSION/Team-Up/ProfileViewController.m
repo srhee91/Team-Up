@@ -30,6 +30,14 @@
     [self.submit resignFirstResponder];
 }
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    CGPoint scrollPoint= CGPointMake(0, textField.frame.origin.y);
+    [self.scrollviewprofile setContentOffset:scrollPoint animated:YES];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField { [self.scrollviewprofile setContentOffset:CGPointZero animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
