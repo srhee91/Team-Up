@@ -366,7 +366,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="ZvQ-oM-za7"/>
-                                    <segue destination="wEQ-V9-atz" kind="modal" id="ssV-im-2tJ"/>
+                                    <segue destination="wEQ-V9-atz" kind="modal" modalTransitionStyle="crossDissolve" id="ssV-im-2tJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -997,7 +997,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="HMq-8H-iqB"/>
-                                    <segue destination="wEQ-V9-atz" kind="modal" id="5SN-3F-sbK"/>
+                                    <action selector="signup:" destination="qdG-59-cQS" eventType="touchUpInside" id="QSk-O6-N6u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1017,6 +1017,7 @@
                         <outlet property="pw" destination="uLy-mV-w9h" id="WqH-Yj-5RS"/>
                         <outlet property="signup" destination="Vl3-02-2gx" id="WxX-UA-SbK"/>
                         <outlet property="un" destination="oAG-ZV-lHb" id="e4A-Mf-0iv"/>
+                        <segue destination="wEQ-V9-atz" kind="modal" identifier="toMain" id="WSe-RP-2Bv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEy-4o-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1892,7 +1893,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5SN-3F-sbK"/>
+        <segue reference="WSe-RP-2Bv"/>
         <segue reference="zf7-Ta-Gao"/>
     </inferredMetricsTieBreakers>
 </document>

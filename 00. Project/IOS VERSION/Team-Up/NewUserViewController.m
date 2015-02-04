@@ -47,12 +47,14 @@
     NSString *email = self.em.text;
     user.email = email;
     if ([password compare:password2 options:NSCaseInsensitiveSearch] == NSOrderedSame){
-            if(username.length!=0&&password.length!=0&&password2.length!=0&&birthdate.length!=0&&email.length!=0){
+            if(![self.un.text isEqualToString:@""]&&![self.pw.text isEqualToString:@""]&&![self.newpw.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]){
                 [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (!error) {
-                        NSLog(@"successfull");
+                        NSLog(@"successful");
                         // Now Sign Up successful, continue to onto next page
+                        [self performSegueWithIdentifier:@"toMain" sender:sender];
                     } else {
+                        NSLog(@"Fail");
                         // Sign Up failed, ask for re-input of user information
                         NSString *errorString = [[error userInfo] objectForKey:@"error"];
                         UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
