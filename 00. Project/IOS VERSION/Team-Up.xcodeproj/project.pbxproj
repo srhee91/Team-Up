@@ -658,6 +658,8 @@
 		7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */; };
 		7CC7E52E1A818775001869DE /* WiiUPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */; };
 		7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */; };
+		7CC7E5331A81BFCF001869DE /* QM.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7CC7E5321A81BFCF001869DE /* QM.jpeg */; };
+		7CC7E5361A81C281001869DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5351A81C281001869DE /* ProfileViewController.m */; };
 		7CD9C2621A80BF560038196C /* PCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2611A80BF560038196C /* PCTableViewController.m */; };
 		7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2641A80C2480038196C /* PS3TableViewController.m */; };
 		7CD9C2681A80C2540038196C /* PS4TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2671A80C2540038196C /* PS4TableViewController.m */; };
@@ -1348,6 +1350,9 @@
 		7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiUPrefTableViewController.m; sourceTree = "<group>"; };
 		7CC7E52F1A81877F001869DE /* 3DSPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 3DSPrefTableViewController.h; sourceTree = "<group>"; };
 		7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 3DSPrefTableViewController.m; sourceTree = "<group>"; };
+		7CC7E5321A81BFCF001869DE /* QM.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = QM.jpeg; sourceTree = "<group>"; };
+		7CC7E5341A81C281001869DE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		7CC7E5351A81C281001869DE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		7CD9C2601A80BF560038196C /* PCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTableViewController.h; sourceTree = "<group>"; };
 		7CD9C2611A80BF560038196C /* PCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTableViewController.m; sourceTree = "<group>"; };
 		7CD9C2631A80C2480038196C /* PS3TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS3TableViewController.h; sourceTree = "<group>"; };
@@ -1482,6 +1487,8 @@
 				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
 				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7CC7E5341A81C281001869DE /* ProfileViewController.h */,
+				7CC7E5351A81C281001869DE /* ProfileViewController.m */,
 				7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */,
 				7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */,
 				7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */,
@@ -1528,6 +1535,7 @@
 		7C662F611A7335350074FEE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7CC7E5321A81BFCF001869DE /* QM.jpeg */,
 				7C662F871A75DD9B0074FEE9 /* glyphicons_free */,
 				7C662F621A7335350074FEE9 /* Info.plist */,
 				7C662F631A7335350074FEE9 /* main.m */,
@@ -2389,6 +2397,7 @@
 				7C66338E1A75DD9F0074FEE9 /* glyphicons-472-gas-station.png in Resources */,
 				7C6632CB1A75DD9F0074FEE9 /* glyphicons-297-grater.png in Resources */,
 				7C6633931A75DD9F0074FEE9 /* glyphicons-477-plate-of-food.png in Resources */,
+				7CC7E5331A81BFCF001869DE /* QM.jpeg in Resources */,
 				7C6632D41A75DD9F0074FEE9 /* glyphicons-304-temple-islam.png in Resources */,
 				7C6632FC1A75DD9F0074FEE9 /* glyphicons-340-rabbit.png in Resources */,
 				7C6634201A75DD9F0074FEE9 /* glyphicons-603-superscript.png in Resources */,
@@ -2910,6 +2919,7 @@
 				7C662F6A1A7335350074FEE9 /* ViewController.m in Sources */,
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
 				7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */,
+				7CC7E5361A81C281001869DE /* ProfileViewController.m in Sources */,
 				7CC7E5221A818746001869DE /* PS4PrefTableViewController.m in Sources */,
 				7CC7E52E1A818775001869DE /* WiiUPrefTableViewController.m in Sources */,
 				7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */,
