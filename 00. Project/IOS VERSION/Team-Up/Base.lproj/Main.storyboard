@@ -743,7 +743,7 @@
         <!--Profile-->
         <scene sceneID="CiI-XB-O02">
             <objects>
-                <viewController id="oGB-G3-MNg" sceneMemberID="viewController">
+                <viewController id="oGB-G3-MNg" customClass="ViewProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="90u-mf-pjk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -829,6 +829,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bd" destination="htd-Zq-b5Z" id="Iwa-ay-CIr"/>
+                        <outlet property="des" destination="LEA-kz-9ct" id="3ax-UD-GX8"/>
+                        <outlet property="em" destination="wFf-j2-fhi" id="dIE-Hp-kLL"/>
+                        <outlet property="un" destination="B3h-p3-Phy" id="Oxz-nS-4bU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJY-N2-rNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1090,7 +1096,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="9iS-U7-cSp"/>
-                                    <segue destination="wEQ-V9-atz" kind="modal" modalTransitionStyle="flipHorizontal" id="rgv-u2-0lK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1100,6 +1105,7 @@
                         <outlet property="password" destination="WJw-og-UkZ" id="UsX-b4-3Pq"/>
                         <outlet property="signin" destination="Kq2-Dp-GIA" id="gdf-VX-wfs"/>
                         <outlet property="username" destination="bjB-pY-cqg" id="Qt3-Yu-A9x"/>
+                        <segue destination="wEQ-V9-atz" kind="modal" identifier="logintoprofile" id="CpV-9Y-xOZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEZ-aM-W5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1893,7 +1899,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WSe-RP-2Bv"/>
+        <segue reference="CpV-9Y-xOZ"/>
         <segue reference="zf7-Ta-Gao"/>
     </inferredMetricsTieBreakers>
 </document>

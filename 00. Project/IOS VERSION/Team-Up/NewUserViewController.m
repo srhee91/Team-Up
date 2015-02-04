@@ -39,15 +39,15 @@
     PFUser *user = [PFUser user];
 
     NSString *username = self.un.text;
-    user.username = username;
     NSString *password = self.pw.text;
-    user.password = password;
     NSString *password2 = self.newpw.text;
-    NSString *birthdate = self.bd.text;
     NSString *email = self.em.text;
-    user.email = email;
     if ([password compare:password2 options:NSCaseInsensitiveSearch] == NSOrderedSame){
-            if(![self.un.text isEqualToString:@""]&&![self.pw.text isEqualToString:@""]&&![self.newpw.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]){
+            if(![self.un.text isEqualToString:@""]&&![self.pw.text isEqualToString:@""]&&![self.newpw.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]&&[self.pw.text isEqualToString:self.newpw.text]){
+                user.username = username;
+                user.password = password;
+                user[@"birthday"] = self.bd.text;
+                user.email = email;
                 [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (!error) {
                         NSLog(@"successful");

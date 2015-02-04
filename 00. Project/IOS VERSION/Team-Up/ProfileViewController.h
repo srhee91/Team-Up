@@ -15,6 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *birthdate;
 @property (weak, nonatomic) IBOutlet UITextView *des;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollviewprofile;
 
 @end

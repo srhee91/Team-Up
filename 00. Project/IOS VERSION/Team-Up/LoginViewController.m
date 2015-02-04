@@ -66,7 +66,8 @@
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
             if(user){
                 NSLog(@"login successful");
-                // Now application displays the MyGroup Page
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+                // Now application displays the Profile Page
             }
             else{
                 NSLog(@"Log in failed");

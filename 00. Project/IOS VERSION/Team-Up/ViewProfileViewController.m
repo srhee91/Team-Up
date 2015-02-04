@@ -1,33 +1,26 @@
 //
-//  ProfileViewController.m
+//  ViewProfileViewController.m
 //  Team-Up
 //
-//  Created by Kartik Sawant on 2/3/15.
+//  Created by Kartik Sawant on 2/4/15.
 //  Copyright (c) 2015 Kartik Sawant. All rights reserved.
 //
 
-#import "ProfileViewController.h"
-
-@interface ProfileViewController ()
+#import "ViewProfileViewController.h"
+#import <Parse/Parse.h>
+@interface ViewProfileViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation ViewProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
-    [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
-}
-
--(void) dismissKeyboard {
-    [self.username resignFirstResponder];
-    [self.email resignFirstResponder];
-    [self.birthdate resignFirstResponder];
-    [self.des resignFirstResponder];
-    [self.submit resignFirstResponder];
+    PFUser *currentUser = [PFUser currentUser];
+    self.un.text = currentUser.username;
+    self.em.text = currentUser.email;
+    self.bd.text = currentUser[@"birthday"];
 }
 
 - (void)didReceiveMemoryWarning {

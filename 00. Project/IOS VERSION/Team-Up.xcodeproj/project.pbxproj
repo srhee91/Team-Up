@@ -660,6 +660,7 @@
 		7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */; };
 		7CC7E5331A81BFCF001869DE /* QM.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7CC7E5321A81BFCF001869DE /* QM.jpeg */; };
 		7CC7E5361A81C281001869DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5351A81C281001869DE /* ProfileViewController.m */; };
+		7CC7E53C1A8218FA001869DE /* ViewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E53B1A8218FA001869DE /* ViewProfileViewController.m */; };
 		7CD9C2621A80BF560038196C /* PCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2611A80BF560038196C /* PCTableViewController.m */; };
 		7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2641A80C2480038196C /* PS3TableViewController.m */; };
 		7CD9C2681A80C2540038196C /* PS4TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2671A80C2540038196C /* PS4TableViewController.m */; };
@@ -1353,6 +1354,8 @@
 		7CC7E5321A81BFCF001869DE /* QM.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = QM.jpeg; sourceTree = "<group>"; };
 		7CC7E5341A81C281001869DE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		7CC7E5351A81C281001869DE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		7CC7E53A1A8218FA001869DE /* ViewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileViewController.h; sourceTree = "<group>"; };
+		7CC7E53B1A8218FA001869DE /* ViewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileViewController.m; sourceTree = "<group>"; };
 		7CD9C2601A80BF560038196C /* PCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTableViewController.h; sourceTree = "<group>"; };
 		7CD9C2611A80BF560038196C /* PCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTableViewController.m; sourceTree = "<group>"; };
 		7CD9C2631A80C2480038196C /* PS3TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS3TableViewController.h; sourceTree = "<group>"; };
@@ -1487,6 +1490,8 @@
 				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
 				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7CC7E53A1A8218FA001869DE /* ViewProfileViewController.h */,
+				7CC7E53B1A8218FA001869DE /* ViewProfileViewController.m */,
 				7CC7E5341A81C281001869DE /* ProfileViewController.h */,
 				7CC7E5351A81C281001869DE /* ProfileViewController.m */,
 				7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */,
@@ -2925,6 +2930,7 @@
 				7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */,
 				7C662F671A7335350074FEE9 /* AppDelegate.m in Sources */,
 				7C662F641A7335350074FEE9 /* main.m in Sources */,
+				7CC7E53C1A8218FA001869DE /* ViewProfileViewController.m in Sources */,
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
