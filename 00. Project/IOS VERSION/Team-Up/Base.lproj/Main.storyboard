@@ -794,6 +794,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="edit:" destination="nPs-fU-W2k" eventType="touchUpInside" id="Oag-eo-eKg"/>
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="dWh-gE-CjA"/>
                                 </connections>
                             </button>
@@ -807,6 +808,7 @@
                         <outlet property="em" destination="1GH-wE-elI" id="uiV-8D-45W"/>
                         <outlet property="submit" destination="uuZ-Ny-35N" id="YGK-Ny-f65"/>
                         <outlet property="un" destination="7Q5-19-AFV" id="sIK-zU-bhb"/>
+                        <segue destination="wEQ-V9-atz" kind="modal" identifier="backtoprofile" id="RCe-bw-I6t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cp-1V-Wxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1891,7 +1893,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CpV-9Y-xOZ"/>
+        <segue reference="RCe-bw-I6t"/>
         <segue reference="zf7-Ta-Gao"/>
     </inferredMetricsTieBreakers>
 </document>

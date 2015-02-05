@@ -41,6 +41,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)edit:(id)sender {
+    PFUser *user = [PFUser user];
+    NSString *username = self.un.text;
+    NSString *email = self.em.text;
+    if(![self.un.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]){
+        user.username = username;
+        user.email = email;
+        user[@"birthday"] = self.bd.text;
+        user[@"Description"] = self.des.text;
+        [user saveInBackground];
+        /*[user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                NSLog(@"successful");
+                // Now Sign Up successful, continue to onto next page*/
+                [self performSegueWithIdentifier:@"backtoprofile" sender:sender];
+            /*} else {
+                NSLog(@"Fail");
+                // Sign Up failed, ask for re-input of user information
+                NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                [errorAlertView show];
+            }
+        }];*/
+    }
+    else{
+        NSLog(@"Missing information");
+        //Do not move onto next Page, ask for re-input of information
+    }
+}
 /*
 #pragma mark - Navigation
 
