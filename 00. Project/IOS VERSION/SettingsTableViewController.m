@@ -43,11 +43,6 @@
     return 5;
 }
 
--(IBAction)logout:(id)sender {
-    [PFUser logOut];
-    PFUser *currentUser = [PFUser currentUser];
-}
-
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

@@ -142,7 +142,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Groups" image="glyphicons-44-group.png" id="rXR-V7-0j7"/>
-                    <navigationItem key="navigationItem" title="Team-Up" id="lzn-Gb-exP"/>
+                    <navigationItem key="navigationItem" title="Team-Up" id="lzn-Gb-exP">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="esQ-1a-Cno">
+                            <connections>
+                                <segue destination="Wp1-3q-riv" kind="push" id="w2O-il-eQz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="KQz-yF-CO7" id="2KM-81-rAT"/>
                     </connections>
@@ -159,6 +165,90 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="127" y="818"/>
+        </scene>
+        <!--Create Group-->
+        <scene sceneID="aYz-iQ-LLf">
+            <objects>
+                <viewController id="Wp1-3q-riv" customClass="CreateGroupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5kV-nh-cGP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="K0u-fu-unr">
+                                <rect key="frame" x="15" y="262" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-44-group.png" id="DsM-wX-OIp">
+                                <rect key="frame" x="9" y="79" width="39" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-115-list.png" id="1u9-rw-hpe">
+                                <rect key="frame" x="15" y="180" width="24" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="vwn-0M-ygM">
+                                <rect key="frame" x="238" y="79" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" minimumFontSize="17" id="8Fo-Pl-UMt">
+                                <rect key="frame" x="56" y="75" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="iJw-Z0-aKz">
+                                <rect key="frame" x="49" y="189" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jnv-2k-FJU">
+                                <rect key="frame" x="238" y="137" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Edit Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gng-PE-0Cf">
+                                <rect key="frame" x="16" y="300" width="288" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Create Group">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="edit:" destination="nPs-fU-W2k" eventType="touchUpInside" id="qpJ-Ie-Pu6"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="45Q-ts-Nt4"/>
+                                    <action selector="submit:" destination="Wp1-3q-riv" eventType="touchUpInside" id="XCb-0w-6EF"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" id="eik-H6-WhW">
+                                <rect key="frame" x="49" y="113" width="180" height="144"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Description" minimumFontSize="17" id="sv5-H6-NJz">
+                                <rect key="frame" x="49" y="262" width="248" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Group" id="erd-cv-sSE"/>
+                    <connections>
+                        <outlet property="des" destination="sv5-H6-NJz" id="KWZ-wn-5U1"/>
+                        <outlet property="gn" destination="8Fo-Pl-UMt" id="UNR-Vx-PEU"/>
+                        <outlet property="picker" destination="eik-H6-WhW" id="0mD-r1-4Hh"/>
+                        <segue destination="lRe-0I-UB7" kind="modal" identifier="showgroupmade" id="iO6-Yt-DFv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yU1-tO-iQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573" y="158"/>
         </scene>
         <!--PlayStation 4-->
         <scene sceneID="9Ao-y4-WzC">
@@ -745,11 +835,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="2AJ-ZF-j8I">
-                                <rect key="frame" x="16" y="191" width="26" height="26"/>
+                                <rect key="frame" x="16" y="200" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-279-birthday-cake.png" id="lkJ-72-Hkq">
-                                <rect key="frame" x="16" y="148" width="26" height="29"/>
+                                <rect key="frame" x="16" y="155" width="26" height="29"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-4-user.png" id="EL9-3f-Cgw">
@@ -757,38 +847,31 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-11-envelope.png" id="K88-6W-F90">
-                                <rect key="frame" x="17" y="117" width="24" height="16"/>
+                                <rect key="frame" x="17" y="124" width="24" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="M53-ag-J50">
                                 <rect key="frame" x="238" y="76" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="7Q5-19-AFV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" id="7Q5-19-AFV">
                                 <rect key="frame" x="49" y="72" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="1GH-wE-elI">
-                                <rect key="frame" x="49" y="110" width="181" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" id="1GH-wE-elI">
+                                <rect key="frame" x="48" y="117" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="orJ-Qc-od4">
-                                <rect key="frame" x="50" y="148" width="180" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthdate " minimumFontSize="17" id="orJ-Qc-od4">
+                                <rect key="frame" x="49" y="155" width="180" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" id="fxm-Oo-Pmh">
-                                <rect key="frame" x="45" y="187" width="240" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cHc-It-iUS">
                                 <rect key="frame" x="238" y="134" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -811,13 +894,18 @@
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="dWh-gE-CjA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" minimumFontSize="17" id="cjY-CO-D3w">
+                                <rect key="frame" x="50" y="198" width="248" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="Sc9-eQ-5iy"/>
                     <connections>
                         <outlet property="bd" destination="orJ-Qc-od4" id="kqT-gh-wdv"/>
-                        <outlet property="des" destination="fxm-Oo-Pmh" id="3Bq-bq-xKm"/>
                         <outlet property="em" destination="1GH-wE-elI" id="uiV-8D-45W"/>
                         <outlet property="submit" destination="uuZ-Ny-35N" id="YGK-Ny-f65"/>
                         <outlet property="un" destination="7Q5-19-AFV" id="sIK-zU-bhb"/>
@@ -826,7 +914,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cp-1V-Wxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="206" y="1612"/>
+            <point key="canvasLocation" x="190" y="1612"/>
         </scene>
         <!--Profile-->
         <scene sceneID="BTt-Hu-raJ">
@@ -938,6 +1026,7 @@
                         <outlet property="bd" destination="htd-Zq-b5Z" id="Iwa-ay-CIr"/>
                         <outlet property="des" destination="LEA-kz-9ct" id="3ax-UD-GX8"/>
                         <outlet property="em" destination="wFf-j2-fhi" id="dIE-Hp-kLL"/>
+                        <outlet property="tv" destination="Zdo-Dk-4TC" id="I48-gu-zd4"/>
                         <outlet property="un" destination="B3h-p3-Phy" id="Oxz-nS-4bU"/>
                     </connections>
                 </viewController>
@@ -1956,10 +2045,122 @@
             </objects>
             <point key="canvasLocation" x="-1613" y="1228"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DmQ-hm-P8k">
+            <objects>
+                <navigationController id="lRe-0I-UB7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nYl-cE-sXU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DuZ-Vw-VS3" kind="relationship" relationship="rootViewController" id="Wpv-A2-chp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGr-dJ-iZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="158"/>
+        </scene>
+        <!--Created Group View Controller-->
+        <scene sceneID="5Kq-sM-1bc">
+            <objects>
+                <viewController id="DuZ-Vw-VS3" customClass="CreatedGroupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XSf-tk-NoP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-44-group.png" id="b69-6B-CCY">
+                                <rect key="frame" x="84" y="79" width="34" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-4-user.png" id="KhK-BP-ghc">
+                                <rect key="frame" x="84" y="112" width="34" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="LFo-Pm-5I0">
+                                <rect key="frame" x="16" y="79" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a4K-Wc-Mbk">
+                                <rect key="frame" x="124" y="79" width="180" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pUJ-1j-fsE">
+                                <rect key="frame" x="124" y="112" width="180" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="81u-Lw-2kC">
+                                <rect key="frame" x="52" y="153" width="249" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4yG-tL-fLS">
+                                <rect key="frame" x="52" y="185" width="249" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FwY-Dg-DFV">
+                                <rect key="frame" x="0.0" y="221" width="320" height="347"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="J1a-aC-MdH" style="IBUITableViewCellStyleDefault" id="668-Ai-hIM">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="668-Ai-hIM" id="4Bw-jf-kNi">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Groups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J1a-aC-MdH">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-115-list.png" id="0hS-SS-kly">
+                                <rect key="frame" x="19" y="147" width="24" height="29"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="xS6-cR-8ih">
+                                <rect key="frame" x="18" y="184" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EXq-dV-B1a"/>
+                    <connections>
+                        <outlet property="an" destination="pUJ-1j-fsE" id="Qxp-rF-gzq"/>
+                        <outlet property="cat" destination="81u-Lw-2kC" id="Wo0-8I-79Q"/>
+                        <outlet property="des" destination="4yG-tL-fLS" id="lna-ib-onR"/>
+                        <outlet property="gn" destination="a4K-Wc-Mbk" id="YL3-4r-ddz"/>
+                        <outlet property="navbar" destination="EXq-dV-B1a" id="GDy-cP-wEm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="imQ-vr-uOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302" y="158"/>
+        </scene>
     </scenes>
     <resources>
         <image name="QM.jpeg" width="225" height="225"/>
         <image name="glyphicons-11-envelope.png" width="24" height="16"/>
+        <image name="glyphicons-115-list.png" width="24" height="21"/>
         <image name="glyphicons-137-cogwheel.png" width="24" height="24"/>
         <image name="glyphicons-196-circle-info.png" width="26" height="26"/>
         <image name="glyphicons-246-chat.png" width="24" height="19"/>
@@ -1974,7 +2175,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="CpV-9Y-xOZ"/>
         <segue reference="ymR-1f-a2p"/>
-        <segue reference="WSe-RP-2Bv"/>
     </inferredMetricsTieBreakers>
 </document>

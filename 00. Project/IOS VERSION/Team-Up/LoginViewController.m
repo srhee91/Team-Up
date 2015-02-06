@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser];
     CGRect frameRect = self.username.frame;
     frameRect.size.height = 45;
     self.username.frame = frameRect;

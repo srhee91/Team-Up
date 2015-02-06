@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewProfileViewController : UIViewController
+@interface ViewProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *un;
 @property (weak, nonatomic) IBOutlet UILabel *em;
 @property (weak, nonatomic) IBOutlet UILabel *bd;
 @property (weak, nonatomic) IBOutlet UILabel *des;
+@property (strong, nonatomic) NSArray *array;
+@property (weak, nonatomic) IBOutlet UITableView *tv;
 
 @end
