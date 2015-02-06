@@ -220,7 +220,7 @@
         <!--Settings-->
         <scene sceneID="MRV-Zz-kp2">
             <objects>
-                <tableViewController id="jca-JG-QbS" sceneMemberID="viewController">
+                <tableViewController id="jca-JG-QbS" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qBH-D4-z8f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,7 +259,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="4Yf-Zp-FfV" kind="push" id="LwN-VD-S5K"/>
+                                            <segue destination="EHG-GY-97k" kind="push" id="JdU-8B-xeM"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gdf-GU-ICG" style="IBUITableViewCellStyleDefault" id="EMA-hQ-Xx8">
@@ -337,24 +337,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" id="Cai-OM-sa3">
-                                <rect key="frame" x="16" y="213" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" minimumFontSize="17" id="kDH-Cy-jfp">
-                                <rect key="frame" x="16" y="242" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" id="dhs-Yx-7lH">
-                                <rect key="frame" x="16" y="184" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Krj-vc-HhC">
                                 <rect key="frame" x="16" y="280" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -365,17 +347,21 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="reset:" destination="j6q-gu-zzE" eventType="touchUpInside" id="2Kk-Qi-T0O"/>
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="ZvQ-oM-za7"/>
-                                    <segue destination="wEQ-V9-atz" kind="modal" modalTransitionStyle="crossDissolve" id="ssV-im-2tJ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" id="dhs-Yx-7lH">
+                                <rect key="frame" x="16" y="242" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="iva-vq-Wwz"/>
                     <connections>
-                        <outlet property="conpw" destination="kDH-Cy-jfp" id="8mQ-ct-Op8"/>
-                        <outlet property="newpw" destination="Cai-OM-sa3" id="XAw-Jn-02N"/>
                         <outlet property="oldpw" destination="dhs-Yx-7lH" id="9bq-ta-JdL"/>
                         <outlet property="reset" destination="Krj-vc-HhC" id="0ve-C3-DI6"/>
                     </connections>
@@ -570,7 +556,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="jca-JG-QbS" kind="relationship" relationship="rootViewController" id="tL3-Y4-pDT"/>
+                        <segue destination="jca-JG-QbS" kind="relationship" relationship="rootViewController" id="jSu-SN-5tR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9W-Ug-GDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1074,6 +1060,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="TMh-JV-qjM" kind="modal" id="a8O-tl-Vau"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VX7-rR-erh">
                                 <rect key="frame" x="16" y="490" width="288" height="30"/>
@@ -1902,6 +1891,71 @@
             </objects>
             <point key="canvasLocation" x="1637" y="4563"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Blz-IR-Hrh">
+            <objects>
+                <navigationController id="TMh-JV-qjM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3lf-F8-q6x"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lbH-mU-ai2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XXi-nD-uIE" kind="relationship" relationship="rootViewController" id="rfO-jd-Efw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24O-hA-sjZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2133" y="1228"/>
+        </scene>
+        <!--Forgot Password-->
+        <scene sceneID="0Lr-0z-tEZ">
+            <objects>
+                <viewController id="XXi-nD-uIE" customClass="ForgotPasswordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UYo-XK-Y1L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" id="znM-xY-kGt">
+                                <rect key="frame" x="16" y="251" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="k1k-cP-Lom">
+                                <rect key="frame" x="16" y="289" width="288" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="XXi-nD-uIE" eventType="touchUpInside" id="US1-ma-UuY"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="fNn-m7-H8j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.37254901960784315" green="0.49411764705882355" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="ZwW-e6-IyC">
+                        <barButtonItem key="leftBarButtonItem" title="Login" id="4j4-kG-CK5">
+                            <connections>
+                                <segue destination="hco-ni-qTf" kind="modal" id="lPq-sh-2cQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="em" destination="znM-xY-kGt" id="faQ-f6-bjg"/>
+                        <outlet property="reset" destination="k1k-cP-Lom" id="pAo-Zp-wgd"/>
+                        <segue destination="hco-ni-qTf" kind="modal" identifier="resetdone" id="aWG-HS-wrV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62F-RY-Pgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1613" y="1228"/>
+        </scene>
     </scenes>
     <resources>
         <image name="QM.jpeg" width="225" height="225"/>
@@ -1920,7 +1974,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RCe-bw-I6t"/>
         <segue reference="ymR-1f-a2p"/>
+        <segue reference="WSe-RP-2Bv"/>
     </inferredMetricsTieBreakers>
 </document>

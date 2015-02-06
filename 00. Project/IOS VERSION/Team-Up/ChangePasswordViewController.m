@@ -7,6 +7,7 @@
 //
 
 #import "ChangePasswordViewController.h"
+#import <Parse/Parse.h>
 
 @interface ChangePasswordViewController ()
 
@@ -17,6 +18,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    /*[PFCloud callFunctionInBackground:@"changePassword"
+                       withParameters:@{@"Username":@"ksawant",@"NewPassword":@"hello"}
+                                block:^(NSString *result, NSError *error) {
+                                    if (error) {
+                                        NSLog(@"ERROR");
+                                        // result is @"Hello world!"
+                                    }
+                                    else {
+                                        NSLog(@"%@",result);
+                                    }
+                                }];*/
+    
+}
+
+- (IBAction)reset:(id)sender {
+    PFUser *currentuser = [PFUser currentUser];
+    NSLog(@"%@",currentuser.email);
+    if([self.oldpw.text isEqualToString:currentuser.email]) {
+        NSLog(@"email sent");
+        [PFUser requestPasswordResetForEmailInBackground:currentuser.email];
+    }
+    else {
+        NSLog(@"fail");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
