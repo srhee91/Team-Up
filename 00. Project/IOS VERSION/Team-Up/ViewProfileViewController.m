@@ -22,21 +22,62 @@
     self.em.text = currentUser.email;
     self.bd.text = currentUser[@"birthday"];
     self.des.text = currentUser[@"Description"];
-    PFQuery *group = [PFQuery queryWithClassName:@"Group"];
-    [group orderByAscending: @"groupname"];
-    [group whereKey:@"admin" equalTo:currentUser.username];
-    [group findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        if (!error) {
-            self.array = results;
-            NSLog(@"made it");
-        } else {
-            // The find succeeded.
-            NSLog(@"failed to retrieve the object.");
+    PFQuery *member = [PFQuery queryWithClassName:@"Member"];
+    [member orderByDescending: @"groupId"];
+    [member whereKey:@"username" equalTo:currentUser.username];
+    [member selectKeys:@[@"groupId"]];
+    NSMutableArray *list = [[NSMutableArray alloc] init];
+    [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        //NSLog(@"HERE");
+        self.gId = results;
+        NSInteger counter = [results count];
+        NSLog(@"counter: %d", counter);
+        NSInteger i = 0;
+        while(i < counter) {
+            [list addObject: [self.gId
+               objectAtIndex:i][@"groupId"]];
+            i++;
+            NSLog(@"GROUP ID from list: %@",list);
+            NSLog(@"GROUP ID from gId: %@",[self.gId
+                                            objectAtIndex:0][@"groupId"]);
         }
+        //NSLog(@"GROUP ID: %@",list);
+        PFQuery *group = [PFQuery queryWithClassName:@"Group"];
+        [group orderByAscending: @"groupname"];
+        NSLog(@"%@",list);
+        [group whereKey:@"groupId" containedIn:list];
+        [group findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (!error) {
+                self.array = results;
+                NSLog(@"made it");
+                NSLog(@"%@",results);
+                [self.tv setDelegate:self];
+                [self.tv setDataSource:self];
+                [self.tv reloadData];
+            } else {
+                // The find succeeded.
+                NSLog(@"failed to retrieve the object.");
+            }
+        }];
     }];
+    //[self performSelectorOnMainThread:@selector(updateTable) withObject:nil waitUntilDone:NO];
+    /*dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tv reloadData];
+    });*/
+}
+
+-(void) updateTable
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tv reloadData];
+    });
     [self.tv setDelegate:self];
     [self.tv setDataSource:self];
+    [self.tv reloadData];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tv reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +94,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
+    NSLog(@"count of array %d",[self.array count]);
     return [self.array count];
 }
 

@@ -16,5 +16,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *des;
 @property (strong, nonatomic) NSArray *array;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
-
+@property (strong,nonatomic) NSArray *gId;
 @end
