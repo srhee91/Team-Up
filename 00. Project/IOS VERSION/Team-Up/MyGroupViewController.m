@@ -42,9 +42,43 @@
             // The find succeeded.
             NSLog(@"failed to retrieve the object.");
         }
+        PFQuery *members = [PFQuery queryWithClassName:@"Member"];
+        [members whereKey:@"username" equalTo:currentUser.username];
+        [members whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
+        [members findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if(error) {
+                //join button
+                self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Join" style:UIBarButtonItemStylePlain target:self action:@selector(join)];
+            }
+            else {
+                //leave button
+                self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leave" style:UIBarButtonItemStylePlain target:self action:@selector(leave)];
+            }
+        }];
     }];
+}
 
-    }
+- (void)join {
+    PFUser *currentUser = [PFUser currentUser];
+    PFObject *member = [PFObject objectWithClassName:@"Member"];
+    member[@"username"] = currentUser.username;
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    member[@"groupId"] = [ad.myGlobalArray objectAtIndex:0][@"groupId"];
+    [member saveInBackground];
+    self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leave" style:UIBarButtonItemStylePlain target:self action:@selector(leave)];
+}
+
+- (void)leave {
+    PFUser *currentUser = [PFUser currentUser];
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    PFQuery *mem = [PFQuery queryWithClassName:@"Member"];
+    [mem whereKey:@"username" equalTo:currentUser.username];
+    [mem whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
+    [mem findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        [[results objectAtIndex:0] deleteInBackground];
+    }];
+    self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Join" style:UIBarButtonItemStylePlain target:self action:@selector(join)];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
