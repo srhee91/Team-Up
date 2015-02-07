@@ -110,6 +110,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
     [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
     NSLog(@"%@",ad.myGlobalArray);
     [self performSegueWithIdentifier:@"toMyGroups" sender:self];

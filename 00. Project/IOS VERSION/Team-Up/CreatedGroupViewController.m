@@ -28,12 +28,17 @@
             // The find succeeded.
             NSLog(@"Successfully retrieved the object.");
             self.navbar.title = object[@"groupname"];
+            self.navbar.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(modal)];
             self.gn.text = object[@"groupname"];
             self.an.text = object[@"admin"];
             self.cat.text = object[@"categoryName"];
             self.des.text = object[@"description"];
         }
     }];
+}
+
+- (void)modal {
+    [self performSegueWithIdentifier:@"profile" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

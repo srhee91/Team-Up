@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79861A85A428007F1CCA /* MyGroupViewController.m */; };
+		7C2F798A1A85AC2F007F1CCA /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79891A85AC2F007F1CCA /* UserViewController.m */; };
 		7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */; };
 		7C418AB11A803B0800219F6A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418AAC1A803B0800219F6A /* Parse.framework */; };
 		7C418AB21A803B0800219F6A /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418AAD1A803B0800219F6A /* ParseUI.framework */; };
@@ -690,6 +692,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C2F79851A85A428007F1CCA /* MyGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupViewController.h; sourceTree = "<group>"; };
+		7C2F79861A85A428007F1CCA /* MyGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupViewController.m; sourceTree = "<group>"; };
+		7C2F79881A85AC2F007F1CCA /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		7C2F79891A85AC2F007F1CCA /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		7C3ABE0A1A7A26880069D53D /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		7C418AAC1A803B0800219F6A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -1507,6 +1513,10 @@
 				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
 				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7C2F79881A85AC2F007F1CCA /* UserViewController.h */,
+				7C2F79891A85AC2F007F1CCA /* UserViewController.m */,
+				7C2F79851A85A428007F1CCA /* MyGroupViewController.h */,
+				7C2F79861A85A428007F1CCA /* MyGroupViewController.m */,
 				7C507B2C1A84A3600039B93E /* CreatedGroupViewController.h */,
 				7C507B2D1A84A3600039B93E /* CreatedGroupViewController.m */,
 				7C507B291A847F2B0039B93E /* CreateGroupViewController.h */,
@@ -2954,6 +2964,7 @@
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
 				7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */,
 				7CC7E5361A81C281001869DE /* ProfileViewController.m in Sources */,
+				7C2F798A1A85AC2F007F1CCA /* UserViewController.m in Sources */,
 				7CC7E5221A818746001869DE /* PS4PrefTableViewController.m in Sources */,
 				7CC7E52E1A818775001869DE /* WiiUPrefTableViewController.m in Sources */,
 				7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */,
@@ -2964,6 +2975,7 @@
 				7CC7E53C1A8218FA001869DE /* ViewProfileViewController.m in Sources */,
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
+				7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */,
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
 				7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */,
 				7CD9C2711A80C2780038196C /* WiiUTableViewController.m in Sources */,
