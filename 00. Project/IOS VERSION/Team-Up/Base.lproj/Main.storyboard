@@ -824,7 +824,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gp-OQ-hZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="2242"/>
+            <point key="canvasLocation" x="-32" y="2274"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oBg-aO-EOx">
+            <objects>
+                <viewController id="iDd-J4-6oe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yE0-z0-6VN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nkM-Dg-oyb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1I-ko-y5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="2274"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="TWL-Ed-fwP">
@@ -1028,6 +1043,7 @@
                         <outlet property="em" destination="wFf-j2-fhi" id="dIE-Hp-kLL"/>
                         <outlet property="tv" destination="Zdo-Dk-4TC" id="I48-gu-zd4"/>
                         <outlet property="un" destination="B3h-p3-Phy" id="Oxz-nS-4bU"/>
+                        <segue destination="iDd-J4-6oe" kind="push" identifier="toMyGroups" id="O6D-qg-ySO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJY-N2-rNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2175,7 +2191,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CpV-9Y-xOZ"/>
+        <segue reference="RCe-bw-I6t"/>
         <segue reference="ymR-1f-a2p"/>
     </inferredMetricsTieBreakers>
 </document>

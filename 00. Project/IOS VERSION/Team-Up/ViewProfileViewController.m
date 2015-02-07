@@ -8,6 +8,8 @@
 
 #import "ViewProfileViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
+
 @interface ViewProfileViewController ()
 
 @end
@@ -60,20 +62,6 @@
             }
         }];
     }];
-    //[self performSelectorOnMainThread:@selector(updateTable) withObject:nil waitUntilDone:NO];
-    /*dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tv reloadData];
-    });*/
-}
-
--(void) updateTable
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tv reloadData];
-    });
-    [self.tv setDelegate:self];
-    [self.tv setDataSource:self];
-    [self.tv reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -119,6 +107,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"toMyGroups" sender:self];
+}
 /*
 #pragma mark - Navigation
 
