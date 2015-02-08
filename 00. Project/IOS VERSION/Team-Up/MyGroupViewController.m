@@ -26,7 +26,18 @@
     self.an.text = [ad.myGlobalArray objectAtIndex:0][@"admin"];
     self.cat.text = [ad.myGlobalArray objectAtIndex:0][@"categoryName"];
     self.des.text = [ad.myGlobalArray objectAtIndex:0][@"description"];
-    PFQuery *member = [PFQuery queryWithClassName:@"Member"];
+    if([currentUser.username isEqualToString:[ad.myGlobalArray objectAtIndex:0][@"admin"]]) {
+            [self.editButton addTarget:self
+                                action:@selector(edit)
+                        forControlEvents:UIControlEventTouchUpInside];
+            [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
+            NSLog(@"I AM THE ADMIN");
+    }
+    else {
+        [self.editButton setTitle:@"" forState:UIControlStateNormal];
+        NSLog(@"NOT ADMIN");
+    }
+    PFQuery *member = [PFQuery queryWithClassName:@"Group"];
     [member orderByDescending: @"createdAt"];
     [member whereKey:@"username" notEqualTo:currentUser.username];
     [member whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
@@ -62,6 +73,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self viewDidLoad];
+}
+
+- (void)edit {
+    [self performSegueWithIdentifier:@"toEditGroup" sender:self];
 }
 
 - (void)join {

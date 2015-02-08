@@ -887,14 +887,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f2a-3F-j6X">
-                                <rect key="frame" x="124" y="79" width="180" height="22"/>
+                                <rect key="frame" x="124" y="79" width="177" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bEZ-rv-gt3">
-                                <rect key="frame" x="124" y="112" width="180" height="22"/>
+                                <rect key="frame" x="124" y="112" width="123" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -945,18 +945,28 @@
                                 <rect key="frame" x="18" y="184" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aqp-go-GX6">
+                                <rect key="frame" x="255" y="108" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="nkM-Dg-oyb"/>
                     <connections>
                         <outlet property="an" destination="bEZ-rv-gt3" id="KSC-Q2-Q8G"/>
                         <outlet property="cat" destination="sgM-5K-ddO" id="5kU-WH-TP1"/>
                         <outlet property="des" destination="cG9-j9-gAa" id="Ywp-BN-4yg"/>
+                        <outlet property="editButton" destination="Aqp-go-GX6" id="46z-TC-Gua"/>
                         <outlet property="gn" destination="f2a-3F-j6X" id="4Sn-LK-dVY"/>
                         <outlet property="navbar" destination="nkM-Dg-oyb" id="3w5-1b-9NB"/>
                         <outlet property="tv" destination="iAa-eA-68l" id="cAS-uE-SYO"/>
                         <segue destination="4ZX-dk-UBo" kind="push" identifier="toUserProfile" id="Eax-Gs-aUw"/>
+                        <segue destination="2zE-dn-jeS" kind="push" identifier="toEditGroup" id="g7U-Qc-t2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1I-ko-y5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2346,7 +2356,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pUJ-1j-fsE">
-                                <rect key="frame" x="124" y="112" width="180" height="22"/>
+                                <rect key="frame" x="124" y="112" width="123" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2397,6 +2407,13 @@
                                 <rect key="frame" x="18" y="184" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u5w-GA-rrZ">
+                                <rect key="frame" x="255" y="109" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2405,15 +2422,89 @@
                         <outlet property="an" destination="pUJ-1j-fsE" id="Qxp-rF-gzq"/>
                         <outlet property="cat" destination="81u-Lw-2kC" id="Wo0-8I-79Q"/>
                         <outlet property="des" destination="4yG-tL-fLS" id="lna-ib-onR"/>
+                        <outlet property="editButton" destination="u5w-GA-rrZ" id="yzf-da-Ycw"/>
                         <outlet property="gn" destination="a4K-Wc-Mbk" id="YL3-4r-ddz"/>
                         <outlet property="navbar" destination="EXq-dV-B1a" id="GDy-cP-wEm"/>
                         <outlet property="tv" destination="FwY-Dg-DFV" id="CRY-Er-s0R"/>
                         <segue destination="wEQ-V9-atz" kind="modal" identifier="profile" modalTransitionStyle="crossDissolve" animates="NO" id="Beq-ZA-H9m"/>
+                        <segue destination="2zE-dn-jeS" kind="push" identifier="toEditGroup" id="Q5y-dY-bJW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="imQ-vr-uOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1302" y="158"/>
+        </scene>
+        <!--Edit Group-->
+        <scene sceneID="KHO-W2-toS">
+            <objects>
+                <viewController id="2zE-dn-jeS" customClass="EditGroupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lZD-BY-age">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="l58-Dc-dmu">
+                                <rect key="frame" x="15" y="172" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-44-group.png" id="twn-XS-suJ">
+                                <rect key="frame" x="9" y="132" width="39" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="N4X-ZE-t0a">
+                                <rect key="frame" x="238" y="87" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" minimumFontSize="17" id="i9c-O6-VC5">
+                                <rect key="frame" x="56" y="128" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="gn:" destination="2zE-dn-jeS" eventType="editingDidEnd" id="NrO-Fq-oKj"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Gg-a8-Rs7">
+                                <rect key="frame" x="238" y="145" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Edit Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fs9-SU-mWu">
+                                <rect key="frame" x="16" y="299" width="288" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Edit Group">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="edit:" destination="2zE-dn-jeS" eventType="touchUpInside" id="MMu-mb-MCF"/>
+                                    <action selector="edit:" destination="nPs-fU-W2k" eventType="touchUpInside" id="S3N-oC-hlA"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="5Fj-rt-NYx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Description" minimumFontSize="17" id="Nnf-ML-c0S">
+                                <rect key="frame" x="56" y="170" width="255" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Group" id="XPY-GU-stq"/>
+                    <connections>
+                        <outlet property="des" destination="Nnf-ML-c0S" id="G1g-f1-aQG"/>
+                        <outlet property="edit" destination="Fs9-SU-mWu" id="3rC-2I-nJQ"/>
+                        <outlet property="gn" destination="i9c-O6-VC5" id="ztw-1q-rkc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w00-a9-Rxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2955" y="2197"/>
         </scene>
     </scenes>
     <resources>
@@ -2435,8 +2526,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="yNA-bB-mcx"/>
-        <segue reference="CpV-9Y-xOZ"/>
+        <segue reference="RCe-bw-I6t"/>
         <segue reference="Rm7-ia-3JD"/>
-        <segue reference="74c-yC-l31"/>
+        <segue reference="U0d-bX-apU"/>
+        <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

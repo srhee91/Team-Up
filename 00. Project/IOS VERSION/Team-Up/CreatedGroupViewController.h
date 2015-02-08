@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *an;
 @property (weak, nonatomic) IBOutlet UILabel *cat;
 @property (weak, nonatomic) IBOutlet UILabel *des;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @end

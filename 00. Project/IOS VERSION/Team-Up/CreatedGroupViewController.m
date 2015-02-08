@@ -8,6 +8,8 @@
 
 #import "CreatedGroupViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
+
 @interface CreatedGroupViewController ()
 
 @end
@@ -31,14 +33,25 @@
             self.navbar.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(modal)];
             self.gn.text = object[@"groupname"];
             self.an.text = object[@"admin"];
+            [self.editButton addTarget:self
+                                action:@selector(edit)
+                      forControlEvents:UIControlEventTouchUpInside];
+            [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
             self.cat.text = object[@"categoryName"];
             self.des.text = object[@"description"];
+            AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+            [ad.myGlobalArray removeAllObjects];
+            [ad.myGlobalArray addObject:object];
         }
     }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self viewDidLoad];
+}
+
+- (void)edit {
+    [self performSegueWithIdentifier:@"toEditGroup" sender:self];
 }
 
 - (void)modal {

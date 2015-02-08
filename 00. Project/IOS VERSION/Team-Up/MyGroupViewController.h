@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tv;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (strong, nonatomic) NSArray *array;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+
 @end
