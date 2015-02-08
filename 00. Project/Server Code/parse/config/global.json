@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Team-Up!": {
+            "applicationId": "YW9dg2nCBuBU1xZ4tkR36WTkABoVZe3nAowKYXLJ", 
+            "masterKey": "8SnZEeKqYwv1evnnKFeok4rRZa9qAipDDZx9uIZf"
+        }, 
+        "_default": {
+            "link": "Team-Up!"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.4"
+    }
+}
