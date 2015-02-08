@@ -37,7 +37,7 @@
         [self.editButton setTitle:@"" forState:UIControlStateNormal];
         NSLog(@"NOT ADMIN");
     }
-    PFQuery *member = [PFQuery queryWithClassName:@"Group"];
+    PFQuery *member = [PFQuery queryWithClassName:@"Member"];
     [member orderByDescending: @"createdAt"];
     [member whereKey:@"username" notEqualTo:currentUser.username];
     [member whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
@@ -47,7 +47,6 @@
         if (!error) {
             self.array = results;
             NSLog(@"made it");
-            NSLog(@"%@",results);
             [self.tv setDelegate:self];
             [self.tv setDataSource:self];
             [self.tv reloadData];
