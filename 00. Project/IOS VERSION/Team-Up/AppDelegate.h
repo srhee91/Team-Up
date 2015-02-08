@@ -10,10 +10,12 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     NSMutableArray * myGlobalArray;
+    NSMutableString * storePassword;
 }
 //NSMutableArray * myGlobalArray;
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) NSMutableArray * myGlobalArray;
+@property (nonatomic, retain) NSMutableString * storePassword;
 
 @end
 

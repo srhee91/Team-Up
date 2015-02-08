@@ -11,5 +11,6 @@
 @interface PS4TableViewController : UITableViewController
 
 @property (strong,nonatomic) NSArray *groups;
+@property (strong,nonatomic) NSArray *array;
 
 @end

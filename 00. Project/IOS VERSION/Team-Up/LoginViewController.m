@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "Parse/parse.h"
-
+#import "AppDelegate.h"
 @interface LoginViewController ()
 
 @end
@@ -68,6 +68,9 @@
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
             if(user){
                 NSLog(@"login successful");
+                AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+                ad.storePassword = self.password.text;
+                NSLog(@"%@",ad.storePassword);
                 [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
                 // Now application displays the Profile Page
             }

@@ -7,6 +7,8 @@
 //
 
 #import "XboxOneTableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface XboxOneTableViewController ()
 
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Call of Duty: Advanced Warfare", @"FIFA 15", @"Grand Theft Auto V", @"Halo: Master Chief Collection", @"Titanfall", nil];
+    self.array = [[NSArray alloc]
+                   initWithObjects:@"sIaH6onOyV", @"YRTYpaeS1r", @"jxkD5gvjpN", @"6TW8l71zHP", @"7PCwfnWU9N", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,13 +37,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -68,6 +72,15 @@
 - (void) tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromXboxOne" sender:self];
 }
 
 /*

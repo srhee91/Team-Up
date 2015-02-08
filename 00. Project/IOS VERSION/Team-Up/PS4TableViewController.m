@@ -7,6 +7,8 @@
 //
 
 #import "PS4TableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface PS4TableViewController ()
 
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Call of Duty: Advanced Warfare",@"Call of Duty: Ghosts", @"FIFA 15", @"Grand Theft Auto V", @"The Last of Us", nil];
+    self.array = [[NSArray alloc]
+                   initWithObjects:@"T9jwH1ey8E",@"82vXN1J9Of", @"o5k5D9yIi9", @"APaiUgjILJ", @"lQXBaXXIfX", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -70,6 +74,14 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromPS4" sender:self];
+}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

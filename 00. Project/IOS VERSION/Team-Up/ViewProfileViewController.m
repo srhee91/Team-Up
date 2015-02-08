@@ -65,7 +65,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.tv reloadData];
+    [self viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,8 @@
 //
 
 #import "PCTableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface PCTableViewController ()
 
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Counter-Strike: Global Offensive",@"Diablo III", @"Dota 2", @"League of Legends", @"Minecraft", @"Starcraft 2", @"World of Warcraft", nil];
+    self.array = [[NSArray alloc]
+                  initWithObjects:@"Y08m3Bk2ML",@"OYzE67DLJY", @"hAst9NlM7B", @"5s6t3QOnus", @"kFX8ng3JKP", @"pZJ7IQ2354", @"Wa8OwaLHwl9", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,13 +37,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -68,6 +72,15 @@
 - (void) tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromPC" sender:self];
 }
 
 /*

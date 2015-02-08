@@ -272,6 +272,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PlayStation 4" id="7An-9X-VNL"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromPS4" id="YMW-Me-Bzw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fre-v2-zwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,10 +305,45 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="PC" id="0oU-tU-E6i"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromPC" id="p6Z-4I-uS5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fP1-O6-qaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043" y="818"/>
+        </scene>
+        <!--Category Group View Controller-->
+        <scene sceneID="iU4-5Z-XuZ">
+            <objects>
+                <tableViewController id="omR-cN-zYT" customClass="CategoryGroupViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WbR-FA-1ba">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mUI-8G-uMD">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUI-8G-uMD" id="d68-Ch-NVs">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="omR-cN-zYT" id="iOR-7E-mRG"/>
+                            <outlet property="delegate" destination="omR-cN-zYT" id="RhH-v0-HVa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="pE9-0U-qSN"/>
+                    <connections>
+                        <outlet property="navbar" destination="pE9-0U-qSN" id="koi-UG-if9"/>
+                        <outlet property="tv" destination="WbR-FA-1ba" id="IP2-Tl-9GP"/>
+                        <segue destination="iDd-J4-6oe" kind="push" identifier="toGroupProfile" id="74c-yC-l31"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-gR-uoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="2951"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MRV-Zz-kp2">
@@ -402,7 +440,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="hco-ni-qTf" kind="modal" id="ymR-1f-a2p"/>
+                                            <segue destination="hco-ni-qTf" kind="modal" modalTransitionStyle="crossDissolve" id="ymR-1f-a2p"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -677,6 +715,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="delete:" destination="2H9-vr-GSt" eventType="touchUpInside" id="Edd-h7-Hxz"/>
                                     <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="iGe-WZ-Oxc"/>
                                 </connections>
                             </button>
@@ -687,6 +726,7 @@
                     <connections>
                         <outlet property="deleteaccount" destination="FxD-Sa-Rk1" id="81c-5z-9qy"/>
                         <outlet property="password" destination="zX2-Hj-zdN" id="mrO-Ri-fJN"/>
+                        <segue destination="hco-ni-qTf" kind="modal" identifier="accountdeleted" id="Rm7-ia-3JD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Zc-m3-Qek" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -807,7 +847,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsH-p3-VEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="2960"/>
+            <point key="canvasLocation" x="-32" y="3040"/>
         </scene>
         <!--Chat-->
         <scene sceneID="y3F-FO-Ajx">
@@ -1100,6 +1140,7 @@
                     <navigationItem key="navigationItem" title="Edit Profile" id="Sc9-eQ-5iy"/>
                     <connections>
                         <outlet property="bd" destination="orJ-Qc-od4" id="kqT-gh-wdv"/>
+                        <outlet property="des" destination="cjY-CO-D3w" id="Q37-eJ-OMQ"/>
                         <outlet property="em" destination="1GH-wE-elI" id="uiV-8D-45W"/>
                         <outlet property="submit" destination="uuZ-Ny-35N" id="YGK-Ny-f65"/>
                         <outlet property="un" destination="7Q5-19-AFV" id="sIK-zU-bhb"/>
@@ -1873,6 +1914,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sports" id="gno-Yk-Zfx"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromSports" id="EDu-RM-UKc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeU-JA-Ztm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1900,6 +1944,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Xbox One" id="eor-Tj-20W"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromXboxOne" id="yNA-bB-mcx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIN-dp-9WK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1927,6 +1974,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Nintendo Wii U" id="JIW-5x-Dr0"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromWiiU" id="dJ5-Bh-I6d"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7E5-Cw-EZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1954,6 +2004,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Nintendo 3DS" id="I1d-qz-lG9"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="from3DS" id="Cua-jI-Yt0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFs-Uf-8ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1981,6 +2034,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Xbox 360" id="BxK-KP-2JN"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromXbox360" id="Afy-ld-38o"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqX-4R-C8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2008,6 +2064,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PlayStation 3" id="NMc-Vh-PSe"/>
+                    <connections>
+                        <segue destination="omR-cN-zYT" kind="push" identifier="fromPS3" id="LSk-CH-Q3O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kHI-cj-biO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2375,8 +2434,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ymR-1f-a2p"/>
-        <segue reference="Beq-ZA-H9m"/>
-        <segue reference="O6D-qg-ySO"/>
+        <segue reference="yNA-bB-mcx"/>
+        <segue reference="RCe-bw-I6t"/>
+        <segue reference="Rm7-ia-3JD"/>
+        <segue reference="74c-yC-l31"/>
     </inferredMetricsTieBreakers>
 </document>

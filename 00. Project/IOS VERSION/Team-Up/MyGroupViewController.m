@@ -31,6 +31,8 @@
     [member whereKey:@"username" notEqualTo:currentUser.username];
     [member whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
     [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        //join button
+        self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Join" style:UIBarButtonItemStylePlain target:self action:@selector(join)];
         if (!error) {
             self.array = results;
             NSLog(@"made it");
@@ -46,16 +48,20 @@
         [members whereKey:@"username" equalTo:currentUser.username];
         [members whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
         [members findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-            if(error) {
-                //join button
-                self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Join" style:UIBarButtonItemStylePlain target:self action:@selector(join)];
-            }
-            else {
+            NSLog(@"username %@",[results objectAtIndex:0][@"username"]);
+            NSLog(@"error %@",error.description);
+            int k = 0;
+            if([currentUser.username isEqualToString:[results objectAtIndex:0][@"username"]]) {
                 //leave button
                 self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leave" style:UIBarButtonItemStylePlain target:self action:@selector(leave)];
+                k = 1;
             }
         }];
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
 }
 
 - (void)join {

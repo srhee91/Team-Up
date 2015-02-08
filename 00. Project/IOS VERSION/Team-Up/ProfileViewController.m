@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface ProfileViewController ()
 
@@ -28,6 +29,10 @@
     self.des.text = currentUser[@"Description"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
+}
+
 -(void) dismissKeyboard {
     [self.un resignFirstResponder];
     [self.em resignFirstResponder];
@@ -42,28 +47,16 @@
 }
 
 -(IBAction)edit:(id)sender {
-    PFUser *user = [PFUser user];
-    NSString *username = self.un.text;
-    NSString *email = self.em.text;
+    PFUser *currentUser = [PFUser currentUser];
     if(![self.un.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]){
-        user.username = username;
-        user.email = email;
+        AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+        PFUser *user = [PFUser logInWithUsername:currentUser.username password:ad.storePassword];
+        user.username = self.un.text;
+        user.email = self.em.text;
         user[@"birthday"] = self.bd.text;
         user[@"Description"] = self.des.text;
-        [user saveInBackground];
-        /*[user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                NSLog(@"successful");
-                // Now Sign Up successful, continue to onto next page*/
-                [self performSegueWithIdentifier:@"backtoprofile" sender:sender];
-            /*} else {
-                NSLog(@"Fail");
-                // Sign Up failed, ask for re-input of user information
-                NSString *errorString = [[error userInfo] objectForKey:@"error"];
-                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                [errorAlertView show];
-            }
-        }];*/
+        [user save];
+        [self performSegueWithIdentifier:@"backtoprofile" sender:self];
     }
     else{
         NSLog(@"Missing information");

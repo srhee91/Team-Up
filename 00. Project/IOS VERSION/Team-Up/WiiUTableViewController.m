@@ -7,6 +7,8 @@
 //
 
 #import "WiiUTableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface WiiUTableViewController ()
 
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Call of Duty: Black Ops",@"Mario Kart 8", @"Monster Hunter", @"Super Mario 3D World", @"Super Smash Bros. for Wii U", nil];
+    self.array = [[NSArray alloc]
+                   initWithObjects:@"J9FW17h0vG", @"iYsvijsXEi", @"HH8gn7RrWa", @"jsSQCQHbkH", @"cOhmCtZbaz", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,13 +37,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -68,6 +72,15 @@
 - (void) tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromWiiU" sender:self];
 }
 
 

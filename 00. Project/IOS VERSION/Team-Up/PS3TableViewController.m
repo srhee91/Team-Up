@@ -7,6 +7,8 @@
 //
 
 #import "PS3TableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface PS3TableViewController ()
 
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Borderlands",@"Call of Duty: Black Ops", @"Dark Souls II", @"FIFA 15", @"Grand Theft Auto V", nil];
+    self.array = [[NSArray alloc]
+                   initWithObjects:@"wL7AUqQZzh",@"O2PKmIfD2S", @"6FhvX3AwZh", @"YLCvbqcPwv", @"C6ts4k4A1V", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,13 +37,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -70,6 +74,14 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromPS3" sender:self];
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

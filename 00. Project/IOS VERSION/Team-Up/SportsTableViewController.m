@@ -7,6 +7,8 @@
 //
 
 #import "SportsTableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface SportsTableViewController ()
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.array = [[NSArray alloc]
+                   initWithObjects:@"3JnaDl86bH",@"2BhHEQp7rp", @"iLLmAbaI7N", @"y9LKvRhAZO", @"zESMkkCUn9", @"E8U96BO7Rj", @"HzsirFtnlN", @"R3y0nzWFY3", @"0ibvHNlvcP", @"jMY37MfYlN", @"HUEv421bbF", nil];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Basketball",@"Bowling", @"Dance", @"Football", @"Golf", @"Hockey", @"Lifting", @"Running", @"Soccer", @"Tennis", @"Volleyball", nil];
     // Uncomment the following line to preserve selection between presentations.
@@ -39,13 +43,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.groups count];
 }
@@ -74,6 +78,15 @@
 - (void) tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromSports" sender:self];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

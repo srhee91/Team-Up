@@ -7,7 +7,9 @@
 //
 
 #import "NewUserViewController.h"
-#import "Parse/parse.h"//;
+#import "Parse/parse.h"
+#import "AppDelegate.h"
+
 
 @interface NewUserViewController ()
 
@@ -43,7 +45,7 @@
     NSString *password2 = self.newpw.text;
     NSString *email = self.em.text;
     if ([password compare:password2 options:NSCaseInsensitiveSearch] == NSOrderedSame){
-            if(![self.un.text isEqualToString:@""]&&![self.pw.text isEqualToString:@""]&&![self.newpw.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]&&[self.pw.text isEqualToString:self.newpw.text]){
+            if(![self.un.text isEqualToString:@""]&&![self.un.text isEqualToString:@" "]&&![self.pw.text isEqualToString:@""]&&![self.newpw.text isEqualToString:@""]&&![self.bd.text isEqualToString:@""]&&![self.em.text isEqualToString:@""]&&[self.pw.text isEqualToString:self.newpw.text]){
                 user.username = username;
                 user.password = password;
                 user[@"birthday"] = self.bd.text;
@@ -52,6 +54,9 @@
                     if (!error) {
                         NSLog(@"successful");
                         // Now Sign Up successful, continue to onto next page
+                        AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+                        ad.storePassword = self.pw.text;
+                        NSLog(@"%@",ad.storePassword);
                         [self performSegueWithIdentifier:@"toMain" sender:sender];
                     } else {
                         NSLog(@"Fail");
@@ -63,7 +68,8 @@
                 }];
             }
             else{
-                NSLog(@"Missing information");
+                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Enter information again." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                [errorAlertView show];
                 //Do not move onto next Page, ask for re-input of information
             }
     }

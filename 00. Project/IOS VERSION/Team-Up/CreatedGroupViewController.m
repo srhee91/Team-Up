@@ -37,6 +37,10 @@
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
+}
+
 - (void)modal {
     [self performSegueWithIdentifier:@"profile" sender:self];
 }

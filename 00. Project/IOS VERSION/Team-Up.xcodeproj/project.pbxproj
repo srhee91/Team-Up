@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79861A85A428007F1CCA /* MyGroupViewController.m */; };
 		7C2F798A1A85AC2F007F1CCA /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79891A85AC2F007F1CCA /* UserViewController.m */; };
+		7C2F798D1A85D6BD007F1CCA /* CategoryGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F798C1A85D6BD007F1CCA /* CategoryGroupViewController.m */; };
 		7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */; };
 		7C418AB11A803B0800219F6A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418AAC1A803B0800219F6A /* Parse.framework */; };
 		7C418AB21A803B0800219F6A /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418AAD1A803B0800219F6A /* ParseUI.framework */; };
@@ -696,6 +697,8 @@
 		7C2F79861A85A428007F1CCA /* MyGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupViewController.m; sourceTree = "<group>"; };
 		7C2F79881A85AC2F007F1CCA /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		7C2F79891A85AC2F007F1CCA /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		7C2F798B1A85D6BD007F1CCA /* CategoryGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryGroupViewController.h; sourceTree = "<group>"; };
+		7C2F798C1A85D6BD007F1CCA /* CategoryGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryGroupViewController.m; sourceTree = "<group>"; };
 		7C3ABE0A1A7A26880069D53D /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		7C418AAC1A803B0800219F6A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -1513,6 +1516,8 @@
 				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
 				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7C2F798B1A85D6BD007F1CCA /* CategoryGroupViewController.h */,
+				7C2F798C1A85D6BD007F1CCA /* CategoryGroupViewController.m */,
 				7C2F79881A85AC2F007F1CCA /* UserViewController.h */,
 				7C2F79891A85AC2F007F1CCA /* UserViewController.m */,
 				7C2F79851A85A428007F1CCA /* MyGroupViewController.h */,
@@ -2956,6 +2961,7 @@
 				7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */,
 				7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */,
 				7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */,
+				7C2F798D1A85D6BD007F1CCA /* CategoryGroupViewController.m in Sources */,
 				7C507B2E1A84A3600039B93E /* CreatedGroupViewController.m in Sources */,
 				7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */,
 				7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */,

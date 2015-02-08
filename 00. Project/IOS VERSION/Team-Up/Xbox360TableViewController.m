@@ -7,6 +7,8 @@
 //
 
 #import "Xbox360TableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface Xbox360TableViewController ()
 
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Assassin's Creed",@"Destiny", @"FIFA 15", @"Grand Theft Auto V", @"Minecraft", nil];
+    self.array = [[NSArray alloc]
+                   initWithObjects:@"OJS5QqzpR7",@"9xjg4FpOyp", @"12hTVqTqd9", @"cJt81g4L2u", @"mbRN1g5IXI", nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -68,6 +72,15 @@
 - (void) tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"fromXbox360" sender:self];
 }
 
 /*

@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *un;
 @property (weak, nonatomic) IBOutlet UITextField *em;
 @property (weak, nonatomic) IBOutlet UITextField *bd;
-@property (weak, nonatomic) IBOutlet UITextView *des;
+@property (weak, nonatomic) IBOutlet UITextField *des;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
 
 @end

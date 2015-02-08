@@ -7,6 +7,8 @@
 //
 
 #import "3DSTableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface _DSTableViewController ()
 
@@ -18,6 +20,9 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Animal Crossing: New Leaf",@"Mario Kart 7", @"Need for Speed: The Run", @"Pokemon Omega Ruby and Alpha Sapphire", @"Pokemon X/Y", @"Super Smash Bros. for 3DS", nil];
+    self.groups = [[NSArray alloc]
+                   initWithObjects:@"v7IvgXAxMb", @"MnJz8dxqWB7", @"501cCWxX1O", @"VmDf5LorGK", @"xN02mxzNdU", @"jzq16IKP5x", nil];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -68,6 +73,15 @@
 - (void) tableView:(UITableView *)tableView
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray removeAllObjects];
+    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    NSLog(@"%@",ad.myGlobalArray);
+    [self performSegueWithIdentifier:@"from3DS" sender:self];
 }
 
 /*

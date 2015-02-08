@@ -38,9 +38,21 @@
     if([self.oldpw.text isEqualToString:currentuser.email]) {
         NSLog(@"email sent");
         [PFUser requestPasswordResetForEmailInBackground:currentuser.email];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Sent"
+                                                        message:@"Email to change password has been sent."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
     else {
         NSLog(@"fail");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Email"
+                                                        message:@"Please enter the email associated with this account."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 

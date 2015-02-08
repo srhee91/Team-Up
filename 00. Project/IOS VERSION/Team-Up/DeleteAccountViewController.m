@@ -7,7 +7,8 @@
 //
 
 #import "DeleteAccountViewController.h"
-#import "Parse/parse.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface DeleteAccountViewController ()
 
@@ -32,7 +33,33 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)delete:(id)sender{
-    PFUser *user = [PFUser user];
+    PFUser *currentUser = [PFUser currentUser];
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    if([self.password.text isEqualToString:ad.storePassword]){
+        PFUser *user = [PFUser logInWithUsername:currentUser.username password:ad.storePassword];
+        user.username = @" ";
+        user.email = @"";
+        user[@"birthday"] = @"";
+        user[@"Description"] = @"";
+        [user save];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Account Deleted"
+                                                        message:@"Your account has been deleted"
+                                                        delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"Gone");
+        [self performSegueWithIdentifier:@"accountdeleted" sender:self];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Password"
+                                                        message:@"Retry"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        //Do not move onto next Page, ask for re-input of information
+    }
     
 }
 
