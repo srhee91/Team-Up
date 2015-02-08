@@ -48,7 +48,6 @@
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles:nil];
         [alert show];
-        NSLog(@"Gone");
         [self performSegueWithIdentifier:@"accountdeleted" sender:self];
     }
     else{

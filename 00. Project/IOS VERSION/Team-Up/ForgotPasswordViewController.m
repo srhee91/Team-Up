@@ -27,12 +27,22 @@
 
 - (IBAction)reset:(id)sender {
     if(![self.em.text isEqualToString:@""]) {
-        NSLog(@"email sent");
         [PFUser requestPasswordResetForEmailInBackground:self.em.text];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Sent"
+                                                        message:@"Email to change password has been sent."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
         [self performSegueWithIdentifier:@"resetdone" sender:sender];
     }
     else {
-        NSLog(@"fail");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email failed"
+                                                        message:@"Please try again."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
