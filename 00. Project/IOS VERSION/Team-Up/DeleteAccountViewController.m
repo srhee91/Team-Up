@@ -36,12 +36,14 @@
     PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     if([self.password.text isEqualToString:ad.storePassword]){
-        PFUser *user = [PFUser logInWithUsername:currentUser.username password:ad.storePassword];
+        [[PFUser currentUser] deleteInBackground];
+
+/*        PFUser *user = [PFUser logInWithUsername:currentUser.username password:ad.storePassword];
         user.username = @" ";
         user.email = @"";
         user[@"birthday"] = @"";
-        user[@"Description"] = @"";
-        [user save];
+        user[@"Description"] = @"";*/
+       // [user save];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Account Deleted"
                                                         message:@"Your account has been deleted"
                                                         delegate:self
@@ -58,6 +60,7 @@
                                               otherButtonTitles:nil];
         [alert show];
         //Do not move onto next Page, ask for re-input of information
+        //currentUser = user;
     }
     
 }
