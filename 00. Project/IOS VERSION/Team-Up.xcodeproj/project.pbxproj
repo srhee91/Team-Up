@@ -659,6 +659,9 @@
 		7C66344F1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631EB1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png */; };
 		7C6634501A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631EC1A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png */; };
 		7C6634511A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6631ED1A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png */; };
+		7C69AF8E1A95AF62003CA3AC /* ChatGroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C69AF8D1A95AF62003CA3AC /* ChatGroupsTableViewController.m */; };
+		7C69AF911A95B3D0003CA3AC /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C69AF901A95B3D0003CA3AC /* ChatViewController.m */; };
+		7C69AF941A95B3EE003CA3AC /* MessageComposerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */; };
 		7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */; };
 		7CC7E5221A818746001869DE /* PS4PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */; };
 		7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */; };
@@ -1363,6 +1366,12 @@
 		7C6631EB1A75DD9F0074FEE9 /* glyphicons-97-vector-path-polygon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-97-vector-path-polygon.png"; sourceTree = "<group>"; };
 		7C6631EC1A75DD9F0074FEE9 /* glyphicons-98-vector-path-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-98-vector-path-line.png"; sourceTree = "<group>"; };
 		7C6631ED1A75DD9F0074FEE9 /* glyphicons-99-vector-path-curve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons-99-vector-path-curve.png"; sourceTree = "<group>"; };
+		7C69AF8C1A95AF62003CA3AC /* ChatGroupsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatGroupsTableViewController.h; sourceTree = "<group>"; };
+		7C69AF8D1A95AF62003CA3AC /* ChatGroupsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatGroupsTableViewController.m; sourceTree = "<group>"; };
+		7C69AF8F1A95B3D0003CA3AC /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		7C69AF901A95B3D0003CA3AC /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageComposerView.h; sourceTree = "<group>"; };
+		7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageComposerView.m; sourceTree = "<group>"; };
 		7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPrefTableViewController.h; sourceTree = "<group>"; };
 		7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPrefTableViewController.m; sourceTree = "<group>"; };
 		7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS4PrefTableViewController.h; sourceTree = "<group>"; };
@@ -1519,6 +1528,12 @@
 				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
 				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */,
+				7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */,
+				7C69AF8C1A95AF62003CA3AC /* ChatGroupsTableViewController.h */,
+				7C69AF8D1A95AF62003CA3AC /* ChatGroupsTableViewController.m */,
+				7C69AF8F1A95B3D0003CA3AC /* ChatViewController.h */,
+				7C69AF901A95B3D0003CA3AC /* ChatViewController.m */,
 				7C2F79911A8812BE007F1CCA /* EditGroupViewController.h */,
 				7C2F79921A8812BE007F1CCA /* EditGroupViewController.m */,
 				7C2F798B1A85D6BD007F1CCA /* CategoryGroupViewController.h */,
@@ -2982,10 +2997,13 @@
 				7C662F671A7335350074FEE9 /* AppDelegate.m in Sources */,
 				7C507B1F1A844D280039B93E /* ForgotPasswordViewController.m in Sources */,
 				7C662F641A7335350074FEE9 /* main.m in Sources */,
+				7C69AF941A95B3EE003CA3AC /* MessageComposerView.m in Sources */,
 				7CC7E5491A834A60001869DE /* PrefTableViewController.m in Sources */,
 				7CC7E53C1A8218FA001869DE /* ViewProfileViewController.m in Sources */,
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
+				7C69AF8E1A95AF62003CA3AC /* ChatGroupsTableViewController.m in Sources */,
+				7C69AF911A95B3D0003CA3AC /* ChatViewController.m in Sources */,
 				7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */,
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
 				7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */,

@@ -825,7 +825,7 @@
         <!--Chat-->
         <scene sceneID="gB3-dk-4TW">
             <objects>
-                <tableViewController id="GSk-Gr-DwH" sceneMemberID="viewController">
+                <tableViewController id="GSk-Gr-DwH" customClass="ChatGroupsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eYS-ld-GPU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -844,10 +844,85 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chat" id="GoJ-6M-fWe"/>
+                    <connections>
+                        <outlet property="tv" destination="eYS-ld-GPU" id="G7c-iW-zrS"/>
+                        <segue destination="jVS-IZ-ORc" kind="modal" identifier="toMyChats" id="3Ql-DN-zWV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsH-p3-VEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-32" y="3040"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="Lzx-dl-kxx">
+            <objects>
+                <viewController id="Dtx-xK-heH" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T0Y-kG-lcv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Knl-gs-obM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="472"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pnu-Q2-f0T">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pnu-Q2-f0T" id="jnI-IV-vZC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ylL-ce-ybm">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ylL-ce-ybm" id="8F0-bB-zpN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Cqn-RO-13g">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cqn-RO-13g" id="hJR-JC-R2Y">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xed-gY-nI1">
+                        <barButtonItem key="leftBarButtonItem" title="Chat" id="NOp-dg-R6i">
+                            <connections>
+                                <action selector="back:" destination="Dtx-xK-heH" id="9Ui-XV-aRU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chatView" destination="T0Y-kG-lcv" id="nOC-1C-J1Y"/>
+                        <outlet property="navbar" destination="xed-gY-nI1" id="RmJ-v1-kGg"/>
+                        <outlet property="tv" destination="Knl-gs-obM" id="nbo-4G-xhk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wx2-Sd-fNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="3725"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gT2-VO-jTR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOT-av-GzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="jVS-IZ-ORc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zyr-fP-ZkU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sVh-sl-8FX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dtx-xK-heH" kind="relationship" relationship="rootViewController" id="5KI-U3-aWg"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="307" y="3383"/>
         </scene>
         <!--Chat-->
         <scene sceneID="y3F-FO-Ajx">
@@ -2525,10 +2600,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="yNA-bB-mcx"/>
         <segue reference="RCe-bw-I6t"/>
-        <segue reference="Rm7-ia-3JD"/>
-        <segue reference="U0d-bX-apU"/>
+        <segue reference="O6D-qg-ySO"/>
         <segue reference="g7U-Qc-t2Z"/>
+        <segue reference="Rm7-ia-3JD"/>
+        <segue reference="yNA-bB-mcx"/>
     </inferredMetricsTieBreakers>
 </document>
