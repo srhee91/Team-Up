@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"HERE");
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     PFQuery *group = [PFQuery queryWithClassName:@"Group"];

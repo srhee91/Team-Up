@@ -2500,7 +2500,7 @@
                         <outlet property="editButton" destination="u5w-GA-rrZ" id="yzf-da-Ycw"/>
                         <outlet property="gn" destination="a4K-Wc-Mbk" id="YL3-4r-ddz"/>
                         <outlet property="navbar" destination="EXq-dV-B1a" id="GDy-cP-wEm"/>
-                        <outlet property="tv" destination="FwY-Dg-DFV" id="CRY-Er-s0R"/>
+                        <outlet property="tv" destination="FwY-Dg-DFV" id="4cD-fC-ggi"/>
                         <segue destination="wEQ-V9-atz" kind="modal" identifier="profile" modalTransitionStyle="crossDissolve" animates="NO" id="Beq-ZA-H9m"/>
                         <segue destination="2zE-dn-jeS" kind="push" identifier="toEditGroup" id="Q5y-dY-bJW"/>
                     </connections>
@@ -2600,9 +2600,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RCe-bw-I6t"/>
+        <segue reference="Beq-ZA-H9m"/>
+        <segue reference="Q5y-dY-bJW"/>
         <segue reference="O6D-qg-ySO"/>
-        <segue reference="g7U-Qc-t2Z"/>
         <segue reference="Rm7-ia-3JD"/>
         <segue reference="yNA-bB-mcx"/>
     </inferredMetricsTieBreakers>

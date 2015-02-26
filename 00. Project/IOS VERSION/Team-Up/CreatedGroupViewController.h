@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *cat;
 @property (weak, nonatomic) IBOutlet UILabel *des;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UITableView *tv;
 
 @end
