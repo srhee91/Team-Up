@@ -486,7 +486,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="iva-vq-Wwz"/>
                     <connections>
@@ -720,7 +720,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Delete Account" id="5CJ-pD-i8v"/>
                     <connections>
@@ -1424,7 +1424,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.37254901959999998" green="0.4941176471" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="New User" id="8lS-Nw-ce6">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="K9C-Oz-Tyw">
@@ -1519,7 +1519,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.37254901960784315" green="0.49411764705882355" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="password" destination="WJw-og-UkZ" id="UsX-b4-3Pq"/>
@@ -2365,7 +2365,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.37254901960784315" green="0.49411764705882355" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="ZwW-e6-IyC">
                         <barButtonItem key="leftBarButtonItem" title="Login" id="4j4-kG-CK5">
@@ -2490,7 +2490,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="EXq-dV-B1a"/>
                     <connections>
@@ -2600,10 +2600,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Beq-ZA-H9m"/>
-        <segue reference="Q5y-dY-bJW"/>
-        <segue reference="O6D-qg-ySO"/>
+        <segue reference="CpV-9Y-xOZ"/>
         <segue reference="Rm7-ia-3JD"/>
+        <segue reference="O6D-qg-ySO"/>
+        <segue reference="Q5y-dY-bJW"/>
         <segue reference="yNA-bB-mcx"/>
     </inferredMetricsTieBreakers>
 </document>
