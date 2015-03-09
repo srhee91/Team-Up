@@ -46,17 +46,15 @@
     // mark the existing preference that are stored in the DB
     [self markExistingPrefences];
     
+    // Do any additional setup after loading the view, typically from a nib.
+    self.cellSelected = [NSMutableArray array];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    self.cellSelected = [NSMutableArray array];
-    
-    
+  
     
 }
 
