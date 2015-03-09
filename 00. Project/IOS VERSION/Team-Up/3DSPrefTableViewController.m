@@ -18,7 +18,7 @@
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    //[super viewDidLoad];
     
         self.groups = [[NSArray alloc]
                        initWithObjects:@"Animal Crossing: New Leaf",@"Mario Kart 7", @"Need for Speed: The Run", @"Pokemon Omega Ruby and Alpha Sapphire", @"Pokemon X/Y", @"Super Smash Bros. for 3DS", nil];
@@ -100,16 +100,14 @@
     if ([self.cellSelected containsObject:indexPath])
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        NSString *categoryID =[self.categories
-                              objectAtIndex: [indexPath row]];
-        [self addPreferenceToParse:categoryID];
+
     }
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
-//        NSString *categoryID =[self.categories
-//                               objectAtIndex: [indexPath row]];
-//        [self removePreferenceFromParse:categoryID];
+        //NSString *categoryID =[self.categories
+        //                       objectAtIndex: [indexPath row]];
+        //[self removePreferenceFromParse:categoryID];
     }
     NSLog(@"%i",indexPath.row);
     return cell;
@@ -131,11 +129,15 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     if ([self.cellSelected containsObject:indexPath])
     {
         [self.cellSelected removeObject:indexPath];
+
     }
     else
     {
         [self.cellSelected addObject:indexPath];
-        
+        NSString *categoryID =[self.categories
+                               objectAtIndex: [indexPath row]];
+        [self addPreferenceToParse:categoryID];
+
     }
     [tableView reloadData];
 }
@@ -178,7 +180,7 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     //[super viewDidAppear:animated];
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:row inSection:0];
     //[self.tableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
-   [self.cellSelected addObject:indexPath];
+    [self.cellSelected addObject:indexPath];
     [self.tableView cellForRowAtIndexPath:indexPath];
     [self.tableView reloadData];
 }
