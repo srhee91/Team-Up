@@ -11,5 +11,10 @@
 @interface _DSPrefTableViewController : UITableViewController
 
 @property (strong,nonatomic) NSArray *groups;
+@property (strong,nonatomic) NSMutableArray *categories;
+@property (strong,nonatomic) NSMutableArray *cellSelected;
+@property (strong, nonatomic) NSArray *array;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
+@property (weak, nonatomic) IBOutlet UITableView *tv;
 
 @end
