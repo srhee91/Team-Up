@@ -16,29 +16,7 @@
 
 @implementation _DSPrefTableViewController
 
-//- (void)addPreferenceToParse {
-//    // Push reference changes to the Parse DB
-//    PFUser *currentUser = [PFUser currentUser];
-//    PFQuery *member = [PFQuery queryWithClassName:@"Preference"];
-//    [member orderByDescending: @"createdAt"];
-//    [member whereKey:@"username" notEqualTo:currentUser.username];
-//    [member whereKey:@"categoryname" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
-//    [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-//        //Save button
-//        self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
-//        if (!error) {
-//            self.array = results;
-//            NSLog(@"Successfully push to the DB");
-//            [self.tv setDelegate:self];
-//            [self.tv setDataSource:self];
-//            [self.tv reloadData];
-//        } else {
-//            // The find succeeded.
-//            NSLog(@"failed to retrieve the object.");
-//        }
-//
-//    }];
-//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,23 +24,24 @@
         self.groups = [[NSArray alloc]
                        initWithObjects:@"Animal Crossing: New Leaf",@"Mario Kart 7", @"Need for Speed: The Run", @"Pokemon Omega Ruby and Alpha Sapphire", @"Pokemon X/Y", @"Super Smash Bros. for 3DS", nil];
     
-    
-//        PFQuery *query = [PFQuery queryWithClassName:@"Category"];
-//        [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
-//        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//            if (!error) {
-//                // The find succeeded.
-//                NSLog(@"Successfully retrieved %d scores.", objects.count);
-//                // Do something with the found objects
-//                for (PFObject *object in objects) {
-//                    NSLog(@"%@", object.objectId);
-//                    self.categories.addObject
-//                }
-//            } else {
-//                // Log details of the failure
-//                NSLog(@"Error: %@ %@", error, [error userInfo]);
-//            }
-//        }];
+        self.categories = [[NSMutableArray alloc] init];
+        PFQuery *query = [PFQuery queryWithClassName:@"Catogery"];
+        [query whereKey:@"parentCatogery" equalTo:[PFObject objectWithoutDataWithClassName:@"Catogery" objectId:@"wnkJ4oI2nK"]];
+        [query orderByAscending:@"categoryname"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %d scores.", objects.count);
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    NSLog(@"%@", object.objectId);
+                    [self.categories addObject:object.objectId];
+                }
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     
     
     
@@ -119,12 +98,14 @@
     if ([self.cellSelected containsObject:indexPath])
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        //cell.addPreferenceToParse //TODO
+        NSString *categoryID =[self.categories
+                              objectAtIndex: [indexPath row]];
+        [self addPreferenceToParse:categoryID];
     }
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        //cell.removePreferenceFromParse //TODO
+        //[self removePreferenceFromParse];
     }
     NSLog(@"%i",indexPath.row);
     return cell;
@@ -146,14 +127,53 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     if ([self.cellSelected containsObject:indexPath])
     {
         [self.cellSelected removeObject:indexPath];
-        //[self removePreferenceFromParse];
     }
     else
     {
         [self.cellSelected addObject:indexPath];
-        //[self addPreferenceToParse];
+        
     }
     [tableView reloadData];
+}
+
+- (void)addPreferenceToParse:(NSString *)categoryID {
+    // Push reference changes to the Parse DB
+    PFUser *currentUser = [PFUser currentUser];
+//    PFQuery *member = [PFQuery queryWithClassName:@"Preference"];
+//    [member orderByDescending: @"createdAt"];
+//    [member whereKey:@"username" notEqualTo:currentUser.username];
+//    [member whereKey:@"categoryID" equalTo:categoryID];
+    
+    
+    
+    PFObject *preference = [PFObject objectWithClassName:@"Preference"];
+    preference[@"username"] = currentUser.username;
+    preference[@"categoryID"] = categoryID;
+    [preference saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            NSLog(@"Successfully push to the parse DB");
+        } else {
+            // There was a problem, check error.description
+            NSLog(@"Failed push to the parse DB");
+        }
+    }];
+    
+//    [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+//        //Save button
+//        self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+//        if (!error) {
+//            self.array = results;
+//            NSLog(@"made it");
+//            [self.tv setDelegate:self];
+//            [self.tv setDataSource:self];
+//            [self.tv reloadData];
+//        } else {
+//            // The find succeeded.
+//            NSLog(@"failed to retrieve the object.");
+//        }
+//
+//    }];
 }
 
 /*
