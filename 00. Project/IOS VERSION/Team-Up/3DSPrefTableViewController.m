@@ -2,7 +2,7 @@
 //  3DSPrefTableViewController.m
 //  Team-Up
 //
-//  Created by Kartik Sawant on 2/3/15.
+//  Created by Kartik Sawant, Yiyang Pan on 3/9/15.
 //  Copyright (c) 2015 Kartik Sawant. All rights reserved.
 //
 
@@ -18,7 +18,7 @@
 
 
 - (void)viewDidLoad {
-    //[super viewDidLoad];
+    [super viewDidLoad];
     
         self.groups = [[NSArray alloc]
                        initWithObjects:@"Animal Crossing: New Leaf",@"Mario Kart 7", @"Need for Speed: The Run", @"Pokemon Omega Ruby and Alpha Sapphire", @"Pokemon X/Y", @"Super Smash Bros. for 3DS", nil];
@@ -105,9 +105,6 @@
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        //NSString *categoryID =[self.categories
-        //                       objectAtIndex: [indexPath row]];
-        //[self removePreferenceFromParse:categoryID];
     }
     NSLog(@"%i",indexPath.row);
     return cell;
@@ -129,6 +126,9 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     if ([self.cellSelected containsObject:indexPath])
     {
         [self.cellSelected removeObject:indexPath];
+        NSString *categoryID =[self.categories
+                               objectAtIndex: [indexPath row]];
+        [self removePreferenceFromParse:categoryID];
 
     }
     else
@@ -207,8 +207,8 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
 - (void)removePreferenceFromParse:(NSString *)categoryID {
     
     PFQuery *query = [PFQuery queryWithClassName:@"Preference"];
-    [query whereKey:@"categoryID" equalTo:categoryID];
     PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"categoryID" equalTo:categoryID];
     [query whereKey:@"username" equalTo:currentUser.username];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -217,8 +217,6 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
-                PFObject *object = [PFObject objectWithoutDataWithClassName:@"Preference"
-                                                                   objectId:object.objectId];
                 [object deleteEventually];
             }
         } else {
