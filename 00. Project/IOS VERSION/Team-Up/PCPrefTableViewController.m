@@ -2,11 +2,13 @@
 //  PCPrefTableViewController.m
 //  Team-Up
 //
-//  Created by Kartik Sawant on 2/3/15.
+//  Created by Kartik Sawant, Yiyang Pan on 3/9/15.
 //  Copyright (c) 2015 Kartik Sawant. All rights reserved.
 //
 
 #import "PCPrefTableViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface PCPrefTableViewController ()
 
@@ -18,6 +20,32 @@
     [super viewDidLoad];
     self.groups = [[NSArray alloc]
                    initWithObjects:@"Counter-Strike: Global Offensive",@"Diablo III", @"Dota 2", @"League of Legends", @"Minecraft", @"Starcraft 2", @"World of Warcraft", nil];
+    // get all the categories name in this table view
+    self.categories = [[NSMutableArray alloc] init];
+    PFQuery *query = [PFQuery queryWithClassName:@"Catogery"];
+    [query whereKey:@"parentCatogery" equalTo:[PFObject objectWithoutDataWithClassName:@"Catogery" objectId:@"2fzNXO5P0N"]];
+    [query orderByAscending:@"categoryname"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                [self.categories addObject:object.objectId];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    // mark the existing preference that are stored in the DB
+    [self markExistingPrefences];
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    self.cellSelected = [NSMutableArray array];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -60,7 +88,18 @@
     // Configure the cell.
     cell.textLabel.text = [self.groups
                            objectAtIndex: [indexPath row]];
-    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    // Add check mark when cells are selected
+    if ([self.cellSelected containsObject:indexPath])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     NSLog(@"%i",indexPath.row);
     return cell;
 }
@@ -69,6 +108,118 @@
 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%i",indexPath.row);
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //if you want only one cell to be selected use a local NSIndexPath property instead of array. and use the code below
+    //self.selectedIndexPath = indexPath;
+    
+    //the below code will allow multiple selection
+    if ([self.cellSelected containsObject:indexPath])
+    {
+        [self.cellSelected removeObject:indexPath];
+        NSString *categoryID =[self.categories
+                               objectAtIndex: [indexPath row]];
+        [self removePreferenceFromParse:categoryID];
+        
+    }
+    else
+    {
+        [self.cellSelected addObject:indexPath];
+        NSString *categoryID =[self.categories
+                               objectAtIndex: [indexPath row]];
+        [self addPreferenceToParse:categoryID];
+        
+    }
+    [tableView reloadData];
+}
+
+
+
+- (void)markExistingPrefences{
+    // TODO check existing preference for the user , and mark them
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Preference"];
+    //[query whereKey:@"categoryID" equalTo:categoryID];
+    PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"username" equalTo:currentUser.username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                
+                NSString *CID = object[@"categoryID"];
+                for (int i = 0; i < [self.categories count]; i++){
+                    
+                    if([CID isEqualToString:self.categories[i]]){
+                        NSInteger nsi = (NSInteger) i;
+                        [self viewDidAppear:NO:nsi];
+                    }
+                }
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated :(NSInteger)row{
+    //[super viewDidAppear:animated];
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:row inSection:0];
+    //[self.tableView selectRowAtIndexPath:indexPath animated:NO  scrollPosition:UITableViewScrollPositionBottom];
+    [self.cellSelected addObject:indexPath];
+    [self.tableView cellForRowAtIndexPath:indexPath];
+    [self.tableView reloadData];
+}
+
+
+- (void)addPreferenceToParse:(NSString *)categoryID {
+    // Push reference changes to the Parse DB
+    PFUser *currentUser = [PFUser currentUser];
+    PFObject *preference = [PFObject objectWithClassName:@"Preference"];
+    preference[@"username"] = currentUser.username;
+    preference[@"categoryID"] = categoryID;
+    [preference saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            NSLog(@"Successfully push to the parse DB");
+        } else {
+            // There was a problem, check error.description
+            NSLog(@"Failed push to the parse DB");
+        }
+    }];
+    
+}
+
+- (void)removePreferenceFromParse:(NSString *)categoryID {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Preference"];
+    PFUser *currentUser = [PFUser currentUser];
+    [query whereKey:@"categoryID" equalTo:categoryID];
+    [query whereKey:@"username" equalTo:currentUser.username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                [object deleteEventually];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
