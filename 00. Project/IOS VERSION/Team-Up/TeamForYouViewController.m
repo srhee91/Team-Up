@@ -18,9 +18,6 @@
 @implementation TeamForYouViewController
 
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -43,11 +40,7 @@
             [self getGroupByPreference];
             NSLog(@"After : print the group name in self.groupArray");
             NSLog([self.groupArray objectAtIndex: 0][@"groupname"] );
-            
-//            [self.tv setDelegate:self];
-//            [self.tv setDataSource:self];
-//            [self.tv reloadData];
-
+        
             
         } else {
             // The find succeeded.
@@ -68,13 +61,15 @@
         [group findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 
-                // get the user preferences and store in the self.array
+                // get the user preferences and store in the self.groupArray
                 for(int i = 0; i < [objects count]; i++){
                     [self.groupArray addObject:objects[i]];
-                    NSLog(@"Inplace :print the group name in self.groupArray");
-                    NSLog([self.groupArray objectAtIndex: i][@"groupname"] );
+//                    NSLog(@"Inplace :print the group name in self.groupArray");
+//                    NSLog([self.groupArray objectAtIndex: i][@"groupname"] );
 
                 }
+                
+                // Why self.groupArray will lose content outside of loop?
                 [self.tv setDelegate:self];
                 [self.tv setDataSource:self];
                 [self.tv reloadData];
