@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *des;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
-@property (strong, nonatomic) NSArray *array;
+@property (strong, nonatomic) NSArray *prefArray;
+@property (strong, nonatomic) NSMutableArray *groupArray;
 @property (strong, nonatomic) NSArray *gId;
 
 @end

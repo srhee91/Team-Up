@@ -17,91 +17,79 @@
 
 @implementation TeamForYouViewController
 
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Initialize Array!!!
+    self.groupArray = [NSMutableArray array];
+    
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-    PFQuery *group = [PFQuery queryWithClassName:@"Preference"];
-    [group whereKey:@"username" equalTo:currentUser.username];
-    [group findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+    PFQuery *pref = [PFQuery queryWithClassName:@"Preference"];
+    [pref whereKey:@"username" equalTo:currentUser.username];
+    [pref findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (!error) {
             self.navbar.title = @"Groups we selected for you";
-            self.array = results;
-            [self.tv setDelegate:self];
-            [self.tv setDataSource:self];
-            [self.tv reloadData];
+            // get the user preferences and store in the self.array
+            self.prefArray = results;
+            //NSLog([results objectAtIndex:0][@"categoryID"]);
+
+            
+            [self getGroupByPreference];
+            NSLog(@"After : print the group name in self.groupArray");
+            NSLog([self.groupArray objectAtIndex: 0][@"groupname"] );
+            
+//            [self.tv setDelegate:self];
+//            [self.tv setDataSource:self];
+//            [self.tv reloadData];
+
+            
         } else {
             // The find succeeded.
             NSLog(@"failed to retrieve the object.");
         }
     }];
     
-    
-//    
-//    
-//    // Do any additional setup after loading the view.
-//    PFUser *currentUser = [PFUser currentUser];
-//    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    NSString *name = [ad.myGlobalArray objectAtIndex:0][@"username"];
-//    self.navbar.title = name;
-//    self.un.text = name;
-//    PFQuery *User = [PFQuery queryWithClassName:@"_User"];
-//    [User whereKey:@"username" equalTo:[ad.myGlobalArray objectAtIndex:0][@"username"]];
-//    [User findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-//        if (!error) {
-//            self.em.text = [results objectAtIndex:0][@"email"];
-//            self.des.text = [results objectAtIndex:0][@"Description"];
-//            self.bd.text = [results objectAtIndex:0][@"birthday"];
-//            PFQuery *member = [PFQuery queryWithClassName:@"Member"];
-//            [member orderByDescending: @"groupId"];
-//            [member whereKey:@"username" equalTo:name];
-//            [member selectKeys:@[@"groupId"]];
-//            NSMutableArray *list = [[NSMutableArray alloc] init];
-//            [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-//                //NSLog(@"HERE");
-//                self.gId = results;
-//                NSInteger counter = [results count];
-//                NSLog(@"counter: %d", counter);
-//                NSInteger i = 0;
-//                while(i < counter) {
-//                    [list addObject: [self.gId
-//                                      objectAtIndex:i][@"groupId"]];
-//                    i++;
-//                    NSLog(@"GROUP ID from list: %@",list);
-//                    NSLog(@"GROUP ID from gId: %@",[self.gId
-//                                                    objectAtIndex:0][@"groupId"]);
-//                }
-//                //NSLog(@"GROUP ID: %@",list);
-//                PFQuery *group = [PFQuery queryWithClassName:@"Group"];
-//                [group orderByAscending: @"groupname"];
-//                NSLog(@"%@",list);
-//                [group whereKey:@"groupId" containedIn:list];
-//                [group findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-//                    if (!error) {
-//                        self.array = results;
-//                        NSLog(@"made it");
-//                        NSLog(@"%@",results);
-//                        [self.tv setDelegate:self];
-//                        [self.tv setDataSource:self];
-//                        [self.tv reloadData];
-//                    } else {
-//                        // The find succeeded.
-//                        NSLog(@"failed to retrieve the object.");
-//                    }
-//                }];
-//            }];
-//            
-//        } else {
-//            // The find succeeded.
-//            NSLog(@"failed to retrieve the object.");
-//        }
-//    }];
+
     
 }
 
+- (void)getGroupByPreference {
+    // get the groups by preferences
+    NSLog(@"prefArray count of array %d",[self.prefArray count] );
+    for(PFObject *preference in self.prefArray){
+        PFQuery *group = [PFQuery queryWithClassName:@"Group"];
+        [group whereKey:@"category" equalTo:[preference objectForKey:@"categoryID"]];
+        [group findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                
+                // get the user preferences and store in the self.array
+                for(int i = 0; i < [objects count]; i++){
+                    [self.groupArray addObject:objects[i]];
+                    NSLog(@"Inplace :print the group name in self.groupArray");
+                    NSLog([self.groupArray objectAtIndex: i][@"groupname"] );
+
+                }
+                [self.tv setDelegate:self];
+                [self.tv setDataSource:self];
+                [self.tv reloadData];
+                
+            } else {
+                // The find succeeded.
+                NSLog(@"failed to retrieve the object.");
+            }
+        }];
+
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
-    [self viewDidLoad];
+    //[self viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,8 +106,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"count of array %d",[self.array count]);
-    return [self.array count];
+    NSLog(@"count of array %d",[self.groupArray count]);
+    return [self.groupArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -136,8 +124,8 @@
     }
     
     // Configure the cell.
-    cell.textLabel.text = [self.array
-                           objectAtIndex: [indexPath row]][@"categoryID"];
+    cell.textLabel.text = [self.groupArray
+                           objectAtIndex: [indexPath row]][@"groupname"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSLog(@"%i",indexPath.row);
     return cell;
@@ -147,9 +135,9 @@
 {
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [ad.myGlobalArray removeAllObjects];
-    [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    [ad.myGlobalArray addObject:[self.groupArray objectAtIndex:[indexPath row]]];
     NSLog(@"%@",ad.myGlobalArray);
-    [self performSegueWithIdentifier:@"toGroupProfile" sender:self];
+    [self performSegueWithIdentifier:@"toGroupView" sender:self];
 }
 
 @end

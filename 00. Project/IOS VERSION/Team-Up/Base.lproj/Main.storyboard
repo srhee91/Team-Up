@@ -346,7 +346,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-gR-uoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="2935"/>
+            <point key="canvasLocation" x="925" y="2931"/>
         </scene>
         <!--Team For You View Controller-->
         <scene sceneID="GRs-UK-3sw">
@@ -357,7 +357,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="b6t-VJ-45T">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="b6t-VJ-45T">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b6t-VJ-45T" id="hUH-OB-YGr">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -373,11 +373,12 @@
                     <connections>
                         <outlet property="navbar" destination="ksn-Fn-FKu" id="mtT-QH-YHf"/>
                         <outlet property="tv" destination="kdo-4V-diC" id="QBz-BL-xmC"/>
+                        <segue destination="iDd-J4-6oe" kind="push" identifier="toGroupView" id="t4c-d4-9VZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBx-s8-b5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="2940"/>
+            <point key="canvasLocation" x="1267" y="2926"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MRV-Zz-kp2">
@@ -1023,6 +1024,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-115-list.png" id="Tv8-9L-miC">
+                                <rect key="frame" x="19" y="147" width="24" height="29"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="Ekd-rk-BnD">
+                                <rect key="frame" x="18" y="184" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aqp-go-GX6">
+                                <rect key="frame" x="255" y="108" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iAa-eA-68l">
                                 <rect key="frame" x="0.0" y="221" width="320" height="347"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1046,21 +1062,6 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-115-list.png" id="Tv8-9L-miC">
-                                <rect key="frame" x="19" y="147" width="24" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="Ekd-rk-BnD">
-                                <rect key="frame" x="18" y="184" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aqp-go-GX6">
-                                <rect key="frame" x="255" y="108" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1177,7 +1178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5A-2h-NQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="477" y="2993"/>
+            <point key="canvasLocation" x="377" y="3121"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="TWL-Ed-fwP">
@@ -2615,37 +2616,6 @@
             </objects>
             <point key="canvasLocation" x="2955" y="2197"/>
         </scene>
-        <!--Category Group View Controller-->
-        <scene sceneID="G9h-HL-bS2">
-            <objects>
-                <tableViewController id="L5H-Zt-I61" customClass="CategoryGroupViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="L9a-nf-k85">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rRJ-Xg-G9K">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rRJ-Xg-G9K" id="Myv-VO-PBc">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="L5H-Zt-I61" id="JQ1-DU-m6A"/>
-                            <outlet property="delegate" destination="L5H-Zt-I61" id="n3S-4D-I3X"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="JqP-Uo-K34"/>
-                    <connections>
-                        <outlet property="navbar" destination="JqP-Uo-K34" id="CZR-iK-XA0"/>
-                        <outlet property="tv" destination="L9a-nf-k85" id="yXw-WY-SZK"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w9r-6x-Atx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1043" y="2935"/>
-        </scene>
     </scenes>
     <resources>
         <image name="QM.jpeg" width="225" height="225"/>
@@ -2667,8 +2637,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="CpV-9Y-xOZ"/>
         <segue reference="Rm7-ia-3JD"/>
-        <segue reference="Cua-jI-Yt0"/>
-        <segue reference="74c-yC-l31"/>
+        <segue reference="t4c-d4-9VZ"/>
         <segue reference="g7U-Qc-t2Z"/>
+        <segue reference="EDu-RM-UKc"/>
     </inferredMetricsTieBreakers>
 </document>
