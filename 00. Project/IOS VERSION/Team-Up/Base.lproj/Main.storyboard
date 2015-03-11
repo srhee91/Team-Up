@@ -132,6 +132,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AsN-Ha-xfa" kind="push" id="K5W-tN-8Rm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -225,16 +228,16 @@
                                     <action selector="submit:" destination="Wp1-3q-riv" eventType="touchUpInside" id="XCb-0w-6EF"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" id="eik-H6-WhW">
-                                <rect key="frame" x="49" y="113" width="180" height="144"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Description" minimumFontSize="17" id="sv5-H6-NJz">
                                 <rect key="frame" x="49" y="262" width="248" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" id="eik-H6-WhW">
+                                <rect key="frame" x="49" y="113" width="180" height="144"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -343,7 +346,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-gR-uoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="2951"/>
+            <point key="canvasLocation" x="925" y="2931"/>
+        </scene>
+        <!--Team For You View Controller-->
+        <scene sceneID="GRs-UK-3sw">
+            <objects>
+                <tableViewController id="AsN-Ha-xfa" userLabel="Team For You View Controller" customClass="TeamForYouViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kdo-4V-diC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="b6t-VJ-45T">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b6t-VJ-45T" id="hUH-OB-YGr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AsN-Ha-xfa" id="7vY-FI-f8U"/>
+                            <outlet property="delegate" destination="AsN-Ha-xfa" id="Nkl-zM-zlP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ksn-Fn-FKu"/>
+                    <connections>
+                        <outlet property="navbar" destination="ksn-Fn-FKu" id="mtT-QH-YHf"/>
+                        <outlet property="tv" destination="kdo-4V-diC" id="QBz-BL-xmC"/>
+                        <segue destination="iDd-J4-6oe" kind="push" identifier="toGroupView" id="t4c-d4-9VZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBx-s8-b5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1267" y="2926"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MRV-Zz-kp2">
@@ -989,6 +1024,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-115-list.png" id="Tv8-9L-miC">
+                                <rect key="frame" x="19" y="147" width="24" height="29"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="Ekd-rk-BnD">
+                                <rect key="frame" x="18" y="184" width="26" height="26"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aqp-go-GX6">
+                                <rect key="frame" x="255" y="108" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iAa-eA-68l">
                                 <rect key="frame" x="0.0" y="221" width="320" height="347"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1012,21 +1062,6 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-115-list.png" id="Tv8-9L-miC">
-                                <rect key="frame" x="19" y="147" width="24" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="Ekd-rk-BnD">
-                                <rect key="frame" x="18" y="184" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aqp-go-GX6">
-                                <rect key="frame" x="255" y="108" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1143,7 +1178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5A-2h-NQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="477" y="2993"/>
+            <point key="canvasLocation" x="377" y="3121"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="TWL-Ed-fwP">
@@ -2602,8 +2637,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="CpV-9Y-xOZ"/>
         <segue reference="Rm7-ia-3JD"/>
-        <segue reference="Q5y-dY-bJW"/>
-        <segue reference="yNA-bB-mcx"/>
-        <segue reference="74c-yC-l31"/>
+        <segue reference="t4c-d4-9VZ"/>
+        <segue reference="g7U-Qc-t2Z"/>
+        <segue reference="EDu-RM-UKc"/>
     </inferredMetricsTieBreakers>
 </document>
