@@ -103,7 +103,10 @@
         for(PFObject *object in self.allCategories){
             NSString *categoryName = [object objectForKey:@"categoryname"];
             
-            if([categoryName containsString:text])
+            NSString *categoryNameAllCaps = [categoryName uppercaseString];
+            NSString *searchTextAllCaps = [text uppercaseString];
+            
+            if([categoryNameAllCaps containsString:searchTextAllCaps])
                 [self.filteredCategories addObject:object];
         }
         
