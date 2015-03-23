@@ -686,6 +686,7 @@
 		7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */; };
 		7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */; };
 		7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */; };
+		F1D58EDC1ABFBCBF00F2EDEB /* MemberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1421,6 +1422,8 @@
 		7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsPrefTableViewController.h; sourceTree = "<group>"; };
 		7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsPrefTableViewController.m; sourceTree = "<group>"; };
+		F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewController.h; sourceTree = "<group>"; };
+		F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1605,6 +1608,8 @@
 				7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */,
 				7CD9C26C1A80C2700038196C /* XboxOneTableViewController.h */,
 				7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */,
+				F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */,
+				F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */,
 			);
 			path = "Team-Up";
 			sourceTree = "<group>";
@@ -3015,6 +3020,7 @@
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
 				7C69AF8E1A95AF62003CA3AC /* ChatGroupsTableViewController.m in Sources */,
+				F1D58EDC1ABFBCBF00F2EDEB /* MemberTableViewController.m in Sources */,
 				7C69AF911A95B3D0003CA3AC /* ChatViewController.m in Sources */,
 				7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */,
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
