@@ -686,6 +686,7 @@
 		7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */; };
 		7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */; };
 		7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */; };
+		F11A204C1AC3E9A3007C0185 /* AdminPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */; };
 		F1D58EDC1ABFBCBF00F2EDEB /* MemberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -1422,6 +1423,8 @@
 		7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsPrefTableViewController.h; sourceTree = "<group>"; };
 		7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsPrefTableViewController.m; sourceTree = "<group>"; };
+		F11A204A1AC3E9A3007C0185 /* AdminPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminPopupViewController.h; sourceTree = "<group>"; };
+		F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminPopupViewController.m; sourceTree = "<group>"; };
 		F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewController.h; sourceTree = "<group>"; };
 		F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1610,6 +1613,8 @@
 				7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */,
 				F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */,
 				F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */,
+				F11A204A1AC3E9A3007C0185 /* AdminPopupViewController.h */,
+				F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */,
 			);
 			path = "Team-Up";
 			sourceTree = "<group>";
@@ -2999,6 +3004,7 @@
 				7C2F798D1A85D6BD007F1CCA /* CategoryGroupViewController.m in Sources */,
 				7C507B2E1A84A3600039B93E /* CreatedGroupViewController.m in Sources */,
 				7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */,
+				F11A204C1AC3E9A3007C0185 /* AdminPopupViewController.m in Sources */,
 				7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */,
 				7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */,
 				1F4025C81ABD033700F81DF7 /* CategoryTableViewController.m in Sources */,
