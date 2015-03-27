@@ -190,6 +190,21 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     //Perform query to check if there are any groups that belong to this category.
     NSString *categoryName = [[self.filteredCategories objectAtIndex:indexPath.row] objectForKey:@"categoryname"];
     NSString *categoryID = [[self.filteredCategories objectAtIndex:indexPath.row] objectId];
+    
+    //Check if category name is "Teams for You" or "Suggested Groups".  If so, do something else and return early
+    if([categoryName isEqualToString:@"Teams for You"]){
+        AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [ad.myGlobalArray removeAllObjects];
+        [ad.myGlobalArray addObject:categoryID];
+        NSLog(@"%@",ad.myGlobalArray);
+        [self performSegueWithIdentifier:@"fromCategoryToTFY" sender:self];
+        return;
+    } else if([categoryName isEqualToString:@"Suggested Groups"]){
+        //Segue to 'suggested groups' page
+    }
+    
+    
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Group"];
     [query whereKey:@"category" equalTo:categoryID];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
