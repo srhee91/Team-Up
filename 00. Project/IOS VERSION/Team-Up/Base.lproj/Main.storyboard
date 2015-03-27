@@ -2209,7 +2209,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="N4X-ZE-t0a">
-                                <rect key="frame" x="238" y="87" width="60" height="60"/>
+                                <rect key="frame" x="239" y="88" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" minimumFontSize="17" id="i9c-O6-VC5">
@@ -2228,6 +2228,9 @@
                                 <state key="normal" title="Edit Picture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Y9o-vy-RUp" kind="push" id="9yC-Ff-YRy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fs9-SU-mWu">
                                 <rect key="frame" x="16" y="299" width="288" height="41"/>
@@ -2263,6 +2266,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w00-a9-Rxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2955" y="2197"/>
+        </scene>
+        <!--Download Picture View Controller-->
+        <scene sceneID="Y3p-mh-plk">
+            <objects>
+                <viewController id="Y9o-vy-RUp" customClass="DownloadPictureViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jr0-W5-NAz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image URL" minimumFontSize="17" id="5yo-si-yS9">
+                                <rect key="frame" x="16" y="196" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="uZx-os-SdB">
+                                <rect key="frame" x="93" y="283" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Xc-Rj-8Zw">
+                                <rect key="frame" x="119" y="234" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Download">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonPressed:" destination="Y9o-vy-RUp" eventType="touchUpInside" id="jD9-a7-kGs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HY7-fT-ZjS"/>
+                    <connections>
+                        <outlet property="btnDownload" destination="7Xc-Rj-8Zw" id="aul-bq-eY3"/>
+                        <outlet property="progressBar" destination="uZx-os-SdB" id="6Wu-T9-Q9v"/>
+                        <outlet property="txtUrl" destination="5yo-si-yS9" id="75s-S5-2R8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R8o-d2-QOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951" y="2900"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZmJ-E8-c87">
