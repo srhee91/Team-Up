@@ -977,6 +977,7 @@
                         <outlet property="des" destination="cG9-j9-gAa" id="Ywp-BN-4yg"/>
                         <outlet property="editButton" destination="Aqp-go-GX6" id="46z-TC-Gua"/>
                         <outlet property="gn" destination="f2a-3F-j6X" id="4Sn-LK-dVY"/>
+                        <outlet property="imgGroup" destination="6Er-u1-eLe" id="Uo6-U2-FkR"/>
                         <outlet property="membersButton" destination="qGr-Bz-tKj" id="gA4-rw-qUE"/>
                         <outlet property="navbar" destination="nkM-Dg-oyb" id="3w5-1b-9NB"/>
                         <outlet property="tv" destination="iAa-eA-68l" id="cAS-uE-SYO"/>
@@ -2102,10 +2103,6 @@
                                 <rect key="frame" x="84" y="112" width="34" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="LFo-Pm-5I0">
-                                <rect key="frame" x="16" y="79" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a4K-Wc-Mbk">
                                 <rect key="frame" x="124" y="79" width="180" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2172,6 +2169,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="LFo-Pm-5I0">
+                                <rect key="frame" x="16" y="79" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -2182,6 +2183,7 @@
                         <outlet property="des" destination="4yG-tL-fLS" id="lna-ib-onR"/>
                         <outlet property="editButton" destination="u5w-GA-rrZ" id="yzf-da-Ycw"/>
                         <outlet property="gn" destination="a4K-Wc-Mbk" id="YL3-4r-ddz"/>
+                        <outlet property="imgGroup" destination="LFo-Pm-5I0" id="o19-m8-H9N"/>
                         <outlet property="navbar" destination="EXq-dV-B1a" id="GDy-cP-wEm"/>
                         <outlet property="tv" destination="FwY-Dg-DFV" id="4cD-fC-ggi"/>
                         <segue destination="wEQ-V9-atz" kind="modal" identifier="profile" modalTransitionStyle="crossDissolve" animates="NO" id="Beq-ZA-H9m"/>
@@ -2221,17 +2223,6 @@
                                     <action selector="gn:" destination="2zE-dn-jeS" eventType="editingDidEnd" id="NrO-Fq-oKj"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Gg-a8-Rs7">
-                                <rect key="frame" x="238" y="145" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="Edit Picture">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Y9o-vy-RUp" kind="push" id="9yC-Ff-YRy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fs9-SU-mWu">
                                 <rect key="frame" x="16" y="299" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2253,6 +2244,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Gg-a8-Rs7">
+                                <rect key="frame" x="238" y="145" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Edit Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Y9o-vy-RUp" kind="push" id="9yC-Ff-YRy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2261,6 +2263,7 @@
                         <outlet property="des" destination="Nnf-ML-c0S" id="G1g-f1-aQG"/>
                         <outlet property="edit" destination="Fs9-SU-mWu" id="3rC-2I-nJQ"/>
                         <outlet property="gn" destination="i9c-O6-VC5" id="ztw-1q-rkc"/>
+                        <outlet property="imgGroup" destination="N4X-ZE-t0a" id="P89-lj-unF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w00-a9-Rxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2276,17 +2279,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image URL" minimumFontSize="17" id="5yo-si-yS9">
-                                <rect key="frame" x="16" y="196" width="288" height="30"/>
+                                <rect key="frame" x="16" y="250" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="uZx-os-SdB">
-                                <rect key="frame" x="93" y="283" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Xc-Rj-8Zw">
-                                <rect key="frame" x="119" y="234" width="83" height="30"/>
+                                <rect key="frame" x="119" y="288" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Download">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2295,13 +2294,17 @@
                                     <action selector="downloadButtonPressed:" destination="Y9o-vy-RUp" eventType="touchUpInside" id="jD9-a7-kGs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="FBH-or-hRy">
+                                <rect key="frame" x="95" y="87" width="131" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HY7-fT-ZjS"/>
                     <connections>
                         <outlet property="btnDownload" destination="7Xc-Rj-8Zw" id="aul-bq-eY3"/>
-                        <outlet property="progressBar" destination="uZx-os-SdB" id="6Wu-T9-Q9v"/>
+                        <outlet property="imgGroup" destination="FBH-or-hRy" id="WgI-9s-lGf"/>
                         <outlet property="txtUrl" destination="5yo-si-yS9" id="75s-S5-2R8"/>
                     </connections>
                 </viewController>
@@ -2342,8 +2345,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Beq-ZA-H9m"/>
+        <segue reference="Q5y-dY-bJW"/>
         <segue reference="Rm7-ia-3JD"/>
         <segue reference="vvE-nJ-Nqp"/>
-        <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,5 +19,6 @@
 @property (strong, nonatomic) NSArray *array;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *membersButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imgGroup;
 
 @end

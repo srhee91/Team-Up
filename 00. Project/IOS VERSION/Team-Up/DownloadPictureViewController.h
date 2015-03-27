@@ -13,5 +13,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtUrl;
 @property (weak, nonatomic) IBOutlet UIButton *btnDownload;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIImageView *imgGroup;
+
+
+
+
 
 @end

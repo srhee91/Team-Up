@@ -19,6 +19,14 @@
     [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    //Load group image
+    ad.currentGroupImage = [UIImage imageWithData:[[ad.myGlobalArray objectAtIndex:0][@"image"] getData]];
+    if(ad.currentGroupImage == nil)
+        ad.currentGroupImage = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    [self.imgGroup setImage:ad.currentGroupImage];
+    
+    //Load group name and description
     self.gn.text = [ad.myGlobalArray objectAtIndex:0][@"groupname"];
     self.des.text = [ad.myGlobalArray objectAtIndex:0][@"description"];
 }

@@ -11,5 +11,6 @@
 @interface EditGroupViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *gn;
 @property (weak, nonatomic) IBOutlet UITextField *des;
+@property (weak, nonatomic) IBOutlet UIImageView *imgGroup;
 @property (weak, nonatomic) IBOutlet UIButton *edit;
 @end

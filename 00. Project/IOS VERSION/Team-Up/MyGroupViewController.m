@@ -20,6 +20,10 @@
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    ad.currentGroupImage = [UIImage imageWithData:[[ad.myGlobalArray objectAtIndex:0][@"image"] getData]];
+    if(ad.currentGroupImage == nil)
+        ad.currentGroupImage = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    [self.imgGroup setImage:ad.currentGroupImage];
     NSString *name = [ad.myGlobalArray objectAtIndex:0][@"groupname"];
     self.navbar.title = name;
     self.gn.text = name;
