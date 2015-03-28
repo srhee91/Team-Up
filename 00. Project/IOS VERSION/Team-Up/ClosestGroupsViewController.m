@@ -38,36 +38,6 @@
     
 }
 
-//- (void)getGroupByPreference {
-//    // get the groups by preferences
-//    NSLog(@"prefArray count of array %d",[self.prefArray count] );
-//    for(PFObject *preference in self.prefArray){
-//        PFQuery *group = [PFQuery queryWithClassName:@"Group"];
-//        [group whereKey:@"category" equalTo:[preference objectForKey:@"categoryID"]];
-//        [group findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//            if (!error) {
-//                
-//                // get the user preferences and store in the self.groupArray
-//                for(int i = 0; i < [objects count]; i++){
-//                    [self.groupArray addObject:objects[i]];
-//                    //                    NSLog(@"Inplace :print the group name in self.groupArray");
-//                    //                    NSLog([self.groupArray objectAtIndex: i][@"groupname"] );
-//                    
-//                }
-//                
-//                // Why self.groupArray will lose content outside of loop?
-//                [self.tv setDelegate:self];
-//                [self.tv setDataSource:self];
-//                [self.tv reloadData];
-//                
-//            } else {
-//                // The find succeeded.
-//                NSLog(@"failed to retrieve the object.");
-//            }
-//        }];
-//        
-//    }
-//}
 
 - (void)getGroupByGeoPoints {
 
