@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F4025C81ABD033700F81DF7 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */; };
+		6B148F391AC7261A00E35931 /* ClosestGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */; };
 		6BA54B971AAFDB7D00B331AD /* TeamForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */; };
 		7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79861A85A428007F1CCA /* MyGroupViewController.m */; };
 		7C2F798A1A85AC2F007F1CCA /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79891A85AC2F007F1CCA /* UserViewController.m */; };
@@ -703,6 +704,8 @@
 /* Begin PBXFileReference section */
 		1F4025C61ABD033600F81DF7 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
+		6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestGroupsViewController.m; sourceTree = "<group>"; };
+		6B148F3A1AC7269B00E35931 /* ClosestGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClosestGroupsViewController.h; sourceTree = "<group>"; };
 		6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamForYouViewController.m; sourceTree = "<group>"; };
 		6BA54B991AAFDC0800B331AD /* TeamForYouViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamForYouViewController.h; sourceTree = "<group>"; };
 		7C2F79851A85A428007F1CCA /* MyGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupViewController.h; sourceTree = "<group>"; };
@@ -1615,6 +1618,8 @@
 				F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */,
 				F11A204A1AC3E9A3007C0185 /* AdminPopupViewController.h */,
 				F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */,
+				6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */,
+				6B148F3A1AC7269B00E35931 /* ClosestGroupsViewController.h */,
 			);
 			path = "Team-Up";
 			sourceTree = "<group>";
@@ -3008,6 +3013,7 @@
 				7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */,
 				7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */,
 				1F4025C81ABD033700F81DF7 /* CategoryTableViewController.m in Sources */,
+				6B148F391AC7261A00E35931 /* ClosestGroupsViewController.m in Sources */,
 				7C662F6A1A7335350074FEE9 /* ViewController.m in Sources */,
 				6BA54B971AAFDB7D00B331AD /* TeamForYouViewController.m in Sources */,
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
