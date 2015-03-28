@@ -31,10 +31,13 @@
                                 action:@selector(edit)
                         forControlEvents:UIControlEventTouchUpInside];
             [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
+            [self.membersButton setTitle:@"Member" forState:UIControlStateNormal];
             NSLog(@"I AM THE ADMIN");
     }
     else {
         [self.editButton setTitle:@"" forState:UIControlStateNormal];
+        [self.membersButton setHidden:YES];
+
         NSLog(@"NOT ADMIN");
     }
     PFQuery *member = [PFQuery queryWithClassName:@"Member"];

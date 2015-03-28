@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4025C81ABD033700F81DF7 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */; };
 		6BA54B971AAFDB7D00B331AD /* TeamForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */; };
 		7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79861A85A428007F1CCA /* MyGroupViewController.m */; };
 		7C2F798A1A85AC2F007F1CCA /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79891A85AC2F007F1CCA /* UserViewController.m */; };
@@ -685,6 +686,8 @@
 		7CD9C27A1A814FDB0038196C /* DeleteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */; };
 		7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */; };
 		7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */; };
+		F11A204C1AC3E9A3007C0185 /* AdminPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */; };
+		F1D58EDC1ABFBCBF00F2EDEB /* MemberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -698,6 +701,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F4025C61ABD033600F81DF7 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
+		1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamForYouViewController.m; sourceTree = "<group>"; };
 		6BA54B991AAFDC0800B331AD /* TeamForYouViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamForYouViewController.h; sourceTree = "<group>"; };
 		7C2F79851A85A428007F1CCA /* MyGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupViewController.h; sourceTree = "<group>"; };
@@ -1418,6 +1423,10 @@
 		7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsPrefTableViewController.h; sourceTree = "<group>"; };
 		7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsPrefTableViewController.m; sourceTree = "<group>"; };
+		F11A204A1AC3E9A3007C0185 /* AdminPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminPopupViewController.h; sourceTree = "<group>"; };
+		F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminPopupViewController.m; sourceTree = "<group>"; };
+		F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewController.h; sourceTree = "<group>"; };
+		F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1521,85 +1530,91 @@
 		7C662F601A7335350074FEE9 /* Team-Up */ = {
 			isa = PBXGroup;
 			children = (
-				7C507B2F1A8577FE0039B93E /* Global.h */,
+				7CC7E52F1A81877F001869DE /* 3DSPrefTableViewController.h */,
+				7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */,
+				7CD9C2721A80C2930038196C /* 3DSTableViewController.h */,
+				7CD9C2731A80C2930038196C /* 3DSTableViewController.m */,
 				7C662F651A7335350074FEE9 /* AppDelegate.h */,
 				7C662F661A7335350074FEE9 /* AppDelegate.m */,
-				6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */,
-				6BA54B991AAFDC0800B331AD /* TeamForYouViewController.h */,
-				7C662F681A7335350074FEE9 /* ViewController.h */,
-				7C662F691A7335350074FEE9 /* ViewController.m */,
-				7C3ABE0A1A7A26880069D53D /* NewUserViewController.h */,
-				7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */,
-				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
-				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
-				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
-				7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */,
-				7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */,
+				7C2F798B1A85D6BD007F1CCA /* CategoryGroupViewController.h */,
+				7C2F798C1A85D6BD007F1CCA /* CategoryGroupViewController.m */,
+				1F4025C61ABD033600F81DF7 /* CategoryTableViewController.h */,
+				1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */,
+				7CD9C27B1A8150330038196C /* ChangePasswordViewController.h */,
+				7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */,
 				7C69AF8C1A95AF62003CA3AC /* ChatGroupsTableViewController.h */,
 				7C69AF8D1A95AF62003CA3AC /* ChatGroupsTableViewController.m */,
 				7C69AF8F1A95B3D0003CA3AC /* ChatViewController.h */,
 				7C69AF901A95B3D0003CA3AC /* ChatViewController.m */,
-				7C2F79911A8812BE007F1CCA /* EditGroupViewController.h */,
-				7C2F79921A8812BE007F1CCA /* EditGroupViewController.m */,
-				7C2F798B1A85D6BD007F1CCA /* CategoryGroupViewController.h */,
-				7C2F798C1A85D6BD007F1CCA /* CategoryGroupViewController.m */,
-				7C2F79881A85AC2F007F1CCA /* UserViewController.h */,
-				7C2F79891A85AC2F007F1CCA /* UserViewController.m */,
-				7C2F79851A85A428007F1CCA /* MyGroupViewController.h */,
-				7C2F79861A85A428007F1CCA /* MyGroupViewController.m */,
 				7C507B2C1A84A3600039B93E /* CreatedGroupViewController.h */,
 				7C507B2D1A84A3600039B93E /* CreatedGroupViewController.m */,
 				7C507B291A847F2B0039B93E /* CreateGroupViewController.h */,
 				7C507B2A1A847F2B0039B93E /* CreateGroupViewController.m */,
-				7C507B261A845F9B0039B93E /* SettingsTableViewController.h */,
-				7C507B271A845F9B0039B93E /* SettingsTableViewController.m */,
-				7C507B1D1A844D280039B93E /* ForgotPasswordViewController.h */,
-				7C507B1E1A844D280039B93E /* ForgotPasswordViewController.m */,
-				7CC7E53A1A8218FA001869DE /* ViewProfileViewController.h */,
-				7CC7E53B1A8218FA001869DE /* ViewProfileViewController.m */,
-				7CC7E5341A81C281001869DE /* ProfileViewController.h */,
-				7CC7E5351A81C281001869DE /* ProfileViewController.m */,
-				7CC7E5471A834A60001869DE /* PrefTableViewController.h */,
-				7CC7E5481A834A60001869DE /* PrefTableViewController.m */,
-				7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */,
-				7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */,
-				7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */,
-				7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */,
-				7CC7E5231A81874F001869DE /* PS3PrefTableViewController.h */,
-				7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */,
-				7CC7E5261A818759001869DE /* Xbox360PrefTableViewController.h */,
-				7CC7E5271A818759001869DE /* Xbox360PrefTableViewController.m */,
-				7CC7E5291A818766001869DE /* XboxOnePrefTableViewController.h */,
-				7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */,
-				7CC7E52C1A818775001869DE /* WiiUPrefTableViewController.h */,
-				7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */,
-				7CC7E52F1A81877F001869DE /* 3DSPrefTableViewController.h */,
-				7CC7E5301A81877F001869DE /* 3DSPrefTableViewController.m */,
-				7CD9C27B1A8150330038196C /* ChangePasswordViewController.h */,
-				7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */,
 				7CD9C2781A814FDB0038196C /* DeleteAccountViewController.h */,
 				7CD9C2791A814FDB0038196C /* DeleteAccountViewController.m */,
-				7CD9C2751A80C6850038196C /* SportsTableViewController.h */,
-				7CD9C2761A80C6850038196C /* SportsTableViewController.m */,
-				7CD9C2631A80C2480038196C /* PS3TableViewController.h */,
-				7CD9C2641A80C2480038196C /* PS3TableViewController.m */,
-				7CD9C2661A80C2540038196C /* PS4TableViewController.h */,
-				7CD9C2671A80C2540038196C /* PS4TableViewController.m */,
-				7CD9C2691A80C2670038196C /* Xbox360TableViewController.h */,
-				7CD9C26A1A80C2670038196C /* Xbox360TableViewController.m */,
-				7CD9C26C1A80C2700038196C /* XboxOneTableViewController.h */,
-				7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */,
-				7CD9C26F1A80C2780038196C /* WiiUTableViewController.h */,
-				7CD9C2701A80C2780038196C /* WiiUTableViewController.m */,
-				7CD9C2721A80C2930038196C /* 3DSTableViewController.h */,
-				7CD9C2731A80C2930038196C /* 3DSTableViewController.m */,
-				7CD9C2601A80BF560038196C /* PCTableViewController.h */,
-				7CD9C2611A80BF560038196C /* PCTableViewController.m */,
-				7C418ADF1A807B8800219F6A /* LoginViewController.h */,
-				7C418AE01A807B8800219F6A /* LoginViewController.m */,
+				7C2F79911A8812BE007F1CCA /* EditGroupViewController.h */,
+				7C2F79921A8812BE007F1CCA /* EditGroupViewController.m */,
+				7C507B1D1A844D280039B93E /* ForgotPasswordViewController.h */,
+				7C507B1E1A844D280039B93E /* ForgotPasswordViewController.m */,
+				7C507B2F1A8577FE0039B93E /* Global.h */,
 				7C662F6E1A7335350074FEE9 /* Images.xcassets */,
 				7C662F701A7335350074FEE9 /* LaunchScreen.xib */,
+				7C418ADF1A807B8800219F6A /* LoginViewController.h */,
+				7C418AE01A807B8800219F6A /* LoginViewController.m */,
+				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */,
+				7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */,
+				7C2F79851A85A428007F1CCA /* MyGroupViewController.h */,
+				7C2F79861A85A428007F1CCA /* MyGroupViewController.m */,
+				7C3ABE0A1A7A26880069D53D /* NewUserViewController.h */,
+				7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */,
+				7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */,
+				7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */,
+				7CD9C2601A80BF560038196C /* PCTableViewController.h */,
+				7CD9C2611A80BF560038196C /* PCTableViewController.m */,
+				7CC7E5471A834A60001869DE /* PrefTableViewController.h */,
+				7CC7E5481A834A60001869DE /* PrefTableViewController.m */,
+				7CC7E5341A81C281001869DE /* ProfileViewController.h */,
+				7CC7E5351A81C281001869DE /* ProfileViewController.m */,
+				7CC7E5231A81874F001869DE /* PS3PrefTableViewController.h */,
+				7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */,
+				7CD9C2631A80C2480038196C /* PS3TableViewController.h */,
+				7CD9C2641A80C2480038196C /* PS3TableViewController.m */,
+				7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */,
+				7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */,
+				7CD9C2661A80C2540038196C /* PS4TableViewController.h */,
+				7CD9C2671A80C2540038196C /* PS4TableViewController.m */,
+				7C507B261A845F9B0039B93E /* SettingsTableViewController.h */,
+				7C507B271A845F9B0039B93E /* SettingsTableViewController.m */,
+				7CD9C27E1A81845F0038196C /* SportsPrefTableViewController.h */,
+				7CD9C27F1A81845F0038196C /* SportsPrefTableViewController.m */,
+				7CD9C2751A80C6850038196C /* SportsTableViewController.h */,
+				7CD9C2761A80C6850038196C /* SportsTableViewController.m */,
 				7C662F611A7335350074FEE9 /* Supporting Files */,
+				6BA54B991AAFDC0800B331AD /* TeamForYouViewController.h */,
+				6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */,
+				7C2F79881A85AC2F007F1CCA /* UserViewController.h */,
+				7C2F79891A85AC2F007F1CCA /* UserViewController.m */,
+				7C662F681A7335350074FEE9 /* ViewController.h */,
+				7C662F691A7335350074FEE9 /* ViewController.m */,
+				7CC7E53A1A8218FA001869DE /* ViewProfileViewController.h */,
+				7CC7E53B1A8218FA001869DE /* ViewProfileViewController.m */,
+				7CC7E52C1A818775001869DE /* WiiUPrefTableViewController.h */,
+				7CC7E52D1A818775001869DE /* WiiUPrefTableViewController.m */,
+				7CD9C26F1A80C2780038196C /* WiiUTableViewController.h */,
+				7CD9C2701A80C2780038196C /* WiiUTableViewController.m */,
+				7CC7E5261A818759001869DE /* Xbox360PrefTableViewController.h */,
+				7CC7E5271A818759001869DE /* Xbox360PrefTableViewController.m */,
+				7CD9C2691A80C2670038196C /* Xbox360TableViewController.h */,
+				7CD9C26A1A80C2670038196C /* Xbox360TableViewController.m */,
+				7CC7E5291A818766001869DE /* XboxOnePrefTableViewController.h */,
+				7CC7E52A1A818766001869DE /* XboxOnePrefTableViewController.m */,
+				7CD9C26C1A80C2700038196C /* XboxOneTableViewController.h */,
+				7CD9C26D1A80C2700038196C /* XboxOneTableViewController.m */,
+				F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */,
+				F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */,
+				F11A204A1AC3E9A3007C0185 /* AdminPopupViewController.h */,
+				F11A204B1AC3E9A3007C0185 /* AdminPopupViewController.m */,
 			);
 			path = "Team-Up";
 			sourceTree = "<group>";
@@ -2989,8 +3004,10 @@
 				7C2F798D1A85D6BD007F1CCA /* CategoryGroupViewController.m in Sources */,
 				7C507B2E1A84A3600039B93E /* CreatedGroupViewController.m in Sources */,
 				7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */,
+				F11A204C1AC3E9A3007C0185 /* AdminPopupViewController.m in Sources */,
 				7CC7E5311A81877F001869DE /* 3DSPrefTableViewController.m in Sources */,
 				7CD9C26E1A80C2700038196C /* XboxOneTableViewController.m in Sources */,
+				1F4025C81ABD033700F81DF7 /* CategoryTableViewController.m in Sources */,
 				7C662F6A1A7335350074FEE9 /* ViewController.m in Sources */,
 				6BA54B971AAFDB7D00B331AD /* TeamForYouViewController.m in Sources */,
 				7C418AE11A807B8800219F6A /* LoginViewController.m in Sources */,
@@ -3009,6 +3026,7 @@
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
 				7C69AF8E1A95AF62003CA3AC /* ChatGroupsTableViewController.m in Sources */,
+				F1D58EDC1ABFBCBF00F2EDEB /* MemberTableViewController.m in Sources */,
 				7C69AF911A95B3D0003CA3AC /* ChatViewController.m in Sources */,
 				7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */,
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
