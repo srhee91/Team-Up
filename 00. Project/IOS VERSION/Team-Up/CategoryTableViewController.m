@@ -199,8 +199,14 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
         NSLog(@"%@",ad.myGlobalArray);
         [self performSegueWithIdentifier:@"fromCategoryToTFY" sender:self];
         return;
-    } else if([categoryName isEqualToString:@"Suggested Groups"]){
+    } else if([categoryName isEqualToString:@"Closest Groups"]){
         //Segue to 'suggested groups' page
+        AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [ad.myGlobalArray removeAllObjects];
+        [ad.myGlobalArray addObject:categoryID];
+        NSLog(@"%@",ad.myGlobalArray);
+        [self performSegueWithIdentifier:@"fromCategoryToClosestGroups" sender:self];
+        return;
     }
     
     

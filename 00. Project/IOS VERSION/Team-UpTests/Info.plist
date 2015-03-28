@@ -20,5 +20,7 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We want to send your location data to the NSA, please allow access to location services.</string>
 </dict>
 </plist>
