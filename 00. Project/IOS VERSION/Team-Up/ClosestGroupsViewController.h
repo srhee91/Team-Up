@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (strong, nonatomic) NSArray *prefArray;
 @property (strong, nonatomic) NSMutableArray *groupArray;
+@property (strong, nonatomic) NSArray *locationObjectsArray;
 @property (strong, nonatomic) NSArray *gId;
 
 @end
