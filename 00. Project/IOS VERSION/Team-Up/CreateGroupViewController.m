@@ -16,6 +16,17 @@
 @implementation CreateGroupViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // get user's current location
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        if (!error) {
+            // do something with the new geoPoint
+            // User's location
+            self.currentLocation = geoPoint;
+            
+        }
+    }];
+    
     PFQuery *groups = [PFQuery queryWithClassName:@"Group"];
     [groups orderByDescending: @"createdAt"];
     [groups getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
@@ -39,6 +50,7 @@
     [self.view addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
 }
+
 
 -(void) dismissKeyboard {
     [self.picker resignFirstResponder];
@@ -92,6 +104,9 @@
     group[@"category"] = categoryId;
     group[@"categoryName"] = categoryname;
     group[@"description"] = self.des.text;
+    
+    group[@"geoPoint"] = self.currentLocation;
+    
     self.one = [NSNumber numberWithInt:1];
     group[@"groupId"] = [NSNumber numberWithFloat:([self.one intValue] + [self.counter intValue])];
     PFObject *member = [PFObject objectWithClassName:@"Member"];

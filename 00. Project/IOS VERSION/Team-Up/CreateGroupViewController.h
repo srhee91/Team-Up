@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <Parse/PFGeoPoint.h>
 
 @interface CreateGroupViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -19,4 +20,5 @@
 @property (weak,nonatomic) NSNumber *counter;
 @property (strong,nonatomic) NSNumber *one;
 @property NSInteger num;
+@property PFGeoPoint* currentLocation;
 @end
