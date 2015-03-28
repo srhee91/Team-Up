@@ -79,7 +79,7 @@
             // Create a query for places
             PFQuery *query = [PFQuery queryWithClassName:@"Group"];
             // Interested in locations near user.
-            [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
+            [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint withinMiles:10.0];
             // Limit what could be a lot of points.
             query.limit = 5;
             // Final list of objects
