@@ -24,7 +24,6 @@
 		7C2F798D1A85D6BD007F1CCA /* CategoryGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F798C1A85D6BD007F1CCA /* CategoryGroupViewController.m */; };
 		7C2F79931A8812BE007F1CCA /* EditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F79921A8812BE007F1CCA /* EditGroupViewController.m */; };
 		7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */; };
-		7C3F1E8D1AC7971100303FE8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3F1E8C1AC7971100303FE8 /* CloudKit.framework */; };
 		7C418AB71A803B3300219F6A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418AB61A803B3300219F6A /* AdSupport.framework */; };
 		7C418AB91A803B3E00219F6A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418AB81A803B3E00219F6A /* Social.framework */; };
 		7C418ABB1A803B5700219F6A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C418ABA1A803B5700219F6A /* Accounts.framework */; };
@@ -736,7 +735,6 @@
 		7C3ABE0A1A7A26880069D53D /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		7C3ABE0B1A7A26880069D53D /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		7C3F1E8B1AC796CD00303FE8 /* Team-Up.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Team-Up.entitlements"; sourceTree = "<group>"; };
-		7C3F1E8C1AC7971100303FE8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7C418AB61A803B3300219F6A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		7C418AB81A803B3E00219F6A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7C418ABA1A803B5700219F6A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -1451,7 +1449,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3F1E8D1AC7971100303FE8 /* CloudKit.framework in Frameworks */,
 				7C418ADA1A803CA300219F6A /* libz.1.1.3.dylib in Frameworks */,
 				7C273C331AC782070056DC6E /* Bolts.framework in Frameworks */,
 				7C418AD71A803BF700219F6A /* UIKit.framework in Frameworks */,
@@ -1508,7 +1505,6 @@
 			isa = PBXGroup;
 			children = (
 				7C418AD91A803CA300219F6A /* libz.1.1.3.dylib */,
-				7C3F1E8C1AC7971100303FE8 /* CloudKit.framework */,
 				7C418AC91A803BC300219F6A /* libsqlite3.dylib */,
 				7C418AC61A803BB600219F6A /* libstdc++.6.dylib */,
 				7C418AD21A803BE500219F6A /* StoreKit.framework */,
