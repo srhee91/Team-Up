@@ -30,6 +30,9 @@
     self.an.text = [ad.myGlobalArray objectAtIndex:0][@"admin"];
     self.cat.text = [ad.myGlobalArray objectAtIndex:0][@"categoryName"];
     self.des.text = [ad.myGlobalArray objectAtIndex:0][@"description"];
+    self.meetButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.meetButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.meetButton setTitle:@"Meetings" forState:UIControlStateNormal];
     if([currentUser.username isEqualToString:[ad.myGlobalArray objectAtIndex:0][@"admin"]]) {
             [self.editButton addTarget:self
                                 action:@selector(edit)
