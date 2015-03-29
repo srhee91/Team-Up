@@ -20,24 +20,28 @@
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    ad.currentGroupImage = [UIImage imageWithData:[[ad.myGlobalArray objectAtIndex:0][@"image"] getData]];
+    if(ad.currentGroupImage == nil)
+        ad.currentGroupImage = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    [self.imgGroup setImage:ad.currentGroupImage];
     NSString *name = [ad.myGlobalArray objectAtIndex:0][@"groupname"];
     self.navbar.title = name;
     self.gn.text = name;
     self.an.text = [ad.myGlobalArray objectAtIndex:0][@"admin"];
     self.cat.text = [ad.myGlobalArray objectAtIndex:0][@"categoryName"];
     self.des.text = [ad.myGlobalArray objectAtIndex:0][@"description"];
-    self.meetButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.meetButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.meetButton setTitle:@"Meetings" forState:UIControlStateNormal];
     if([currentUser.username isEqualToString:[ad.myGlobalArray objectAtIndex:0][@"admin"]]) {
             [self.editButton addTarget:self
                                 action:@selector(edit)
                         forControlEvents:UIControlEventTouchUpInside];
             [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
+            [self.membersButton setTitle:@"Member" forState:UIControlStateNormal];
             NSLog(@"I AM THE ADMIN");
     }
     else {
         [self.editButton setTitle:@"" forState:UIControlStateNormal];
+        [self.membersButton setHidden:YES];
+
         NSLog(@"NOT ADMIN");
     }
     PFQuery *member = [PFQuery queryWithClassName:@"Member"];

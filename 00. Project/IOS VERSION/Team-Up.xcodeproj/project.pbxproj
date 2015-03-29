@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F2151A71AC5D38B00EA35F3 /* DownloadPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2151A61AC5D38B00EA35F3 /* DownloadPictureViewController.m */; };
 		1F4025C81ABD033700F81DF7 /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */; };
-		1FC405E81AC86CCC006D63B1 /* GroupMeetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC405E41AC86CCC006D63B1 /* GroupMeetingsViewController.m */; };
-		1FC405E91AC86CCC006D63B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC405E51AC86CCC006D63B1 /* Images.xcassets */; };
-		1FC405EA1AC86CCC006D63B1 /* ScheduleMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC405E71AC86CCC006D63B1 /* ScheduleMeetingViewController.m */; };
 		6B148F391AC7261A00E35931 /* ClosestGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */; };
 		6BA54B971AAFDB7D00B331AD /* TeamForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */; };
 		7C273C331AC782070056DC6E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C273C2D1AC782070056DC6E /* Bolts.framework */; };
@@ -712,11 +709,6 @@
 		1F2151A61AC5D38B00EA35F3 /* DownloadPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadPictureViewController.m; sourceTree = "<group>"; };
 		1F4025C61ABD033600F81DF7 /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		1F4025C71ABD033600F81DF7 /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
-		1FC405E31AC86CCC006D63B1 /* GroupMeetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupMeetingsViewController.h; sourceTree = "<group>"; };
-		1FC405E41AC86CCC006D63B1 /* GroupMeetingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupMeetingsViewController.m; sourceTree = "<group>"; };
-		1FC405E51AC86CCC006D63B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1FC405E61AC86CCC006D63B1 /* ScheduleMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleMeetingViewController.h; sourceTree = "<group>"; };
-		1FC405E71AC86CCC006D63B1 /* ScheduleMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleMeetingViewController.m; sourceTree = "<group>"; };
 		6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestGroupsViewController.m; sourceTree = "<group>"; };
 		6B148F3A1AC7269B00E35931 /* ClosestGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClosestGroupsViewController.h; sourceTree = "<group>"; };
 		6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamForYouViewController.m; sourceTree = "<group>"; };
@@ -1591,11 +1583,6 @@
 				7C418ADF1A807B8800219F6A /* LoginViewController.h */,
 				7C418AE01A807B8800219F6A /* LoginViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
-				1FC405E31AC86CCC006D63B1 /* GroupMeetingsViewController.h */,
-				1FC405E41AC86CCC006D63B1 /* GroupMeetingsViewController.m */,
-				1FC405E51AC86CCC006D63B1 /* Images.xcassets */,
-				1FC405E61AC86CCC006D63B1 /* ScheduleMeetingViewController.h */,
-				1FC405E71AC86CCC006D63B1 /* ScheduleMeetingViewController.m */,
 				F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */,
 				F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */,
 				7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */,
@@ -2677,7 +2664,6 @@
 				7C6633091A75DD9F0074FEE9 /* glyphicons-352-book-open.png in Resources */,
 				7C6632131A75DD9F0074FEE9 /* glyphicons-130-message-new.png in Resources */,
 				7C6633BC1A75DD9F0074FEE9 /* glyphicons-513-paste.png in Resources */,
-				1FC405E91AC86CCC006D63B1 /* Images.xcassets in Resources */,
 				7C6634011A75DD9F0074FEE9 /* glyphicons-576-uk-rat-18.png in Resources */,
 				7C6632D01A75DD9F0074FEE9 /* glyphicons-300-hospital-h.png in Resources */,
 				7C6632421A75DD9F0074FEE9 /* glyphicons-173-rewind.png in Resources */,
@@ -3038,7 +3024,6 @@
 				1F2151A71AC5D38B00EA35F3 /* DownloadPictureViewController.m in Sources */,
 				7C507B281A845F9B0039B93E /* SettingsTableViewController.m in Sources */,
 				7CD9C2741A80C2930038196C /* 3DSTableViewController.m in Sources */,
-				1FC405EA1AC86CCC006D63B1 /* ScheduleMeetingViewController.m in Sources */,
 				7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */,
 				7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */,
 				7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */,
@@ -3068,7 +3053,6 @@
 				7CD9C26B1A80C2670038196C /* Xbox360TableViewController.m in Sources */,
 				7C3ABE0C1A7A26880069D53D /* NewUserViewController.m in Sources */,
 				7C69AF8E1A95AF62003CA3AC /* ChatGroupsTableViewController.m in Sources */,
-				1FC405E81AC86CCC006D63B1 /* GroupMeetingsViewController.m in Sources */,
 				F1D58EDC1ABFBCBF00F2EDEB /* MemberTableViewController.m in Sources */,
 				7C69AF911A95B3D0003CA3AC /* ChatViewController.m in Sources */,
 				7C2F79871A85A428007F1CCA /* MyGroupViewController.m in Sources */,
