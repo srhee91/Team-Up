@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Initialize current location to some default geopoint value
+    self.currentLocation = [[PFGeoPoint alloc] init];
+    
+    
     // get user's current location
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         if (!error) {
