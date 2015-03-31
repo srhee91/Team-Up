@@ -10,12 +10,11 @@
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
 @implementation CategoryGroupViewController
-
+int *obj;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"In cateogry");
     // Do any additional setup after loading the view.
-    PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     PFQuery *group = [PFQuery queryWithClassName:@"Group"];
     [group whereKey:@"category" equalTo:[ad.myGlobalArray objectAtIndex:0]];
@@ -107,15 +106,31 @@
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [ad.myGlobalArray removeAllObjects];
     [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    PFQuery *group1 = [PFQuery queryWithClassName:@"Group"];
+    [group1 whereKey:@"category" equalTo:[ad.myGlobalArray objectAtIndex:0][@"category"]];
+    [group1 whereKey:@"groupname" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupname"]];
 
-    NSLog(@"%@",ad.myGlobalArray);
-    if([ad.myGlobalArray objectAtIndex:0][@"isPublic"]){
-        [self performSegueWithIdentifier:@"toGroupProfile" sender:self];
-    }
-    else{
-        [self showPopupWithTitle:@"GROUP PRIVACY INFORMATION" msg: [NSString stringWithFormat:@"%@", @"GROUP IS PRIVATE"] dismissAfter:3];
-    }
+    [group1 findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (!error) {
+            NSLog(@"fafasdf%d",[[results objectAtIndex:0][@"isPublic"] intValue]);
+            if([[results objectAtIndex:0][@"isPublic"] intValue]==0){
+                [self private];
+            }
+            else if([[results objectAtIndex:0][@"isPublic"] intValue]==1){
+                [self public];
+            }
+        } else {
+            // The find succeeded.
+            NSLog(@"failed to retrieve the object.");
+        }
+    }];
     
+}
+-(void) private{
+     [self showPopupWithTitle:@"GROUP PRIVACY INFORMATION" msg: [NSString stringWithFormat:@"%@", @"GROUP IS PRIVATE"] dismissAfter:3];
+}
+-(void) public{
+    [self performSegueWithIdentifier:@"toGroupProfile" sender:self];
 }
 
 @end
