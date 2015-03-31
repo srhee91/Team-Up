@@ -133,7 +133,7 @@
                     action:@selector(admin:)
           forControlEvents:UIControlEventTouchDown];
     [adminbutton setTitle:@"ADMIN" forState:UIControlStateNormal];
-    adminbutton.frame = CGRectMake(225.0f, 5.0f, 50.0f, 30.0f);
+    adminbutton.frame = CGRectMake(190.0f, 5.0f, 50.0f, 30.0f);
     [adminbutton addTarget:self action:@selector(admin:) forControlEvents:UIControlEventTouchUpInside];
     [adminbutton setTag:indexPath.row];
     [cell addSubview:adminbutton];
@@ -143,7 +143,7 @@
                    action:@selector(kick:)
          forControlEvents:UIControlEventTouchDown];
     [kickButton setTitle:@"KICK" forState:UIControlStateNormal];
-    kickButton.frame = CGRectMake(300.0f, 5.0f, 50.0f, 30.0f);
+    kickButton.frame = CGRectMake(260.0f, 5.0f, 50.0f, 30.0f);
     [kickButton setTag:indexPath.row];
     [cell addSubview:kickButton];
     return cell;

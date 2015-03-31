@@ -75,7 +75,6 @@ int *obj;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"count of array %d",[self.array count]);
     return [self.array count];
 }
 
@@ -106,7 +105,6 @@ int *obj;
     [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
     PFUser *currentUser = [PFUser currentUser];
     PFQuery *member = [PFQuery queryWithClassName:@"Member"];
-    [member whereKey:@"username" notEqualTo:currentUser.username];
     [member whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
     [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (!error) {
@@ -122,15 +120,15 @@ int *obj;
     [group1 findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (!error) {
             if([[results objectAtIndex:0][@"isPublic"] intValue]==0){
-                if(currentUser == [ad.myGlobalArray objectAtIndex:0][@"admin"]){
+                if(currentUser.username == (NSString*)[ad.myGlobalArray objectAtIndex:0][@"admin"]){
                     NSLog(@"should not be called");
                     [self public];
                 }
                 else{
                     int i=0;
                     while(i<[self.array_temp count]) {
-                        NSLog(@"username %@", [self.array_temp objectAtIndex:i][@"username"]);
-                        if([currentUser isEqual:[self.array_temp objectAtIndex:i][@"username"]]){
+                        NSLog(@"username %@ %@ %lu", currentUser ,[self.array_temp objectAtIndex:i][@"username"],(unsigned long)[self.array_temp count]);
+                        if(currentUser.username == (NSString *)[self.array_temp objectAtIndex:i][@"username"]){
                             NSLog(@"I'm a member");
                             break;
                         }
