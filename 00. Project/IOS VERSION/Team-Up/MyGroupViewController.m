@@ -105,7 +105,7 @@
     [mem whereKey:@"username" equalTo:currentUser.username];
     [mem whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
     [mem findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        [[results objectAtIndex:0] deleteInBackground];
+        [[results objectAtIndex:0] delete];
     }];
     self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Join" style:UIBarButtonItemStylePlain target:self action:@selector(join)];
 }
