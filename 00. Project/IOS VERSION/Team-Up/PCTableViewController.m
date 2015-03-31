@@ -77,10 +77,17 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    if([ad.myGlobalArray objectAtIndex:0][@"isPublic"] == [NSNumber numberWithBool:YES]){
+        NSLog(@"This group is Public");
+    }
+    else{
+        NSLog(@"This group is private");
+    }
+
     [ad.myGlobalArray removeAllObjects];
     [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
-    NSLog(@"%@",ad.myGlobalArray);
-    [self performSegueWithIdentifier:@"fromPC" sender:self];
+    //NSLog(@"wtf %@",ad.myGlobalArray);
+  //  [self performSegueWithIdentifier:@"fromPC" sender:self];
 }
 
 /*

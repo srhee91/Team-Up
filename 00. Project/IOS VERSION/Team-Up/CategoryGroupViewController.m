@@ -13,6 +13,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"In cateogry");
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -40,6 +41,30 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)dismissAlert_kick:(UIAlertView *)alertView
+{
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+    sleep(1);
+}
+
+- (void)showPopupWithTitle:(NSString *)title
+                       msg:(NSString *)message
+              dismissAfter:(NSTimeInterval)interval
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:title
+                              message:message
+                              delegate:nil
+                              cancelButtonTitle:nil
+                              otherButtonTitles:nil
+                              ];
+    [alertView show];
+    [self performSelector:@selector(dismissAlert_kick:)
+               withObject:alertView
+               afterDelay:interval
+     ];
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -78,11 +103,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Group is Selected");
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [ad.myGlobalArray removeAllObjects];
     [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+
     NSLog(@"%@",ad.myGlobalArray);
-    [self performSegueWithIdentifier:@"toGroupProfile" sender:self];
+    if([ad.myGlobalArray objectAtIndex:0][@"isPublic"]){
+        [self performSegueWithIdentifier:@"toGroupProfile" sender:self];
+    }
+    else{
+        [self showPopupWithTitle:@"GROUP PRIVACY INFORMATION" msg: [NSString stringWithFormat:@"%@", @"GROUP IS PRIVATE"] dismissAfter:3];
+    }
+    
 }
 
 @end

@@ -17,6 +17,8 @@
 
 @property (strong,nonatomic) NSArray *allCategories;
 @property (strong,nonatomic) NSMutableArray *filteredCategories;
+@property (weak,nonatomic) NSNumber *privacy;
+
 
 //A stack containing the parent categories used to get to the current category.
 @property (strong, nonatomic) NSMutableArray *parentCategories;

@@ -13,5 +13,7 @@
 @property (strong,nonatomic) NSArray *array;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (strong, nonatomic) IBOutlet UITableView *tv;
+@property (weak,nonatomic) NSNumber *privacy;
+
 
 @end

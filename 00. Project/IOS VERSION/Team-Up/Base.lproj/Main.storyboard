@@ -226,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrm-gR-uoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="2926"/>
+            <point key="canvasLocation" x="840" y="3046"/>
         </scene>
         <!--Team For You View Controller-->
         <scene sceneID="GRs-UK-3sw">
@@ -2402,19 +2402,6 @@
             </objects>
             <point key="canvasLocation" x="2951" y="2900"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ZmJ-E8-c87">
-            <objects>
-                <viewController id="Y7z-Lp-Jx7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xto-K0-PgL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m7s-01-Sg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6n3-Gx-yrP">
             <objects>
@@ -2470,9 +2457,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RCe-bw-I6t"/>
         <segue reference="Rm7-ia-3JD"/>
-        <segue reference="vvE-nJ-Nqp"/>
+        <segue reference="RCe-bw-I6t"/>
+        <segue reference="74c-yC-l31"/>
         <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>
