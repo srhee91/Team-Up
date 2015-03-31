@@ -19,6 +19,10 @@
 @property (strong,nonatomic) NSArray *categoryIds;
 @property (weak,nonatomic) NSNumber *counter;
 @property (strong,nonatomic) NSNumber *one;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *privacy;
+@property (weak,nonatomic) NSNumber *picy;
+@property(nonatomic) NSInteger selectedSegmentIndex;
+
 @property NSInteger num;
 @property PFGeoPoint* currentLocation;
 @end

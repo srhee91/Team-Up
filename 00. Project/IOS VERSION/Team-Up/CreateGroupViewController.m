@@ -8,7 +8,6 @@
 
 #import "CreateGroupViewController.h"
 #import <Parse/Parse.h>
-
 @interface CreateGroupViewController ()
 
 @end
@@ -96,6 +95,14 @@
     tView.text=[self.array objectAtIndex:row];
     return tView;
 }
+- (IBAction)privacySetting:(id)sender {
+    if(self.privacy.selectedSegmentIndex == 0){
+        NSLog(@"YES");
+    }
+    else if(self.privacy.selectedSegmentIndex == 1){
+        NSLog(@"NO");
+    }
+}
 
 -(IBAction)submit:(id)sender {
     PFUser *currentUser = [PFUser currentUser];
@@ -109,8 +116,18 @@
     group[@"categoryName"] = categoryname;
     group[@"description"] = self.des.text;
     
+    if(self.privacy.selectedSegmentIndex == 0){
+        group[@"isPublic"] = [NSNumber numberWithBool:YES];
+    }
+    else if(self.privacy.selectedSegmentIndex == 1){
+        group[@"isPublic"] = [NSNumber numberWithBool:NO];
+    }
+    else{
+        group[@"isPublic"] = [NSNumber numberWithBool:YES];
+    }
+
     group[@"geoPoint"] = self.currentLocation;
-    
+
     self.one = [NSNumber numberWithInt:1];
     group[@"groupId"] = [NSNumber numberWithFloat:([self.one intValue] + [self.counter intValue])];
     PFObject *member = [PFObject objectWithClassName:@"Member"];
