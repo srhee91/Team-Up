@@ -8,6 +8,7 @@
 
 #import "CreateGroupViewController.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 @interface CreateGroupViewController ()
 
 @end
@@ -130,9 +131,14 @@
     }
 
     group[@"geoPoint"] = self.currentLocation;
-
+	
     self.one = [NSNumber numberWithInt:1];
     group[@"groupId"] = [NSNumber numberWithFloat:([self.one intValue] + [self.counter intValue])];
+    
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [ad.myGlobalArray setObject:group atIndexedSubscript:0];
+    
+    
     PFObject *member = [PFObject objectWithClassName:@"Member"];
     member[@"username"] = currentUser.username;
     member[@"groupId"] = [NSNumber numberWithFloat:([self.one intValue] + [self.counter intValue])];

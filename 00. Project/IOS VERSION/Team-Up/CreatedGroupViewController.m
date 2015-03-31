@@ -22,10 +22,10 @@
     
     //Load group image
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-    //ad.currentGroupImage = [UIImage imageWithData:[[ad.myGlobalArray objectAtIndex:0][@"image"] getData]];
-    //if(ad.currentGroupImage == nil)
-    //    ad.currentGroupImage = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
-    //[self.imgGroup setImage:ad.currentGroupImage];
+    ad.currentGroupImage = [UIImage imageWithData:[[ad.myGlobalArray objectAtIndex:0][@"image"] getData]];
+    if(ad.currentGroupImage == nil)
+        ad.currentGroupImage = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    [self.imgGroup setImage:ad.currentGroupImage];
     
     //Load other things
     PFUser *currentUser = [PFUser currentUser];
