@@ -49,10 +49,6 @@
         } else {
             // The find succeeded.
         }
-        PFQuery *members = [PFQuery queryWithClassName:@"Member"];
-        [members whereKey:@"groupId" equalTo:[self.ad.myGlobalArray objectAtIndex:0][@"groupId"]];
-        [members findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        }];
     }];
 }
 

@@ -12,5 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *gn;
 @property (weak, nonatomic) IBOutlet UITextField *des;
 @property (weak, nonatomic) IBOutlet UIImageView *imgGroup;
+@property (weak, nonatomic) IBOutlet UITextField *txt;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *privacy;
 @property (weak, nonatomic) IBOutlet UIButton *edit;
+@property (weak,nonatomic) NSNumber *picy;
 @end

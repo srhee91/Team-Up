@@ -13,8 +13,11 @@
 @end
 
 @implementation CreateGroupViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.txt.enabled = NO;
     
     //Initialize current location to some default geopoint value
     self.currentLocation = [[PFGeoPoint alloc] init];

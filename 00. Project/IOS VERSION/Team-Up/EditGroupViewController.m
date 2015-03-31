@@ -14,6 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.txt.enabled = NO;
     UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
@@ -29,6 +30,13 @@
     //Load group name and description
     self.gn.text = [ad.myGlobalArray objectAtIndex:0][@"groupname"];
     self.des.text = [ad.myGlobalArray objectAtIndex:0][@"description"];
+    NSLog(@"selected? %@",[ad.myGlobalArray objectAtIndex:0][@"isPublic"]);
+    if([[ad.myGlobalArray objectAtIndex:0][@"isPublic"] intValue] == 1){
+        self.privacy.selectedSegmentIndex = 0;
+    }
+    else{
+        self.privacy.selectedSegmentIndex = 1;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,6 +64,12 @@
         group[@"category"]= [ad.myGlobalArray objectAtIndex:0][@"category"];
         group[@"groupname"] = self.gn.text;
         group[@"description"] = self.des.text;
+        if(self.privacy.selectedSegmentIndex == 0){
+            group[@"isPublic"] = [NSNumber numberWithBool:YES];
+        }
+        else if(self.privacy.selectedSegmentIndex == 1){
+            group[@"isPublic"] = [NSNumber numberWithBool:NO];
+        }
         PFQuery *deleteGroup = [PFQuery queryWithClassName:@"Group"];
         [deleteGroup whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
         [deleteGroup findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {

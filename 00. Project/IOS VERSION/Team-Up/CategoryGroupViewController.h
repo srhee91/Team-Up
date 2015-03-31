@@ -11,6 +11,7 @@
 @interface CategoryGroupViewController : UITableViewController
 
 @property (strong,nonatomic) NSArray *array;
+@property (strong,nonatomic) NSArray *array_temp;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (strong, nonatomic) IBOutlet UITableView *tv;
 @property (weak,nonatomic) NSNumber *privacy;

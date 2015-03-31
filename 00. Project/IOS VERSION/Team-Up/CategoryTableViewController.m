@@ -211,6 +211,7 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     
     
     
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Group"];
     [query whereKey:@"category" equalTo:categoryID];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -226,7 +227,7 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
                 AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
                 [ad.myGlobalArray removeAllObjects];
                 [ad.myGlobalArray addObject:categoryID];
-                NSLog(@"%@",ad.myGlobalArray);
+                 NSLog(@"%@",ad.myGlobalArray);
                 [self performSegueWithIdentifier:@"fromCategory" sender:self];
             }
             

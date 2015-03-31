@@ -139,7 +139,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gng-PE-0Cf">
-                                <rect key="frame" x="20" y="350" width="288" height="41"/>
+                                <rect key="frame" x="19" y="382" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -163,14 +163,21 @@
                                 <rect key="frame" x="53" y="163" width="180" height="144"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Is this group public?" borderStyle="roundedRect" minimumFontSize="17" id="F6S-7s-icW">
-                                <rect key="frame" x="15" y="76" width="153" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IS THIS GROUP PUBLIC?" minimumFontSize="17" id="F6S-7s-icW">
+                                <rect key="frame" x="19" y="76" width="172" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="text:" destination="Wp1-3q-riv" eventType="editingDidEnd" id="M9H-QR-LLn"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="eJX-Qh-1Ah">
-                                <rect key="frame" x="206" y="76" width="81" height="29"/>
+                                <rect key="frame" x="220" y="76" width="81" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="YES"/>
@@ -189,12 +196,13 @@
                         <outlet property="gn" destination="8Fo-Pl-UMt" id="UNR-Vx-PEU"/>
                         <outlet property="picker" destination="eik-H6-WhW" id="0mD-r1-4Hh"/>
                         <outlet property="privacy" destination="eJX-Qh-1Ah" id="Ha0-A6-sNc"/>
+                        <outlet property="txt" destination="F6S-7s-icW" id="Wao-7T-k3y"/>
                         <segue destination="lRe-0I-UB7" kind="modal" identifier="showgroupmade" id="iO6-Yt-DFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yU1-tO-iQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="158"/>
+            <point key="canvasLocation" x="555" y="158"/>
         </scene>
         <!--Category Group View Controller-->
         <scene sceneID="iU4-5Z-XuZ">
@@ -2293,19 +2301,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-196-circle-info.png" id="l58-Dc-dmu">
-                                <rect key="frame" x="15" y="172" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-44-group.png" id="twn-XS-suJ">
-                                <rect key="frame" x="9" y="132" width="39" height="22"/>
+                                <rect key="frame" x="15" y="228" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="N4X-ZE-t0a">
-                                <rect key="frame" x="239" y="88" width="60" height="60"/>
+                                <rect key="frame" x="239" y="140" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" minimumFontSize="17" id="i9c-O6-VC5">
-                                <rect key="frame" x="56" y="128" width="181" height="30"/>
+                                <rect key="frame" x="56" y="170" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -2314,7 +2318,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fs9-SU-mWu">
-                                <rect key="frame" x="16" y="299" width="288" height="41"/>
+                                <rect key="frame" x="15" y="302" width="288" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -2329,13 +2333,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Description" minimumFontSize="17" id="Nnf-ML-c0S">
-                                <rect key="frame" x="56" y="170" width="255" height="30"/>
+                                <rect key="frame" x="56" y="226" width="255" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Gg-a8-Rs7">
-                                <rect key="frame" x="238" y="145" width="61" height="30"/>
+                                <rect key="frame" x="238" y="201" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="Edit Picture">
@@ -2345,6 +2349,34 @@
                                     <segue destination="Y9o-vy-RUp" kind="push" id="9yC-Ff-YRy"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IS THIS GROUP PUBLIC?" minimumFontSize="17" id="Csr-09-h1k">
+                                <rect key="frame" x="22" y="85" width="172" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="text:" destination="Wp1-3q-riv" eventType="editingDidEnd" id="Fi5-jA-1lJ"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="YaK-7k-A4v">
+                                <rect key="frame" x="223" y="86" width="81" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="YES"/>
+                                    <segment title="NO"/>
+                                </segments>
+                                <connections>
+                                    <action selector="privacySetting:" destination="Wp1-3q-riv" eventType="valueChanged" id="OLS-u5-5wR"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-44-group.png" id="twn-XS-suJ">
+                                <rect key="frame" x="9" y="174" width="39" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2354,6 +2386,8 @@
                         <outlet property="edit" destination="Fs9-SU-mWu" id="3rC-2I-nJQ"/>
                         <outlet property="gn" destination="i9c-O6-VC5" id="ztw-1q-rkc"/>
                         <outlet property="imgGroup" destination="N4X-ZE-t0a" id="P89-lj-unF"/>
+                        <outlet property="privacy" destination="YaK-7k-A4v" id="lg5-5I-sgD"/>
+                        <outlet property="txt" destination="Csr-09-h1k" id="MBQ-of-8Wo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w00-a9-Rxr" userLabel="First Responder" sceneMemberID="firstResponder"/>

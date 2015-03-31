@@ -96,25 +96,55 @@ int *obj;
     cell.textLabel.text = [self.array
                            objectAtIndex: [indexPath row]][@"groupname"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    NSLog(@"%i",indexPath.row);
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Group is Selected");
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [ad.myGlobalArray removeAllObjects];
     [ad.myGlobalArray addObject:[self.array objectAtIndex:[indexPath row]]];
+    PFUser *currentUser = [PFUser currentUser];
+    PFQuery *member = [PFQuery queryWithClassName:@"Member"];
+    [member whereKey:@"username" notEqualTo:currentUser.username];
+    [member whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
+    [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (!error) {
+            self.array_temp = results;
+        } else {
+        }
+    }];
+    
     PFQuery *group1 = [PFQuery queryWithClassName:@"Group"];
     [group1 whereKey:@"category" equalTo:[ad.myGlobalArray objectAtIndex:0][@"category"]];
     [group1 whereKey:@"groupname" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupname"]];
 
     [group1 findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (!error) {
-            NSLog(@"fafasdf%d",[[results objectAtIndex:0][@"isPublic"] intValue]);
             if([[results objectAtIndex:0][@"isPublic"] intValue]==0){
-                [self private];
+                if(currentUser == [ad.myGlobalArray objectAtIndex:0][@"admin"]){
+                    NSLog(@"should not be called");
+                    [self public];
+                }
+                else{
+                    int i=0;
+                    while(i<[self.array_temp count]) {
+                        NSLog(@"username %@", [self.array_temp objectAtIndex:i][@"username"]);
+                        if([currentUser isEqual:[self.array_temp objectAtIndex:i][@"username"]]){
+                            NSLog(@"I'm a member");
+                            break;
+                        }
+                        i++;
+                    }
+                    NSLog(@"count %lu, i = %d", (unsigned long)[self.array_temp count], i);
+                    if(i<[self.array_temp count]){
+                          NSLog(@"I'm a member verified");
+                        [self public];
+                    }
+                    else if(i == [self.array_temp count]){
+                        [self private];
+                    }
+                }
             }
             else if([[results objectAtIndex:0][@"isPublic"] intValue]==1){
                 [self public];

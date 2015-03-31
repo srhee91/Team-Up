@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *privacy;
 @property (weak,nonatomic) NSNumber *picy;
 @property(nonatomic) NSInteger selectedSegmentIndex;
+@property (weak, nonatomic) IBOutlet UITextField *txt;
 
 @property NSInteger num;
 @property PFGeoPoint* currentLocation;
