@@ -1437,13 +1437,13 @@
                                 <rect key="frame" x="16" y="164" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verify Password" minimumFontSize="17" id="eZu-Oe-VF7">
                                 <rect key="frame" x="16" y="193" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate (MMDDYYYY)" minimumFontSize="17" id="8ic-36-KFk">
                                 <rect key="frame" x="16" y="222" width="288" height="30"/>
@@ -2491,8 +2491,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Rm7-ia-3JD"/>
-        <segue reference="RCe-bw-I6t"/>
+        <segue reference="WSe-RP-2Bv"/>
+        <segue reference="zf7-Ta-Gao"/>
         <segue reference="74c-yC-l31"/>
         <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>

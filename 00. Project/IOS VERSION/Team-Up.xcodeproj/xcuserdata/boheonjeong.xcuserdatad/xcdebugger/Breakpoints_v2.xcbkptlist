@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Team-Up/MemberTableViewController.m"
-            timestampString = "449482452.764292"
+            timestampString = "449538216.200177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-kick:"
             landmarkType = "5">
          </BreakpointContent>
