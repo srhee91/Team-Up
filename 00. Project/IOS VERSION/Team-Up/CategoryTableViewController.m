@@ -175,6 +175,9 @@
     //                       objectAtIndex: [indexPath row]];
     cell.textLabel.text = [[self.filteredCategories objectAtIndex:indexPath.row]
                            objectForKey:@"categoryname"];
+    if(indexPath.row == 0 || indexPath.row == 4) {
+        cell.textLabel.textColor = [UIColor blueColor];
+    }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSLog(@"%i",indexPath.row);
     return cell;
