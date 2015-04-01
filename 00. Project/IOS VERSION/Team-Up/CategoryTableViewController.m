@@ -175,7 +175,8 @@
     //                       objectAtIndex: [indexPath row]];
     cell.textLabel.text = [[self.filteredCategories objectAtIndex:indexPath.row]
                            objectForKey:@"categoryname"];
-    if(indexPath.row == 0 || indexPath.row == 4) {
+    cell.textLabel.textColor = [UIColor blackColor];
+    if([cell.textLabel.text isEqualToString:@"Closest Groups"] || [cell.textLabel.text isEqualToString:@"Teams for You"]) {
         cell.textLabel.textColor = [UIColor blueColor];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
