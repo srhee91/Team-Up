@@ -191,8 +191,8 @@
 }
 
 - (IBAction)sendInvite:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title"
-        message:@"Message"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invite"
+        message:@"Type in username of member to invite"
         delegate:self
         cancelButtonTitle:@"Send"
         otherButtonTitles:@"Cancel",nil];
@@ -203,6 +203,45 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 0) {
         NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+        PFQuery *member = [PFQuery queryWithClassName:@"_User"];
+        PFUser *currentUser = [PFUser currentUser];
+        
+        [member orderByDescending: @"createdAt"];
+        [member whereKey:@"username" equalTo:[alertView textFieldAtIndex:0].text];
+        [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (!error && results.count != 0) {
+                NSLog(@"%d", results.count);
+                self.array = results;
+                self.ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+                PFUser *currentUser = [PFUser currentUser];
+                PFObject *invite = [PFObject objectWithClassName:@"Invite"];
+                invite[@"inviter"] = currentUser.username;
+                invite[@"invitee"] = [alertView textFieldAtIndex:0].text;
+                invite[@"groupId"] = [self.ad.myGlobalArray objectAtIndex:0][@"groupId"];
+                [invite saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        // The object has been saved.
+                        UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"Invite sent"
+                                                                         message: @""
+                                                                        delegate:nil
+                                                                        cancelButtonTitle:@"OK"
+                                                                        otherButtonTitles:nil];
+                        [alert2 show];
+                    } else {
+                        // There was a problem, check error.description
+                        NSLog(@"%@",error.description);
+                    }
+                }];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                    message:@"User does not exist"
+                    delegate:nil
+                    cancelButtonTitle:@"OK"
+                    otherButtonTitles:nil];
+                [alert show];
+
+            }
+        }];
     }
     else {
         NSLog(@"CANCEL");
