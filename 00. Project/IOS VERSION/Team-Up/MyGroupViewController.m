@@ -78,6 +78,15 @@
             }
         }];
     }];
+    PFQuery *meetings = [PFQuery queryWithClassName:@"Meeting"];
+    NSDate *today = [NSDate date];
+    [meetings orderByAscending:@"date"];
+    [meetings whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
+    [meetings whereKey:@"date" greaterThan:today];
+    [meetings findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        self.meetingArray = results;
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -118,6 +127,15 @@
             [newadmin findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
                 if([results count] == 0) {
                     //Delete group
+                    [[ad.myGlobalArray objectAtIndex:0] delete];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Group Deleted"
+                                                                    message:@"There are no more members in the group."
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    alert.cancelButtonIndex = 0;
+                    [alert show];
+                    
                 }
                 else {
                     //Make user @ object 0 admin
@@ -130,6 +148,13 @@
     self.navbar.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Join" style:UIBarButtonItemStylePlain target:self action:@selector(join)];
    // sleep(2);
     //[self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)alertView:(UIAlertView *) alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if(buttonIndex ==0) {
+        [self performSegueWithIdentifier:@"toMyProfilePage" sender:self];
+        //[self dismissViewControllerAnimated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
