@@ -1132,6 +1132,7 @@
                         <outlet property="tv" destination="iAa-eA-68l" id="cAS-uE-SYO"/>
                         <segue destination="4ZX-dk-UBo" kind="push" identifier="toUserProfile" id="Eax-Gs-aUw"/>
                         <segue destination="2zE-dn-jeS" kind="push" identifier="toEditGroup" id="g7U-Qc-t2Z"/>
+                        <segue destination="wEQ-V9-atz" kind="modal" identifier="toMyProfilePage" id="1DS-zV-ZEN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1I-ko-y5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2624,9 +2625,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RCe-bw-I6t"/>
-        <segue reference="ymR-1f-a2p"/>
+        <segue reference="1DS-zV-ZEN"/>
         <segue reference="U0d-bX-apU"/>
         <segue reference="g7U-Qc-t2Z"/>
+        <segue reference="ymR-1f-a2p"/>
     </inferredMetricsTieBreakers>
 </document>
