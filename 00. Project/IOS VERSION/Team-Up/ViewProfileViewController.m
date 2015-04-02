@@ -62,6 +62,64 @@
             }
         }];
     }];
+    PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
+    [invite whereKey:@"invitee" equalTo:currentUser.username];
+    [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if(!error && results.count != 0) {
+            self.inviteArray = results;
+            PFQuery *groups = [PFQuery queryWithClassName:@"Group"];
+            [groups whereKey:@"groupId" equalTo:[results objectAtIndex:0][@"groupId"]];
+            [groups findObjectsInBackgroundWithBlock:^(NSArray *results2, NSError *error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Group Invite"
+                                                                message:[NSString stringWithFormat:@"%@ has invited you to %@",[results objectAtIndex:0][@"inviter"],[results2 objectAtIndex:0][@"groupname"]]
+                                                               delegate: self
+                                                      cancelButtonTitle:@"Yes"
+                                                      otherButtonTitles:@"No", nil];
+                sleep(1);
+                [alert show];
+            }];
+        }
+        else {
+            
+        }
+    }];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"HERE");
+    if(buttonIndex == 0) {
+        PFObject *member = [PFObject objectWithClassName:@"Member"];
+        member[@"username"] = currentUser.username;
+        member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
+        [member saveInBackground];
+        PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
+        [invite whereKey:@"invitee" equalTo:currentUser.username];
+        [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
+        [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            int i = 0;
+            while (i < results.count) {
+                [[results objectAtIndex:i] deleteInBackground];
+                i++;
+            }
+        }];
+        NSLog(@"YES");
+        sleep(2);
+        [self viewDidAppear:(FALSE)];
+    }
+    else {
+        PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
+        [invite whereKey:@"invitee" equalTo:currentUser.username];
+        [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
+        [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            int i = 0;
+            while (i < results.count) {
+                [[results objectAtIndex:i] deleteInBackground];
+                i++;
+            }
+        }];
+        NSLog(@"NO");
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

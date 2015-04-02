@@ -209,7 +209,7 @@
         [member orderByDescending: @"createdAt"];
         [member whereKey:@"username" equalTo:[alertView textFieldAtIndex:0].text];
         [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-            if (!error && results.count != 0) {
+            if (!error && results.count != 0 && ![[alertView textFieldAtIndex:0].text isEqualToString:currentUser.username]) {
                 NSLog(@"%d", results.count);
                 self.array = results;
                 self.ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -232,6 +232,13 @@
                         NSLog(@"%@",error.description);
                     }
                 }];
+            } else if([[alertView textFieldAtIndex:0].text isEqualToString:currentUser.username]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                message:@"You cannot invite youself"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                     message:@"User does not exist"
