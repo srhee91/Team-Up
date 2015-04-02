@@ -190,4 +190,23 @@
     }
 }
 
+- (IBAction)sendInvite:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title"
+        message:@"Message"
+        delegate:self
+        cancelButtonTitle:@"Send"
+        otherButtonTitles:@"Cancel",nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0) {
+        NSLog(@"%@", [alertView textFieldAtIndex:0].text);
+    }
+    else {
+        NSLog(@"CANCEL");
+    }
+}
+
 @end

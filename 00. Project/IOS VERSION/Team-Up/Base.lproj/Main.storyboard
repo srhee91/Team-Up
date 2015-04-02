@@ -1092,7 +1092,13 @@
                             <outlet property="delegate" destination="kSb-qy-G0A" id="ut5-xb-2B8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ld3-0z-i79"/>
+                    <navigationItem key="navigationItem" id="ld3-0z-i79">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2br-Uh-iwq">
+                            <connections>
+                                <action selector="sendInvite:" destination="kSb-qy-G0A" id="jmP-AJ-173"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="MV" destination="fTr-O6-3ht" id="Deg-qH-rAa"/>
                         <segue destination="iDd-J4-6oe" kind="modal" identifier="backtoGroup" id="vvE-nJ-Nqp"/>
@@ -2491,9 +2497,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="74c-yC-l31"/>
+        <segue reference="vvE-nJ-Nqp"/>
+        <segue reference="g7U-Qc-t2Z"/>
         <segue reference="WSe-RP-2Bv"/>
         <segue reference="ymR-1f-a2p"/>
-        <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>
