@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 
+@property (strong,nonatomic) NSArray *allGroups;
 @property (strong,nonatomic) NSArray *allCategories;
 @property (strong,nonatomic) NSMutableArray *filteredCategories;
 @property (weak,nonatomic) NSNumber *privacy;

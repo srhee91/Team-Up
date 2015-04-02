@@ -22,6 +22,7 @@
     self.allCategories = [[NSMutableArray alloc] init];
     self.filteredCategories = [[NSMutableArray alloc] init];
     self.parentCategories = [[NSMutableArray alloc] init];
+    self.allGroups = [[NSMutableArray alloc] init];
     
     self.txtSearchBar.delegate = (id)self;
     
@@ -42,6 +43,21 @@
             
         } else {
             // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    //Retrieve all groups
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Group"];
+    [query2 orderByAscending:@"groupname"];
+    [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Successfully retrieved %d groups.", objects.count);
+            
+            self.allGroups = [objects copy];
+            
+            [self pushCategoryAndLoad:@"NULL"];
+        } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
