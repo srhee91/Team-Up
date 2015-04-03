@@ -56,7 +56,6 @@
             
             self.allGroups = [objects copy];
             
-            [self pushCategoryAndLoad:@"NULL"];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -114,6 +113,7 @@
         [self popCategoryAndLoad];
     } else{ //If search bar has text, only load categories that meet requirements
         self.filteredCategories = [[NSMutableArray alloc] init];
+        self.filteredGroups = [[NSMutableArray alloc] init];
         
         //Loop through all categories, and add categories that contain part of 'text'
         for(PFObject *object in self.allCategories){
@@ -124,6 +124,17 @@
             
             if([categoryNameAllCaps containsString:searchTextAllCaps])
                 [self.filteredCategories addObject:object];
+        }
+
+        for(PFObject *object in self.allGroups){
+            NSString *groupName = [object objectForKey:@"groupname"];
+            
+            NSString *groupNameAllCaps = [groupName uppercaseString];
+            NSString *searchTextAllCaps = [text uppercaseString];
+            
+            if([groupNameAllCaps containsString:searchTextAllCaps])
+                [self.filteredGroups addObject:object];
+                
         }
         
     }
@@ -138,6 +149,7 @@
 - (void)filterCategoriesInList:(NSString *)parentId{
     
     self.filteredCategories = [[NSMutableArray alloc] init];
+    self.filteredGroups = [[NSMutableArray alloc] init];
     
     //NSLog(@"Looping through %@ categories", self.allCategories.count);
     
@@ -170,7 +182,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.filteredCategories count];
+    return [self.filteredCategories count] + [self.filteredGroups count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -189,9 +201,21 @@
     // Configure the cell.
     //cell.textLabel.text = [self.groups
     //                       objectAtIndex: [indexPath row]];
-    cell.textLabel.text = [[self.filteredCategories objectAtIndex:indexPath.row]
-                           objectForKey:@"categoryname"];
-    cell.textLabel.textColor = [UIColor blackColor];
+    
+    
+    if(indexPath.row < self.filteredCategories.count && [[[self.filteredCategories objectAtIndex:indexPath.row] parseClassName] isEqualToString:@"Catogery"]){
+        cell.textLabel.text = [[self.filteredCategories objectAtIndex:indexPath.row]
+                               objectForKey:@"categoryname"];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
+    else{
+        uint i = indexPath.row - self.filteredCategories.count;
+        cell.textLabel.text = [[self.filteredGroups objectAtIndex:i]
+                               objectForKey:@"groupname"];
+        cell.textLabel.textColor = [UIColor blackColor];
+    }
+    
+    
     if([cell.textLabel.text isEqualToString:@"Closest Groups"] || [cell.textLabel.text isEqualToString:@"Teams for You"]) {
         cell.textLabel.textColor = [UIColor blueColor];
     }
@@ -208,8 +232,25 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Perform query to check if there are any groups that belong to this category.
-    NSString *categoryName = [[self.filteredCategories objectAtIndex:indexPath.row] objectForKey:@"categoryname"];
-    NSString *categoryID = [[self.filteredCategories objectAtIndex:indexPath.row] objectId];
+    
+    NSString *categoryName;
+    NSString *categoryID;
+    PFObject *obj;
+    bool isCategory = false;
+    
+    if(indexPath.row < self.filteredCategories.count){
+        obj = [self.filteredCategories objectAtIndex:indexPath.row];
+        categoryName = [[self.filteredCategories objectAtIndex:indexPath.row] objectForKey:@"categoryname"];
+        categoryID = [[self.filteredCategories objectAtIndex:indexPath.row] objectId];
+        isCategory = true;
+    }
+    else{
+        int i = indexPath.row - self.filteredCategories.count;
+        obj = [self.filteredGroups objectAtIndex:i];
+        categoryName = [[self.filteredGroups objectAtIndex:i] objectForKey:@"groupname"];
+        categoryID = [[self.filteredGroups objectAtIndex:i] objectId];
+        isCategory = false;
+    }
     
     //Check if category name is "Teams for You" or "Suggested Groups".  If so, do something else and return early
     if([categoryName isEqualToString:@"Teams for You"]){
@@ -229,33 +270,40 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
         return;
     }
     
-    
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Group"];
-    [query whereKey:@"category" equalTo:categoryID];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d groups.", objects.count);
-            
-            //If no groups were retrieved, load the next categories to be displayed
-            if(objects.count == 0){
-                [self pushCategoryAndLoad:categoryID];
-                self.searchDisplayController.active = NO;
-            } else{ //If groups were retrieved, segue to CategoryGroupViewController to display groups.
-                AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-                [ad.myGlobalArray removeAllObjects];
-                [ad.myGlobalArray addObject:categoryID];
-                 NSLog(@"%@",ad.myGlobalArray);
-                [self performSegueWithIdentifier:@"fromCategory" sender:self];
+    if(isCategory){
+        PFQuery *query = [PFQuery queryWithClassName:@"Group"];
+        [query whereKey:@"category" equalTo:categoryID];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %d groups.", objects.count);
+                
+                //If no groups were retrieved, load the next categories to be displayed
+                if(objects.count == 0){
+                    [self pushCategoryAndLoad:categoryID];
+                    self.searchDisplayController.active = NO;
+                } else{ //If groups were retrieved, segue to CategoryGroupViewController to display groups.
+                    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+                    [ad.myGlobalArray removeAllObjects];
+                    [ad.myGlobalArray addObject:categoryID];
+                    NSLog(@"%@",ad.myGlobalArray);
+                    [self performSegueWithIdentifier:@"fromCategory" sender:self];
+                }
+                
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-            
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+        }];
+    }
+    else{
+        AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+        [ad.myGlobalArray removeAllObjects];
+        [ad.myGlobalArray addObject:obj];
+        NSLog(@"%@",ad.myGlobalArray);
+        [self performSegueWithIdentifier:@"fromCategoryToGroup" sender:self];
+    }
+    
 }
 
 /*
