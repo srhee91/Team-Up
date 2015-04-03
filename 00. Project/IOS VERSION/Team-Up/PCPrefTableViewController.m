@@ -28,6 +28,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
+            [self markExistingPrefences];
             NSLog(@"Successfully retrieved %d scores.", objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
@@ -41,7 +42,7 @@
     }];
     
     // mark the existing preference that are stored in the DB
-    [self markExistingPrefences];
+    //[self markExistingPrefences];
     
     // Do any additional setup after loading the view, typically from a nib.
     self.cellSelected = [NSMutableArray array];
