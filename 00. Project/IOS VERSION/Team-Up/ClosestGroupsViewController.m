@@ -114,9 +114,9 @@
 {
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     [ad.myGlobalArray removeAllObjects];
-    [ad.myGlobalArray addObject:[self.groupArray objectAtIndex:[indexPath row]]];
+    [ad.myGlobalArray addObject:[self.locationObjectsArray objectAtIndex:[indexPath row]]];
     NSLog(@"%@",ad.myGlobalArray);
-    [self performSegueWithIdentifier:@"toGroupView" sender:self];
+    [self performSegueWithIdentifier:@"toGroupViewFromClosestGroups" sender:self];
 }
 
 @end

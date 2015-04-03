@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="hco-ni-qTf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Groups-->
@@ -339,7 +339,7 @@
                     <connections>
                         <outlet property="navbar" destination="1m7-2O-3s4" id="h87-be-k0v"/>
                         <outlet property="tv" destination="lfG-cu-f4i" id="53d-FB-w8k"/>
-                        <segue destination="iDd-J4-6oe" kind="push" identifier="toGroupView" id="qIK-6F-3sl"/>
+                        <segue destination="iDd-J4-6oe" kind="push" identifier="toGroupViewFromClosestGroups" id="qIK-6F-3sl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8x-HO-hMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2498,9 +2498,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="74c-yC-l31"/>
         <segue reference="WSe-RP-2Bv"/>
         <segue reference="ymR-1f-a2p"/>
+        <segue reference="qIK-6F-3sl"/>
         <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>
