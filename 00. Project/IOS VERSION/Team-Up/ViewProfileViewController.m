@@ -76,8 +76,8 @@
                                                                delegate: self
                                                       cancelButtonTitle:@"Yes"
                                                       otherButtonTitles:@"No", nil];
-                sleep(1);
                 [alert show];
+                sleep(1);
             }];
         }
         else {
@@ -103,10 +103,9 @@
                 [[results objectAtIndex:i] deleteInBackground];
                 i++;
             }
-            [self viewDidAppear:(FALSE)];
+            //[self viewDidAppear:(FALSE)];
         }];
         NSLog(@"YES");
-        sleep(2);
         [self viewDidAppear:(FALSE)];
     }
     else {
