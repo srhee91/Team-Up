@@ -20,6 +20,8 @@
 @property (strong,nonatomic) NSArray *allCategories;
 @property (strong,nonatomic) NSMutableArray *filteredCategories;
 @property (weak,nonatomic) NSNumber *privacy;
+@property (strong,nonatomic) NSArray *array_temp;
+
 
 
 //A stack containing the parent categories used to get to the current category.

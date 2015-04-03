@@ -299,10 +299,89 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     else{
         AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
         [ad.myGlobalArray removeAllObjects];
-        [ad.myGlobalArray addObject:obj];
-        NSLog(@"%@",ad.myGlobalArray);
-        [self performSegueWithIdentifier:@"fromCategoryToGroup" sender:self];
+        [ad.myGlobalArray addObject:[self.filteredGroups objectAtIndex:[indexPath row]]];
+        PFUser *currentUser = [PFUser currentUser];
+        PFQuery *member = [PFQuery queryWithClassName:@"Member"];
+        [member whereKey:@"groupId" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupId"]];
+        [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (!error) {
+                self.array_temp = results;
+            } else {
+            }
+        }];
+        
+        PFQuery *group1 = [PFQuery queryWithClassName:@"Group"];
+        [group1 whereKey:@"category" equalTo:[ad.myGlobalArray objectAtIndex:0][@"category"]];
+        [group1 whereKey:@"groupname" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupname"]];
+        
+        [group1 findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            NSLog(@"in the loop");
+            if (!error) {
+                if([[results objectAtIndex:0][@"isPublic"] intValue]==0){
+                    if([(NSString *)currentUser.username isEqualToString:(NSString*)[ad.myGlobalArray objectAtIndex:0][@"admin"]]){
+                        [self public];
+                    }
+                    else{
+                        NSLog(@" group is private ");
+                        int i=0;
+                        while(i<[self.array_temp count]) {
+                            NSLog(@"username %@ %@ %lu", currentUser ,[self.array_temp objectAtIndex:i][@"username"],(unsigned long)[self.array_temp count]);
+                            //    if(currentUser.username == (NSString *)[self.array_temp objectAtIndex:i][@"username"]){
+                            if([(NSString *)currentUser.username isEqualToString:(NSString *)[self.array_temp objectAtIndex:i][@"username"]]){
+                                break;
+                            }
+                            i++;
+                        }
+                        NSLog(@"count %lu, i = %d", (unsigned long)[self.array_temp count], i);
+                        if(i<[self.array_temp count]){
+                            NSLog(@"I'm a member verified");
+                            [self public];
+                        }
+                        else if(i == [self.array_temp count]){
+                            [self private];
+                        }
+                    }
+                }
+                else if([[results objectAtIndex:0][@"isPublic"] intValue]==1){
+                    NSLog(@"Public");
+                    [self public];
+                }
+            } else {
+                // The find succeeded.
+                NSLog(@"failed to retrieve the object.");
+            }
+        }];  //      [self performSegueWithIdentifier:@"fromCategoryToGroup" sender:self];
     }
+    
+}
+-(void) private{
+    [self showPopupWithTitle:@"GROUP PRIVACY INFORMATION" msg: [NSString stringWithFormat:@"%@", @"GROUP IS PRIVATE"] dismissAfter:3];
+}
+-(void) public{
+    [self performSegueWithIdentifier:@"fromCategoryToGroup" sender:self];
+}
+- (void)dismissAlert_kick:(UIAlertView *)alertView
+{
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
+    sleep(1);
+}
+
+- (void)showPopupWithTitle:(NSString *)title
+                       msg:(NSString *)message
+              dismissAfter:(NSTimeInterval)interval
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:title
+                              message:message
+                              delegate:nil
+                              cancelButtonTitle:nil
+                              otherButtonTitles:nil
+                              ];
+    [alertView show];
+    [self performSelector:@selector(dismissAlert_kick:)
+               withObject:alertView
+               afterDelay:interval
+     ];
     
 }
 
