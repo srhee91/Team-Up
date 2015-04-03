@@ -118,18 +118,19 @@ int *obj;
     [group1 whereKey:@"groupname" equalTo:[ad.myGlobalArray objectAtIndex:0][@"groupname"]];
 
     [group1 findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        NSLog(@"in the loop");
         if (!error) {
             if([[results objectAtIndex:0][@"isPublic"] intValue]==0){
-                if(currentUser.username == (NSString*)[ad.myGlobalArray objectAtIndex:0][@"admin"]){
-                    NSLog(@"should not be called");
+                if([(NSString *)currentUser.username isEqualToString:(NSString*)[ad.myGlobalArray objectAtIndex:0][@"admin"]]){
                     [self public];
                 }
                 else{
+                    NSLog(@" group is private ");
                     int i=0;
                     while(i<[self.array_temp count]) {
                         NSLog(@"username %@ %@ %lu", currentUser ,[self.array_temp objectAtIndex:i][@"username"],(unsigned long)[self.array_temp count]);
-                        if(currentUser.username == (NSString *)[self.array_temp objectAtIndex:i][@"username"]){
-                            NSLog(@"I'm a member");
+                    //    if(currentUser.username == (NSString *)[self.array_temp objectAtIndex:i][@"username"]){
+                        if([(NSString *)currentUser.username isEqualToString:(NSString *)[self.array_temp objectAtIndex:i][@"username"]]){
                             break;
                         }
                         i++;
