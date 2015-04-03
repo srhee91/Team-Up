@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    sleep(1);
+    //sleep(1);
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     self.un.text = currentUser.username;
@@ -77,7 +77,7 @@
                                                       cancelButtonTitle:@"Yes"
                                                       otherButtonTitles:@"No", nil];
                 [alert show];
-                sleep(1);
+                //sleep(1);
             }];
         }
         else {
