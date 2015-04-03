@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    sleep(1);
     // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
     self.un.text = currentUser.username;
@@ -102,6 +103,7 @@
                 [[results objectAtIndex:i] deleteInBackground];
                 i++;
             }
+            [self viewDidAppear:(FALSE)];
         }];
         NSLog(@"YES");
         sleep(2);
