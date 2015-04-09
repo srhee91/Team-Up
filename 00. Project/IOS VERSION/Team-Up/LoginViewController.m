@@ -9,6 +9,12 @@
 #import "LoginViewController.h"
 #import "Parse/parse.h"
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+
+
 @interface LoginViewController ()
 
 @end
@@ -49,8 +55,9 @@
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
     [self.view addGestureRecognizer:tap];
+
+
     
 }
 //Sign In Action Button method
@@ -81,6 +88,9 @@
         }];
 
     }
+}
+-(IBAction)fbLogin:(id)sender{
+    
 }
 
 -(void) dismissKeyboard {
