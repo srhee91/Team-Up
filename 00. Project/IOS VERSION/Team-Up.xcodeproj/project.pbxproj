@@ -12,6 +12,10 @@
 		1FEDC5CD1AC8A8A200DAC3A7 /* GroupMeetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDC5CA1AC8A8A200DAC3A7 /* GroupMeetingsViewController.m */; };
 		1FEDC5CE1AC8A8A200DAC3A7 /* ScheduleMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDC5CC1AC8A8A200DAC3A7 /* ScheduleMeetingViewController.m */; };
 		6B148F391AC7261A00E35931 /* ClosestGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */; };
+		6B8F5A9D1AD8434B00E9506F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8F5A9A1AD8434B00E9506F /* FBSDKCoreKit.framework */; };
+		6B8F5A9E1AD8434C00E9506F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8F5A9B1AD8434B00E9506F /* FBSDKLoginKit.framework */; };
+		6B8F5A9F1AD8434C00E9506F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8F5A9C1AD8434B00E9506F /* FBSDKShareKit.framework */; };
+		6B8F5AA11AD885A700E9506F /* InviteFacebookFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8F5AA01AD885A700E9506F /* InviteFacebookFriendsViewController.m */; };
 		6BA54B971AAFDB7D00B331AD /* TeamForYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */; };
 		7C273C331AC782070056DC6E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C273C2D1AC782070056DC6E /* Bolts.framework */; };
 		7C273C341AC782070056DC6E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C273C2E1AC782070056DC6E /* Parse.framework */; };
@@ -716,6 +720,11 @@
 		1FEDC5CC1AC8A8A200DAC3A7 /* ScheduleMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleMeetingViewController.m; sourceTree = "<group>"; };
 		6B148F381AC7261900E35931 /* ClosestGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClosestGroupsViewController.m; sourceTree = "<group>"; };
 		6B148F3A1AC7269B00E35931 /* ClosestGroupsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClosestGroupsViewController.h; sourceTree = "<group>"; };
+		6B8F5A9A1AD8434B00E9506F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		6B8F5A9B1AD8434B00E9506F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		6B8F5A9C1AD8434B00E9506F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		6B8F5AA01AD885A700E9506F /* InviteFacebookFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFacebookFriendsViewController.m; sourceTree = "<group>"; };
+		6B8F5AA21AD885C900E9506F /* InviteFacebookFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteFacebookFriendsViewController.h; sourceTree = "<group>"; };
 		6BA54B961AAFDB7D00B331AD /* TeamForYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamForYouViewController.m; sourceTree = "<group>"; };
 		6BA54B991AAFDC0800B331AD /* TeamForYouViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamForYouViewController.h; sourceTree = "<group>"; };
 		7C273C2D1AC782070056DC6E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -1454,6 +1463,7 @@
 				7C418AD71A803BF700219F6A /* UIKit.framework in Frameworks */,
 				7C418AD51A803BF000219F6A /* SystemConfiguration.framework in Frameworks */,
 				7C418AD31A803BE500219F6A /* StoreKit.framework in Frameworks */,
+				6B8F5A9F1AD8434C00E9506F /* FBSDKShareKit.framework in Frameworks */,
 				7C418AD11A803BDD00219F6A /* Security.framework in Frameworks */,
 				7C273C381AC782070056DC6E /* ParseUI.framework in Frameworks */,
 				7C418ACF1A803BD400219F6A /* QuartzCore.framework in Frameworks */,
@@ -1464,10 +1474,12 @@
 				7C418AC51A803B9500219F6A /* Foundation.framework in Frameworks */,
 				7C418AC31A803B8D00219F6A /* CoreLocation.framework in Frameworks */,
 				7C418AC11A803B8100219F6A /* CoreGraphics.framework in Frameworks */,
+				6B8F5A9D1AD8434B00E9506F /* FBSDKCoreKit.framework in Frameworks */,
 				7C273C341AC782070056DC6E /* Parse.framework in Frameworks */,
 				7C418ABF1A803B6900219F6A /* CFNetwork.framework in Frameworks */,
 				7C273C371AC782070056DC6E /* ParseFacebookUtilsV4.framework in Frameworks */,
 				7C418ABD1A803B6100219F6A /* AudioToolbox.framework in Frameworks */,
+				6B8F5A9E1AD8434C00E9506F /* FBSDKLoginKit.framework in Frameworks */,
 				7C418ABB1A803B5700219F6A /* Accounts.framework in Frameworks */,
 				7C273C361AC782070056DC6E /* ParseFacebookUtils.framework in Frameworks */,
 				7C418AB91A803B3E00219F6A /* Social.framework in Frameworks */,
@@ -1489,6 +1501,9 @@
 		7C418AAB1A803AF100219F6A /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				6B8F5A9A1AD8434B00E9506F /* FBSDKCoreKit.framework */,
+				6B8F5A9B1AD8434B00E9506F /* FBSDKLoginKit.framework */,
+				6B8F5A9C1AD8434B00E9506F /* FBSDKShareKit.framework */,
 				7C273C2D1AC782070056DC6E /* Bolts.framework */,
 				7C273C2E1AC782070056DC6E /* Parse.framework */,
 				7C273C2F1AC782070056DC6E /* ParseCrashReporting.framework */,
@@ -1569,6 +1584,8 @@
 				7CD9C27C1A8150330038196C /* ChangePasswordViewController.m */,
 				7C69AF8C1A95AF62003CA3AC /* ChatGroupsTableViewController.h */,
 				7C69AF8D1A95AF62003CA3AC /* ChatGroupsTableViewController.m */,
+				6B8F5AA01AD885A700E9506F /* InviteFacebookFriendsViewController.m */,
+				6B8F5AA21AD885C900E9506F /* InviteFacebookFriendsViewController.h */,
 				7C69AF8F1A95B3D0003CA3AC /* ChatViewController.h */,
 				7C69AF901A95B3D0003CA3AC /* ChatViewController.m */,
 				6B148F3A1AC7269B00E35931 /* ClosestGroupsViewController.h */,
@@ -3066,6 +3083,7 @@
 				7CD9C2771A80C6850038196C /* SportsTableViewController.m in Sources */,
 				7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */,
 				7CD9C2711A80C2780038196C /* WiiUTableViewController.m in Sources */,
+				6B8F5AA11AD885A700E9506F /* InviteFacebookFriendsViewController.m in Sources */,
 				7C507B2B1A847F2B0039B93E /* CreateGroupViewController.m in Sources */,
 				1FEDC5CE1AC8A8A200DAC3A7 /* ScheduleMeetingViewController.m in Sources */,
 				7C2F79931A8812BE007F1CCA /* EditGroupViewController.m in Sources */,
@@ -3203,6 +3221,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/yiyangpan/Downloads/parse-library-1",
 					"/Users/Travis/Downloads/parse-library-1-2",
+					/Users/yiyangpan/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "Team-Up/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3231,6 +3250,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/yiyangpan/Downloads/parse-library-1",
 					"/Users/Travis/Downloads/parse-library-1-2",
+					/Users/yiyangpan/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = "Team-Up/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

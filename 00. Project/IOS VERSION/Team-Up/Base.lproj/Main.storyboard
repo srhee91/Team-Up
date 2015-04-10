@@ -391,6 +391,23 @@
                                             <segue destination="EHG-GY-97k" kind="push" id="JdU-8B-xeM"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rz8-e3-r5L" style="IBUITableViewCellStyleDefault" id="6jQ-0v-6rU">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6jQ-0v-6rU" id="Oc7-tN-lZG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Invite Facebook Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rz8-e3-r5L">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yyA-SL-wht" kind="push" id="cqP-4t-Met"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gdf-GU-ICG" style="IBUITableViewCellStyleDefault" id="EMA-hQ-Xx8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -426,13 +443,13 @@
                                             <segue destination="2H9-vr-GSt" kind="push" id="Dud-2d-iqt"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="F8p-cC-N5k" style="IBUITableViewCellStyleDefault" id="1Ch-KX-xv4">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Uzg-G0-OJS" style="IBUITableViewCellStyleDefault" id="WNy-J1-DSH">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ch-KX-xv4" id="tlN-ve-4sM">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WNy-J1-DSH" id="Cnc-Cb-sbs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="LOGOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F8p-cC-N5k">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="LOGOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uzg-G0-OJS">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,9 +457,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="hco-ni-qTf" kind="modal" modalTransitionStyle="crossDissolve" id="ymR-1f-a2p"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2479,6 +2493,40 @@
             </objects>
             <point key="canvasLocation" x="2021" y="3720"/>
         </scene>
+        <!--Invite Facebook Friends-->
+        <scene sceneID="Q3l-hJ-eqW">
+            <objects>
+                <viewController id="yyA-SL-wht" userLabel="Invite Facebook Friends" customClass="InviteFacebookFriendsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kdh-7m-rax">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YH1-Bc-rUZ">
+                                <rect key="frame" x="77" y="244" width="167" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5450980392" green="0.61568627450000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Invite">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="yyA-SL-wht" eventType="touchUpInside" id="POp-04-gXf"/>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="Mbe-pt-Be9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Invite Facebook Friends" id="kH9-cQ-sho" userLabel="Invite Facebook Friends"/>
+                    <connections>
+                        <outlet property="reset" destination="YH1-Bc-rUZ" id="60E-hP-MmA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Uq-1f-dDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-353" y="4158"/>
+        </scene>
     </scenes>
     <resources>
         <image name="QM.jpeg" width="225" height="225"/>
@@ -2499,7 +2547,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="WSe-RP-2Bv"/>
-        <segue reference="ymR-1f-a2p"/>
+        <segue reference="zf7-Ta-Gao"/>
         <segue reference="qIK-6F-3sl"/>
         <segue reference="g7U-Qc-t2Z"/>
     </inferredMetricsTieBreakers>
