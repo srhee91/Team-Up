@@ -28,47 +28,52 @@
     [User whereKey:@"username" equalTo:[ad.myGlobalArray objectAtIndex:0][@"username"]];
     [User findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (!error) {
-            self.em.text = [results objectAtIndex:0][@"email"];
-            self.des.text = [results objectAtIndex:0][@"Description"];
-            self.bd.text = [results objectAtIndex:0][@"birthday"];
-            PFQuery *member = [PFQuery queryWithClassName:@"Member"];
-            [member orderByDescending: @"groupId"];
-            [member whereKey:@"username" equalTo:name];
-            [member selectKeys:@[@"groupId"]];
-            NSMutableArray *list = [[NSMutableArray alloc] init];
-            [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            self.em.text = @"";
+            self.des.text = @"";
+            self.bd.text = @"";
+            if(![[results objectAtIndex:0][@"Privacy"] isEqualToString: @"True"]) {
+                self.em.text = [results objectAtIndex:0][@"email"];
+                self.des.text = [results objectAtIndex:0][@"Description"];
+                self.bd.text = [results objectAtIndex:0][@"birthday"];
+                PFQuery *member = [PFQuery queryWithClassName:@"Member"];
+                [member orderByDescending: @"groupId"];
+                [member whereKey:@"username" equalTo:name];
+                [member selectKeys:@[@"groupId"]];
+                NSMutableArray *list = [[NSMutableArray alloc] init];
+                [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
                 //NSLog(@"HERE");
-                self.gId = results;
-                NSInteger counter = [results count];
-                NSLog(@"counter: %d", counter);
-                NSInteger i = 0;
-                while(i < counter) {
-                    [list addObject: [self.gId
+                    self.gId = results;
+                    NSInteger counter = [results count];
+                    NSLog(@"counter: %d", counter);
+                    NSInteger i = 0;
+                    while(i < counter) {
+                        [list addObject: [self.gId
                                       objectAtIndex:i][@"groupId"]];
-                    i++;
-                    NSLog(@"GROUP ID from list: %@",list);
-                    NSLog(@"GROUP ID from gId: %@",[self.gId
-                                                    objectAtIndex:0][@"groupId"]);
-                }
-                //NSLog(@"GROUP ID: %@",list);
-                PFQuery *group = [PFQuery queryWithClassName:@"Group"];
-                [group orderByAscending: @"groupname"];
-                NSLog(@"%@",list);
-                [group whereKey:@"groupId" containedIn:list];
-                [group findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-                    if (!error) {
-                        self.array = results;
-                        NSLog(@"made it");
-                        NSLog(@"%@",results);
-                        [self.tv setDelegate:self];
-                        [self.tv setDataSource:self];
-                        [self.tv reloadData];
-                    } else {
-                        // The find succeeded.
-                        NSLog(@"failed to retrieve the object.");
+                        i++;
+                        NSLog(@"GROUP ID from list: %@",list);
+                        NSLog(@"GROUP ID from gId: %@",[self.gId
+                                                        objectAtIndex:0][@"groupId"]);
                     }
+                    //NSLog(@"GROUP ID: %@",list);
+                    PFQuery *group = [PFQuery queryWithClassName:@"Group"];
+                    [group orderByAscending: @"groupname"];
+                    NSLog(@"%@",list);
+                    [group whereKey:@"groupId" containedIn:list];
+                    [group findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                        if (!error) {
+                            self.array = results;
+                            NSLog(@"made it");
+                            NSLog(@"%@",results);
+                            [self.tv setDelegate:self];
+                            [self.tv setDataSource:self];
+                            [self.tv reloadData];
+                        } else {
+                            // The find succeeded.
+                            NSLog(@"failed to retrieve the object.");
+                        }
+                    }];
                 }];
-            }];
+            }
 
         } else {
             // The find succeeded.
