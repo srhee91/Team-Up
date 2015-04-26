@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "Parse/parse.h"
+#include <stdlib.h>
 #import "AppDelegate.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 @interface LoginViewController ()
@@ -19,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [PFUser logOut];
-    PFUser *currentUser = [PFUser currentUser];
     CGRect frameRect = self.username.frame;
     frameRect.size.height = 45;
     self.username.frame = frameRect;
@@ -45,53 +45,69 @@
     
     self.password.leftView = arrow;
     self.password.leftViewMode = UITextFieldViewModeAlways;
-    //self.password.leftView = paddingView2;
-    //self.password.leftViewMode = UITextFieldViewModeAlways;
-    // Do any additional setup after loading the view.
     
     UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
     
 }
-- (void) updatingFbProfile{
-    
-}
-- (IBAction)fbLogin:(id)sender {
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
-    
 
+- (IBAction)fbLogin:(id)sender {
+    PFUser *fbUser = [PFUser user];
+    NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_location", @"user_friends"];
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        user = fbUser;
         if (!user) {
-            NSString *errorMessage = nil;
-            if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-                errorMessage = @"Uh oh. The user cancelled the Facebook login.";
-            } else {
-                NSLog(@"Uh oh. An error occurred: %@", error);
-                errorMessage = [error localizedDescription];
-            }
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error"
-                                                            message:errorMessage
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"Dismiss", nil];
-            [alert show];
         } else {
             if (user.isNew) {
                 NSLog(@"User with facebook signed up and logged in!");
-               //check for user
-                FBRequest *request = [FBRequest requestForMe];
-                
-                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
             } else {
                 NSLog(@"User with facebook logged in!");
-                NSLog(@"ff%@",permissionsArray);
-                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
             }
         }
     }];
+
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+        // handle response
+        if (!error) {
+            NSDictionary *userData = (NSDictionary *)result;
+            NSLog(@"no error");
+            fbUser.email = userData[@"email"];
+            fbUser[@"birthday"] = userData[@"birthday"];
+            fbUser.username = userData[@"last_name"];
+            // [user saveInBackground];
+        }
+        else{
+            NSLog(@"error");
+        }
+    }];
     }
+-(void) updateLogin{
+    FBRequest *request = [FBRequest requestForMe];
+    PFUser *user = [PFUser user];
+    
+    [request startWithCompletionHandler:^(FBRequestConnection *connection,NSDictionary<FBGraphUser> *userr, NSError *error) {
+        // handle response
+        if (!error) {
+            NSLog(@"no error");
+            NSLog(@"%@",userr.username);
+                    }
+        else{
+            NSLog(@"error");
+        }
+    }];
+    NSLog(@"wtf1");
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"wtf");
+        if (!error) {
+            NSLog(@"successful");
+            // Now Sign Up successful, continue to onto next page
+        } else {
+            NSLog(@"Fail");
+        }
+    }];
+}
 //Sign In Action Button method
 -(IBAction)signin:(id)sender{
     PFUser *user = [PFUser user];
