@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "Parse/parse.h"
 #import "AppDelegate.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 @interface LoginViewController ()
 
 @end
@@ -53,6 +54,44 @@
     [self.view addGestureRecognizer:tap];
     
 }
+- (void) updatingFbProfile{
+    
+}
+- (IBAction)fbLogin:(id)sender {
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+    
+
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSString *errorMessage = nil;
+            if (!error) {
+                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+                errorMessage = @"Uh oh. The user cancelled the Facebook login.";
+            } else {
+                NSLog(@"Uh oh. An error occurred: %@", error);
+                errorMessage = [error localizedDescription];
+            }
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error"
+                                                            message:errorMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"Dismiss", nil];
+            [alert show];
+        } else {
+            if (user.isNew) {
+                NSLog(@"User with facebook signed up and logged in!");
+               //check for user
+                FBRequest *request = [FBRequest requestForMe];
+                
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+            } else {
+                NSLog(@"User with facebook logged in!");
+                NSLog(@"ff%@",permissionsArray);
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+            }
+        }
+    }];
+    }
 //Sign In Action Button method
 -(IBAction)signin:(id)sender{
     PFUser *user = [PFUser user];
