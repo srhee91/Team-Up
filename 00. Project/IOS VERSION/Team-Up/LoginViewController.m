@@ -56,58 +56,34 @@
     PFUser *fbUser = [PFUser user];
     NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_location", @"user_friends"];
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        user = fbUser;
+        NSLog(@"%@",user.username);
+        NSLog(@"%@",user.email);
+        
         if (!user) {
         } else {
             if (user.isNew) {
                 NSLog(@"User with facebook signed up and logged in!");
             } else {
                 NSLog(@"User with facebook logged in!");
+                FBRequest *request = [FBRequest requestForMe];
+                [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+                    // handle response
+                    if (!error) {
+                        NSDictionary *userData = (NSDictionary *)result;
+                        NSLog(@"no error");
+                        fbUser.email = userData[@"email"];
+                     ///   fbUser[@"birthday"] = userData[@"birthday"];
+                        fbUser.username = userData[@"last_name"];
+                         [user saveInBackground];
+                    }
+                    else{
+                        NSLog(@"error");
+                    }
+                }];
             }
         }
     }];
-
-    FBRequest *request = [FBRequest requestForMe];
-    [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
-        // handle response
-        if (!error) {
-            NSDictionary *userData = (NSDictionary *)result;
-            NSLog(@"no error");
-            fbUser.email = userData[@"email"];
-            fbUser[@"birthday"] = userData[@"birthday"];
-            fbUser.username = userData[@"last_name"];
-            // [user saveInBackground];
-        }
-        else{
-            NSLog(@"error");
-        }
-    }];
     }
--(void) updateLogin{
-    FBRequest *request = [FBRequest requestForMe];
-    PFUser *user = [PFUser user];
-    
-    [request startWithCompletionHandler:^(FBRequestConnection *connection,NSDictionary<FBGraphUser> *userr, NSError *error) {
-        // handle response
-        if (!error) {
-            NSLog(@"no error");
-            NSLog(@"%@",userr.username);
-                    }
-        else{
-            NSLog(@"error");
-        }
-    }];
-    NSLog(@"wtf1");
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"wtf");
-        if (!error) {
-            NSLog(@"successful");
-            // Now Sign Up successful, continue to onto next page
-        } else {
-            NSLog(@"Fail");
-        }
-    }];
-}
 //Sign In Action Button method
 -(IBAction)signin:(id)sender{
     PFUser *user = [PFUser user];
