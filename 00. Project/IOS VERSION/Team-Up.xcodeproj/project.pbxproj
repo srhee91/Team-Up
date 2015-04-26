@@ -663,6 +663,7 @@
 		7C69AF8E1A95AF62003CA3AC /* ChatGroupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C69AF8D1A95AF62003CA3AC /* ChatGroupsTableViewController.m */; };
 		7C69AF911A95B3D0003CA3AC /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C69AF901A95B3D0003CA3AC /* ChatViewController.m */; };
 		7C69AF941A95B3EE003CA3AC /* MessageComposerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */; };
+		7C7C91191AECD3C9005D82B3 /* PrivateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C91181AECD3C9005D82B3 /* PrivateProfileViewController.m */; };
 		7CC7E51F1A818739001869DE /* PCPrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */; };
 		7CC7E5221A818746001869DE /* PS4PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5211A818746001869DE /* PS4PrefTableViewController.m */; };
 		7CC7E5251A81874F001869DE /* PS3PrefTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7E5241A81874F001869DE /* PS3PrefTableViewController.m */; };
@@ -1389,6 +1390,8 @@
 		7C69AF901A95B3D0003CA3AC /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageComposerView.h; sourceTree = "<group>"; };
 		7C69AF931A95B3ED003CA3AC /* MessageComposerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageComposerView.m; sourceTree = "<group>"; };
+		7C7C91171AECD3C9005D82B3 /* PrivateProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateProfileViewController.h; sourceTree = "<group>"; };
+		7C7C91181AECD3C9005D82B3 /* PrivateProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateProfileViewController.m; sourceTree = "<group>"; };
 		7CC7E51D1A818739001869DE /* PCPrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPrefTableViewController.h; sourceTree = "<group>"; };
 		7CC7E51E1A818739001869DE /* PCPrefTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPrefTableViewController.m; sourceTree = "<group>"; };
 		7CC7E5201A818746001869DE /* PS4PrefTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PS4PrefTableViewController.h; sourceTree = "<group>"; };
@@ -1589,6 +1592,8 @@
 				7C418ADF1A807B8800219F6A /* LoginViewController.h */,
 				7C418AE01A807B8800219F6A /* LoginViewController.m */,
 				7C662F6B1A7335350074FEE9 /* Main.storyboard */,
+				7C7C91171AECD3C9005D82B3 /* PrivateProfileViewController.h */,
+				7C7C91181AECD3C9005D82B3 /* PrivateProfileViewController.m */,
 				F1D58EDA1ABFBCBF00F2EDEB /* MemberTableViewController.h */,
 				F1D58EDB1ABFBCBF00F2EDEB /* MemberTableViewController.m */,
 				7C69AF921A95B3ED003CA3AC /* MessageComposerView.h */,
@@ -3033,6 +3038,7 @@
 				7CD9C2801A81845F0038196C /* SportsPrefTableViewController.m in Sources */,
 				7CD9C27D1A8150330038196C /* ChangePasswordViewController.m in Sources */,
 				7CD9C2651A80C2480038196C /* PS3TableViewController.m in Sources */,
+				7C7C91191AECD3C9005D82B3 /* PrivateProfileViewController.m in Sources */,
 				7C2F798D1A85D6BD007F1CCA /* CategoryGroupViewController.m in Sources */,
 				7C507B2E1A84A3600039B93E /* CreatedGroupViewController.m in Sources */,
 				7CC7E52B1A818766001869DE /* XboxOnePrefTableViewController.m in Sources */,
