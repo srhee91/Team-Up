@@ -19,26 +19,24 @@
 @implementation ViewProfileViewController
 
 - (void)viewDidLoad {
-    PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"%@",currentUser[@"initial"]);
-    if(currentUser[@"initial"]){
-        NSLog(@"first time");
-        currentUser.username = @"temp"; //input username;
-        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
-    }
     [super viewDidLoad];
+    PFUser *currentUser = [PFUser currentUser];
+    if([currentUser[@"initial"]intValue] == 1){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Type in Username or Click Cancel for Automated Username" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil] ;
+        alertView.tag = 2;
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alertView show];
+    }
+    
     // Do any additional setup after loading the view.
-    PFUser *fbUser = [PFUser user];
-
     FBRequest *request = [FBRequest requestForMe];
     [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
         // handle response
         if (!error) {
             NSDictionary *userData = (NSDictionary *)result;
-            NSLog(@"no error");
-            int random = rand()%100;
             currentUser.email = userData[@"email"];
             currentUser[@"birthday"] = userData[@"birthday"];
+            NSLog(@"friends %@",userData[@"user_friends"]);
         }
         else{
             NSLog(@"error");
@@ -119,8 +117,52 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"HERE");
     if(buttonIndex == 0) {
+        NSLog(@"canceled");
+        FBRequest *request = [FBRequest requestForMe];
+        [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+            // handle response
+            if (!error) {
+                NSDictionary *userData = (NSDictionary *)result;
+                int random = rand()%100;
+                currentUser.username =[NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%@", userData[@"last_name"]], [NSString stringWithFormat:@"%d",random]];
+            }
+            else{
+                NSLog(@"error");
+            }
+        }];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // The currentUser saved successfully.
+            } else {
+                // There was an error saving the currentUser.
+                NSLog(@"smae user naem");
+            }
+        }];
+        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+        [self viewDidLoad];
+        
+    }
+    else if(buttonIndex == 1){
+        UITextField * alertTextField = [alertView textFieldAtIndex:0];
+        NSLog(@"alerttextfiled - %@",alertTextField.text);
+        PFUser *currentUser = [PFUser currentUser];
+        currentUser.username = alertTextField.text;
+        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+        //conditions for duplicate username
+        
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // The currentUser saved successfully.
+            } else {
+                // There was an error saving the currentUser.
+                NSLog(@"error");
+            }
+        }];
+        [self viewDidLoad];
+
+    }
+    else if(buttonIndex == 2){
         PFObject *member = [PFObject objectWithClassName:@"Member"];
         member[@"username"] = currentUser.username;
         member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
@@ -134,7 +176,6 @@
                 [[results objectAtIndex:i] deleteInBackground];
                 i++;
             }
-            //[self viewDidAppear:(FALSE)];
         }];
         NSLog(@"YES");
         [self viewDidAppear:(FALSE)];
@@ -172,7 +213,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"count of array %d",[self.array count]);
     return [self.array count];
 }
 
@@ -193,7 +233,6 @@
     cell.textLabel.text = [self.array
                            objectAtIndex: [indexPath row]][@"groupname"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    NSLog(@"%i",indexPath.row);
     return cell;
 }
 
