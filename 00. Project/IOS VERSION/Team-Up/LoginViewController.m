@@ -56,30 +56,14 @@
     PFUser *fbUser = [PFUser user];
     NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_location", @"user_friends"];
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        NSLog(@"%@",user.username);
-        NSLog(@"%@",user.email);
-        
         if (!user) {
         } else {
             if (user.isNew) {
                 NSLog(@"User with facebook signed up and logged in!");
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
             } else {
                 NSLog(@"User with facebook logged in!");
-                FBRequest *request = [FBRequest requestForMe];
-                [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
-                    // handle response
-                    if (!error) {
-                        NSDictionary *userData = (NSDictionary *)result;
-                        NSLog(@"no error");
-                        fbUser.email = userData[@"email"];
-                     ///   fbUser[@"birthday"] = userData[@"birthday"];
-                        fbUser.username = userData[@"last_name"];
-                         [user saveInBackground];
-                    }
-                    else{
-                        NSLog(@"error");
-                    }
-                }];
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
             }
         }
     }];

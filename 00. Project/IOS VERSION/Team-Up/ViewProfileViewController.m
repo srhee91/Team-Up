@@ -8,7 +8,9 @@
 
 #import "ViewProfileViewController.h"
 #import <Parse/Parse.h>
+#include <stdlib.h>
 #import "AppDelegate.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface ViewProfileViewController ()
 
@@ -17,10 +19,40 @@
 @implementation ViewProfileViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    //sleep(1);
-    // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"%@",currentUser[@"initial"]);
+    if(currentUser[@"initial"]){
+        NSLog(@"first time");
+        currentUser.username = @"temp"; //input username;
+        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+    }
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    PFUser *fbUser = [PFUser user];
+
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+        // handle response
+        if (!error) {
+            NSDictionary *userData = (NSDictionary *)result;
+            NSLog(@"no error");
+            int random = rand()%100;
+            currentUser.email = userData[@"email"];
+            currentUser[@"birthday"] = userData[@"birthday"];
+        }
+        else{
+            NSLog(@"error");
+        }
+    }];
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // The currentUser saved successfully.
+        } else {
+            // There was an error saving the currentUser.
+            NSLog(@"smae user naem");
+        }
+    }];
+
     self.un.text = currentUser.username;
     self.em.text = currentUser.email;
     self.bd.text = currentUser[@"birthday"];
@@ -34,7 +66,6 @@
         //NSLog(@"HERE");
         self.gId = results;
         NSInteger counter = [results count];
-        NSLog(@"counter: %d", counter);
         NSInteger i = 0;
         while(i < counter) {
             [list addObject: [self.gId
