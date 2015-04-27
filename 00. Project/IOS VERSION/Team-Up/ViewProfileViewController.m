@@ -25,6 +25,17 @@
     self.em.text = currentUser.email;
     self.bd.text = currentUser[@"birthday"];
     self.des.text = currentUser[@"Description"];
+    
+    
+    //Load profile image
+    PFFile *imgFile = [PFUser currentUser][@"image"];
+    UIImage *profilePicture = [UIImage imageWithData:[imgFile getData]];
+    if(profilePicture == nil)
+        self.imgPicture.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    else
+        [self.imgPicture setImage:profilePicture];
+    
+    
     PFQuery *member = [PFQuery queryWithClassName:@"Member"];
     [member orderByDescending: @"groupId"];
     [member whereKey:@"username" equalTo:currentUser.username];

@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (strong, nonatomic) NSArray *array;
 @property (strong, nonatomic) NSArray *gId;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 
 @end

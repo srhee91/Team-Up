@@ -119,6 +119,7 @@
     group[@"category"] = categoryId;
     group[@"categoryName"] = categoryname;
     group[@"description"] = self.des.text;
+    group[@"image"] = [PFFile fileWithData:UIImagePNGRepresentation(self.imgGroup.image)];
     
     if(self.privacy.selectedSegmentIndex == 0){
         group[@"isPublic"] = [NSNumber numberWithBool:YES];
@@ -154,6 +155,36 @@
         }
     }];
 }
+- (IBAction)editPictureClick:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+//Function called when image is selected from ImagePicker view controller
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imgGroup.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    //Set current group image
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    ad.currentGroupImage = chosenImage;
+    [self.imgGroup setImage:chosenImage];
+    
+    //Upload image to parse
+    //NSData *imgData = UIImagePNGRepresentation(chosenImage);
+    //PFFile *pfImage = [PFFile fileWithData:imgData];
+    //[ad.myGlobalArray objectAtIndex:0][@"image"] = pfImage;
+    //[[ad.myGlobalArray objectAtIndex:0] saveInBackground];
+    
+}
+
 /*
 #pragma mark - Navigation
 

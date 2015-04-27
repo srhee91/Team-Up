@@ -24,6 +24,7 @@
     NSString *name = [ad.myGlobalArray objectAtIndex:0][@"username"];
     self.navbar.title = name;
     self.un.text = name;
+    
     PFQuery *User = [PFQuery queryWithClassName:@"_User"];
     [User whereKey:@"username" equalTo:[ad.myGlobalArray objectAtIndex:0][@"username"]];
     [User findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
@@ -35,6 +36,15 @@
                 self.em.text = [results objectAtIndex:0][@"email"];
                 self.des.text = [results objectAtIndex:0][@"Description"];
                 self.bd.text = [results objectAtIndex:0][@"birthday"];
+                
+                //Load profile image
+                PFFile *imgFile = [results objectAtIndex:0][@"image"];
+                UIImage *profilePicture = [UIImage imageWithData:[imgFile getData]];
+                if(profilePicture == nil)
+                    self.imgPicture.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+                else
+                    [self.imgPicture setImage:profilePicture];
+                
                 PFQuery *member = [PFQuery queryWithClassName:@"Member"];
                 [member orderByDescending: @"groupId"];
                 [member whereKey:@"username" equalTo:name];

@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *bd;
 @property (weak, nonatomic) IBOutlet UITextField *des;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
+@property (weak, nonatomic) IBOutlet UIButton *btnEditPicture;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 
 @end

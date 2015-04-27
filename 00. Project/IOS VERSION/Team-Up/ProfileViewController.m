@@ -27,6 +27,15 @@
     self.em.text = currentUser.email;
     self.bd.text = currentUser[@"birthday"];
     self.des.text = currentUser[@"Description"];
+    
+    //Load profile image
+    PFFile *imgFile = [PFUser currentUser][@"image"];
+    UIImage *profilePicture = [UIImage imageWithData:[imgFile getData]];
+    if(profilePicture == nil)
+        self.imgPicture.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    else
+        [self.imgPicture setImage:profilePicture];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -62,6 +71,34 @@
         NSLog(@"Missing information");
         //Do not move onto next Page, ask for re-input of information
     }
+}
+
+- (IBAction)editPicturePressed:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+//Function called when image is selected from ImagePicker view controller
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    //Set user's profile image
+    [self.imgPicture setImage:chosenImage];
+    
+    //Upload image to parse
+    PFUser *currentUser = [PFUser currentUser];
+    NSData *imgData = UIImagePNGRepresentation(chosenImage);
+    PFFile *pfImage = [PFFile fileWithData:imgData];
+    currentUser[@"image"] = pfImage;
+    [currentUser saveInBackground];
+    
 }
 /*
 #pragma mark - Navigation

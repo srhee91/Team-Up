@@ -23,6 +23,8 @@
 @property (weak,nonatomic) NSNumber *picy;
 @property(nonatomic) NSInteger selectedSegmentIndex;
 @property (weak, nonatomic) IBOutlet UITextField *txt;
+@property (weak, nonatomic) IBOutlet UIImageView *imgGroup;
+@property (weak, nonatomic) IBOutlet UIButton *btnEditPicture;
 
 @property NSInteger num;
 @property PFGeoPoint* currentLocation;

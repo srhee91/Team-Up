@@ -17,5 +17,6 @@
 @property (strong, nonatomic) NSArray *array;
 @property (strong, nonatomic) NSArray *inviteArray;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 @property (strong,nonatomic) NSArray *gId;
 @end
