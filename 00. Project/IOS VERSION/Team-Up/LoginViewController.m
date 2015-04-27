@@ -58,7 +58,7 @@
 }
 
 - (IBAction)fbLogin:(id)sender {
-    NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_location", @"user_friends"];
+    NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_friends"];
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         if (!user) {
         } else {

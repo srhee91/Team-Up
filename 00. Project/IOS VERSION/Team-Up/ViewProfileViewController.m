@@ -27,16 +27,30 @@
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         [alertView show];
     }
-    
-    // Do any additional setup after loading the view.
+    NSMutableArray * m_allFriends;
+    m_allFriends = [[NSMutableArray alloc] init];
+    [FBRequestConnection startWithGraphPath:@"me/friends"
+                                 parameters:nil
+                                 HTTPMethod:@"GET"
+                                 completionHandler:^(
+                                                     FBRequestConnection *connection,
+                                                     id result,
+                                                     NSError *error
+                                                     ) {
+                              NSString *result_friends = [NSString stringWithFormat: @"%@",result];
+                              NSArray *friendList = [result objectForKey:@"data"];
+                              //Data is in friendList;
+                              [m_allFriends addObjectsFromArray: friendList];
+                          }];
     FBRequest *request = [FBRequest requestForMe];
-    [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
         // handle response
         if (!error) {
-            NSDictionary *userData = (NSDictionary *)result;
-            currentUser.email = userData[@"email"];
-            currentUser[@"birthday"] = userData[@"birthday"];
-            NSLog(@"friends %@",userData[@"user_friends"]);
+            //NSDictionary *userData = (NSDictionary *)result;
+            currentUser.email = [user objectForKey:@"email"];
+            currentUser[@"birthday"] = [user objectForKey:@"birthday"];
+            currentUser[@"facebookID"] = user.id;
+            //NSLog(@"friends %@",userData[@"user_friends"]);
         }
         else{
             NSLog(@"error");

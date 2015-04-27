@@ -39,7 +39,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryPrototypeCell" textLabel="P1l-ar-zp6" style="IBUITableViewCellStyleDefault" id="suC-EN-L21">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="suC-EN-L21" id="tfS-FF-SBw">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
