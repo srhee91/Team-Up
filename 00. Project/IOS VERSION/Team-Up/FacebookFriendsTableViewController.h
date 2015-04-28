@@ -1,5 +1,5 @@
 //
-//  FacebookFriends.h
+//  FacebookFriendsTableViewController.h
 //  Team-Up
 //
 //  Created by YIYANG PAN on 4/27/15.
@@ -9,12 +9,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FacebookFriendsTableViewController : UIViewController
+@interface FacebookFriendsTableViewController : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *mv;
 @property (strong, nonatomic) NSMutableArray *FBFriendsArray;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
-@property (weak, nonatomic) IBOutlet UITableView *tv;
+@property (strong, nonatomic) IBOutlet UITableView *tv;
 @property (strong,nonatomic) NSArray *gId;
 @property (strong,nonatomic) NSArray *array;
 @end

@@ -273,7 +273,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBx-s8-b5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="2988"/>
+            <point key="canvasLocation" x="1232" y="2969"/>
         </scene>
         <!--Meetings-->
         <scene sceneID="gQf-07-Cll">
@@ -1134,7 +1134,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <segue destination="paZ-v3-rns" kind="push" id="5pd-FS-8Lh"/>
+                                <segue destination="6ng-Md-pZn" kind="push" id="Boa-tf-hqb"/>
                             </connections>
                         </button>
                         <prototypes>
@@ -1167,33 +1167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9y-R8-MQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048" y="2327"/>
-        </scene>
-        <!--Facebook Friends Table View Controller-->
-        <scene sceneID="pNO-Yh-wKc">
-            <objects>
-                <tableViewController id="paZ-v3-rns" userLabel="Facebook Friends Table View Controller" customClass="FacebookFriendsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="saE-fh-Aa9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TFR-w1-4L5">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TFR-w1-4L5" id="hCv-N7-9i3">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="paZ-v3-rns" id="3hX-9D-raY"/>
-                            <outlet property="delegate" destination="paZ-v3-rns" id="s5R-2G-Dao"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="qKn-8E-M0E"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8RS-aD-3ID" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1301" y="2126"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="d1B-Nf-sVW">
@@ -2614,6 +2587,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoP-W5-0f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2021" y="3720"/>
+        </scene>
+        <!--Facebook Friends View Controller-->
+        <scene sceneID="3k5-ME-KKO">
+            <objects>
+                <tableViewController id="6ng-Md-pZn" userLabel="Facebook Friends View Controller" customClass="FacebookFriendsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="l1o-ub-eNx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Cs2-bH-5Dz">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cs2-bH-5Dz" id="mSk-VV-FcH">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6ng-Md-pZn" id="Llc-sp-tQX"/>
+                            <outlet property="delegate" destination="6ng-Md-pZn" id="QJz-Gs-SS1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gNa-Js-HKi"/>
+                    <connections>
+                        <outlet property="navbar" destination="gNa-Js-HKi" id="UDs-e5-q2z"/>
+                        <outlet property="tv" destination="l1o-ub-eNx" id="LHr-bf-2BT"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrr-Ms-kQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477" y="2407"/>
         </scene>
     </scenes>
     <resources>

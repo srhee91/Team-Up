@@ -14,9 +14,6 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface FacebookFriendsTableViewController ()
-@property (strong, nonatomic) IBOutlet UITableView *MV;
-@property (strong, nonatomic) NSString *admin;
-@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) AppDelegate *ad;
 @end
 
@@ -24,32 +21,9 @@
 
 - (void)viewDidLoad {
     //[super viewDidLoad];
-    PFUser *currentUser = [PFUser currentUser];
-    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-     self.navbar.title = @"Facebook Friends in TeamUp";
+    
+    [self functionToLoadData];
 
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    for(int i = 0; i<[ad.FacebookFriendsArray count]; i++){
-        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-        [query whereKey:@"facebookID" equalTo:ad.FacebookFriendsArray[i]];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-            if (!error) {
-                [tempArray addObject:results[0][@"username"]];
-                NSLog(tempArray[1]);
-                [self.tv reloadData];
-            } else {
-            // The find succeeded.
-            NSLog(@"failed to retrieve the object.");
-            }
-        }];
-
-    }
-    NSLog(@"1st %@", self.FBFriendsArray );
-    self.FBFriendsArray = tempArray;
-   [self.tv reloadData];
-[self.FBFriendsArray addObject:@"fads"];
-    NSLog(@"facebook friends list");
-    NSLog(@"2nd %@", self.FBFriendsArray );
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,6 +32,37 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)functionToLoadData {
+    // Initialize Array!!!
+    self.FBFriendsArray = [NSMutableArray array];
+    PFUser *currentUser = [PFUser currentUser];
+    AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.navbar.title = @"Facebook Friends in TeamUp";
+    int flag = 0;
+    for(int i = 0; i<[ad.FacebookFriendsArray count]; i++){
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"facebookID" equalTo:ad.FacebookFriendsArray[i]];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (!error) {
+                for(PFObject *object in results){
+                    [self.FBFriendsArray addObject:object[@"username"]];
+                    NSLog(@"%@", self.FBFriendsArray);
+                    
+                }
+                dispatch_async(dispatch_get_main_queue(), ^ {
+                    [self.tv setDelegate:self];
+                    [self.tv setDataSource:self];
+                    [self.tv reloadData];
+                });
+            } else {
+                // The find succeeded.
+                NSLog(@"failed to retrieve the object.");
+            }
+        }];
+        
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -80,14 +85,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self viewDidLoad];
+    //[self viewDidLoad];
 }
 
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView
