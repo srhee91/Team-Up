@@ -114,31 +114,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *cellText = cell.textLabel.text;
+    [self sendInvite:cellText];
+}
+
+- (void)sendInvite:(NSString*)cellText {
     
-    [self sendInvite];
-}
-
-- (void)sendInvite {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invite"
-                                                    message:@"Type in username of member to invite"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Send"
-                                          otherButtonTitles:@"Cancel",nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 0) {
-        NSLog(@"%@", [alertView textFieldAtIndex:0].text);
         PFQuery *member = [PFQuery queryWithClassName:@"_User"];
         PFUser *currentUser = [PFUser currentUser];
         
         [member orderByDescending: @"createdAt"];
-        [member whereKey:@"username" equalTo:[alertView textFieldAtIndex:0].text];
+        [member whereKey:@"username" equalTo:cellText];
         [member findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-            if (!error && results.count != 0 && ![[alertView textFieldAtIndex:0].text isEqualToString:currentUser.username]) {
-                NSLog(@"%d", results.count);
+            if (!error && results.count != 0 && ![cellText isEqualToString:currentUser.username]) {
                 self.array = results;
                 self.ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
                 PFUser *currentUser = [PFUser currentUser];
@@ -146,7 +135,7 @@
                 invite[@"inviter"] = currentUser.username;
                 
                 // modify this to take username from cell
-                invite[@"invitee"] = [alertView textFieldAtIndex:0].text;
+                invite[@"invitee"] = cellText;
                 
                 invite[@"groupId"] = [self.ad.myGlobalArray objectAtIndex:0][@"groupId"];
                 [invite saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -163,7 +152,7 @@
                         NSLog(@"%@",error.description);
                     }
                 }];
-            } else if([[alertView textFieldAtIndex:0].text isEqualToString:currentUser.username]) {
+            } else if([cellText isEqualToString:currentUser.username]) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                                 message:@"You cannot invite youself"
                                                                delegate:nil
@@ -181,10 +170,7 @@
             }
         }];
     }
-    else {
-        NSLog(@"CANCEL");
-    }
-}
+
 
 
 @end
