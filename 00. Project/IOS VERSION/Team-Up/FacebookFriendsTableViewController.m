@@ -24,12 +24,36 @@
 @implementation FacebookFriendsTableViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-     self.navbar.title = @"Facebook Friends in TeamUp";
+    //[super viewDidLoad];
+    PFUser *currentUser = [PFUser currentUser];
     AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
-     self.FBFriendsArray = ad.FacebookFriendsArray;
+     self.navbar.title = @"Facebook Friends in TeamUp";
+
+    self.FBFriendsArray = [[NSMutableArray alloc] init];
+    [self.tv reloadData];
+    for(int i = 0; i<[ad.FacebookFriendsArray count]; i++){
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"facebookID" equalTo:ad.FacebookFriendsArray[i]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+            if (!error) {
+                [self.FBFriendsArray addObject:results[0][@"username"]];
+                NSLog(@"%@", self.FBFriendsArray );
+                //[self.tv setDelegate:self];
+               // [self.tv setDataSource:self];
+                     [self.tv reloadData];
+            } else {
+            // The find succeeded.
+            NSLog(@"failed to retrieve the object.");
+            }
+        }];
+
+    }
+    NSLog(@"1 %@", self.FBFriendsArray );
+   [self.tv reloadData];
+[self.FBFriendsArray addObject:@"fads"];
     NSLog(@"facebook friends list");
-    NSLog(@"%@", ad.FacebookFriendsArray);
+    NSLog(@"2 %@", self.FBFriendsArray );
+   
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,12 +77,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
+    NSLog(@"FB count");
+    NSLog(@"%d", [self.FBFriendsArray count]);
     return [self.FBFriendsArray count];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self viewDidLoad];
+    [self.tv reloadData];
 }
 
 
@@ -80,7 +107,6 @@
     cell.textLabel.text = [self.FBFriendsArray
                            objectAtIndex: [indexPath row]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
     return cell;
 
 }

@@ -12,7 +12,7 @@
 @interface FacebookFriendsTableViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *mv;
-@property (strong, nonatomic) NSArray *FBFriendsArray;
+@property (strong, nonatomic) NSMutableArray *FBFriendsArray;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navbar;
 @property (weak, nonatomic) IBOutlet UITableView *tv;
 @property (strong,nonatomic) NSArray *gId;
