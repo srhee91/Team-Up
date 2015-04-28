@@ -190,12 +190,18 @@
     
     static NSString *CellIdentifier = @"Cell";
     
+    UIImageView *thumbnail;
+    
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
+        
+        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,15.0,15.0,15.0)];
+        thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:thumbnail];
     }
     
     // Configure the cell.
@@ -204,14 +210,14 @@
     
     
     if(indexPath.row < self.filteredCategories.count && [[[self.filteredCategories objectAtIndex:indexPath.row] parseClassName] isEqualToString:@"Catogery"]){
-        cell.textLabel.text = [[self.filteredCategories objectAtIndex:indexPath.row]
-                               objectForKey:@"categoryname"];
+        cell.textLabel.text = [@"     " stringByAppendingString:[[self.filteredCategories objectAtIndex:indexPath.row]
+                               objectForKey:@"categoryname"]];
         cell.textLabel.textColor = [UIColor blackColor];
     }
     else{
         uint i = indexPath.row - self.filteredCategories.count;
-        cell.textLabel.text = [[self.filteredGroups objectAtIndex:i]
-                               objectForKey:@"groupname"];
+        cell.textLabel.text = [@"     " stringByAppendingString:[[self.filteredGroups objectAtIndex:i]
+                               objectForKey:@"groupname"]];
         cell.textLabel.textColor = [UIColor blackColor];
     }
     
@@ -220,6 +226,7 @@
         cell.textLabel.textColor = [UIColor blueColor];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
     NSLog(@"%i",indexPath.row);
     return cell;
 }
