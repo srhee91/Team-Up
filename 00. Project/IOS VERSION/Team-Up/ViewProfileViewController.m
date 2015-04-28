@@ -40,6 +40,14 @@
                               NSString *result_friends = [NSString stringWithFormat: @"%@",result];
                               NSArray *friendList = [result objectForKey:@"data"];
                               //Data is in friendList;
+                                AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+                                     NSLog(@"Facebook friends");
+                                     ad.FacebookFriendsArray = [[NSMutableArray alloc] init];
+                                     for(int i =0; i<[friendList count];i++){
+                                         [ad.FacebookFriendsArray addObject:friendList[i][@"id"]];
+                                     }
+                                     NSLog(@"%@",ad.FacebookFriendsArray);
+                              
                               [m_allFriends addObjectsFromArray: friendList];
                           }];
     FBRequest *request = [FBRequest requestForMe];
