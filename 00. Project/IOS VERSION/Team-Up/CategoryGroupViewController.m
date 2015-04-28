@@ -83,18 +83,25 @@ int *obj;
     
     static NSString *CellIdentifier = @"Cell";
     
+    UIImageView *thumbnail;
+    
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
+        
+        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,15.0,15.0,15.0)];
+        thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:thumbnail];
     }
     
     // Configure the cell.
-    cell.textLabel.text = [self.array
-                           objectAtIndex: [indexPath row]][@"groupname"];
+    cell.textLabel.text = [@"     " stringByAppendingString:[self.array
+                           objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
     return cell;
 }
 

@@ -85,7 +85,11 @@
     [meetings whereKey:@"date" greaterThan:today];
     [meetings findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         self.meetingArray = results;
-        
+        if([self.meetingArray count] > 0) {
+            NSString *meetingsNum = [NSString stringWithFormat:@"%d", [self.meetingArray count]];
+            NSString *meetingTitle = [meetingsNum stringByAppendingString:@" Upcoming Meeting(s)"];
+            [self.meetButton setTitle:meetingTitle forState:UIControlStateNormal];
+        }
     }];
 }
 
