@@ -138,7 +138,8 @@
     cell.textLabel.text = [@"     " stringByAppendingString:[self.array
                            objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    NSString *path = @"glyphicons-44-group";
+    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
     NSLog(@"%i",indexPath.row);
     return cell;
 }

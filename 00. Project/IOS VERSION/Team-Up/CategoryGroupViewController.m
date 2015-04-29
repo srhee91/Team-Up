@@ -87,21 +87,22 @@ int *obj;
     
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    //if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
         
-        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,15.0,15.0,15.0)];
+        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,10.0,24.0,20.0)];
         thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:thumbnail];
-    }
+    //}
     
     // Configure the cell.
-    cell.textLabel.text = [@"     " stringByAppendingString:[self.array
+    cell.textLabel.text = [@"        " stringByAppendingString:[self.array
                            objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
+    NSString *path = @"glyphicons-44-group";
+    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
     return cell;
 }
 

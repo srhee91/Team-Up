@@ -192,33 +192,40 @@
     
     UIImageView *thumbnail;
     
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    //UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
+    //if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
         
-        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,15.0,15.0,15.0)];
+        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,10.0,24.0,20.0)];
         thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:thumbnail];
-    }
+    //}
     
     // Configure the cell.
     //cell.textLabel.text = [self.groups
     //                       objectAtIndex: [indexPath row]];
     
     
+    //Category
     if(indexPath.row < self.filteredCategories.count && [[[self.filteredCategories objectAtIndex:indexPath.row] parseClassName] isEqualToString:@"Catogery"]){
-        cell.textLabel.text = [@"     " stringByAppendingString:[[self.filteredCategories objectAtIndex:indexPath.row]
+        cell.textLabel.text = [@"        " stringByAppendingString:[[self.filteredCategories objectAtIndex:indexPath.row]
                                objectForKey:@"categoryname"]];
         cell.textLabel.textColor = [UIColor blackColor];
+        NSString *path = @"glyphicons-145-folder-open";
+        thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
     }
-    else{
+    else{ //Group
         uint i = indexPath.row - self.filteredCategories.count;
-        cell.textLabel.text = [@"     " stringByAppendingString:[[self.filteredGroups objectAtIndex:i]
+        cell.textLabel.text = [@"        " stringByAppendingString:[[self.filteredGroups objectAtIndex:i]
                                objectForKey:@"groupname"]];
         cell.textLabel.textColor = [UIColor blackColor];
+        thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"glyphicons-44-group" ofType:@".png"]];
+        //thumbnail.image = [UIImage imageWithData:[[self.filteredGroups objectAtIndex:i][@"image"] getData]];
     }
     
     
@@ -226,7 +233,6 @@
         cell.textLabel.textColor = [UIColor blueColor];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"QM" ofType:@".jpeg"]];
     NSLog(@"%i",indexPath.row);
     return cell;
 }

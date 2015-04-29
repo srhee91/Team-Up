@@ -1019,10 +1019,6 @@
                                 <rect key="frame" x="84" y="79" width="34" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-4-user.png" id="UU7-sC-wH6">
-                                <rect key="frame" x="84" y="112" width="34" height="22"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QM.jpeg" id="6Er-u1-eLe">
                                 <rect key="frame" x="16" y="79" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1114,6 +1110,10 @@
                                     <segue destination="tkJ-DW-nRQ" kind="modal" id="3pS-g3-Cik"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glyphicons-4-user.png" id="UU7-sC-wH6">
+                                <rect key="frame" x="84" y="112" width="34" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
