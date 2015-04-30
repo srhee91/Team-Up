@@ -273,12 +273,11 @@
     cell.textLabel.text = [@"" stringByAppendingString:[self.array
                            objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-<<<<<<< HEAD
+
     NSString *path = @"glyphicons-44-group";
     thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
     NSLog(@"%i",indexPath.row);
-=======
->>>>>>> origin/fb_bo
+
     return cell;
 }
 
