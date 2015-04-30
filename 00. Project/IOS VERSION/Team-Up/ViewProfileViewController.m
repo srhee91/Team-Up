@@ -8,7 +8,9 @@
 
 #import "ViewProfileViewController.h"
 #import <Parse/Parse.h>
+#include <stdlib.h>
 #import "AppDelegate.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface ViewProfileViewController ()
 
@@ -18,9 +20,59 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //sleep(1);
-    // Do any additional setup after loading the view.
     PFUser *currentUser = [PFUser currentUser];
+    if([currentUser[@"initial"]intValue] == 1){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Type in Username or Click Cancel for Automated Username" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil] ;
+        alertView.tag = 2;
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alertView show];
+    }
+    NSMutableArray * m_allFriends;
+    m_allFriends = [[NSMutableArray alloc] init];
+    [FBRequestConnection startWithGraphPath:@"me/friends"
+                                 parameters:nil
+                                 HTTPMethod:@"GET"
+                                 completionHandler:^(
+                                                     FBRequestConnection *connection,
+                                                     id result,
+                                                     NSError *error
+                                                     ) {
+                              NSString *result_friends = [NSString stringWithFormat: @"%@",result];
+                              NSArray *friendList = [result objectForKey:@"data"];
+                              //Data is in friendList;
+                                AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+                                     NSLog(@"Facebook friends");
+                                     ad.FacebookFriendsArray = [[NSMutableArray alloc] init];
+                                     for(int i =0; i<[friendList count];i++){
+                                         [ad.FacebookFriendsArray addObject:friendList[i][@"id"]];
+                                     }
+                                     NSLog(@"%@",ad.FacebookFriendsArray);
+                              
+                              [m_allFriends addObjectsFromArray: friendList];
+                          }];
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+        // handle response
+        if (!error) {
+            //NSDictionary *userData = (NSDictionary *)result;
+            currentUser.email = [user objectForKey:@"email"];
+            currentUser[@"birthday"] = [user objectForKey:@"birthday"];
+            currentUser[@"facebookID"] = user.id;
+            //NSLog(@"friends %@",userData[@"user_friends"]);
+        }
+        else{
+            NSLog(@"error");
+        }
+    }];
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // The currentUser saved successfully.
+        } else {
+            // There was an error saving the currentUser.
+            NSLog(@"smae user naem");
+        }
+    }];
+
     self.un.text = currentUser.username;
     self.em.text = currentUser.email;
     self.bd.text = currentUser[@"birthday"];
@@ -45,7 +97,6 @@
         //NSLog(@"HERE");
         self.gId = results;
         NSInteger counter = [results count];
-        NSLog(@"counter: %d", counter);
         NSInteger i = 0;
         while(i < counter) {
             [list addObject: [self.gId
@@ -99,8 +150,52 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"HERE");
     if(buttonIndex == 0) {
+        NSLog(@"canceled");
+        FBRequest *request = [FBRequest requestForMe];
+        [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+            // handle response
+            if (!error) {
+                NSDictionary *userData = (NSDictionary *)result;
+                int random = rand()%100;
+                currentUser.username =[NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%@", userData[@"last_name"]], [NSString stringWithFormat:@"%d",random]];
+            }
+            else{
+                NSLog(@"error");
+            }
+        }];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // The currentUser saved successfully.
+            } else {
+                // There was an error saving the currentUser.
+                NSLog(@"smae user naem");
+            }
+        }];
+        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+        [self viewDidLoad];
+        
+    }
+    else if(buttonIndex == 1){
+        UITextField * alertTextField = [alertView textFieldAtIndex:0];
+        NSLog(@"alerttextfiled - %@",alertTextField.text);
+        PFUser *currentUser = [PFUser currentUser];
+        currentUser.username = alertTextField.text;
+        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+        //conditions for duplicate username
+        
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // The currentUser saved successfully.
+            } else {
+                // There was an error saving the currentUser.
+                NSLog(@"error");
+            }
+        }];
+        [self viewDidLoad];
+
+    }
+    else if(buttonIndex == 2){
         PFObject *member = [PFObject objectWithClassName:@"Member"];
         member[@"username"] = currentUser.username;
         member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
@@ -114,7 +209,6 @@
                 [[results objectAtIndex:i] deleteInBackground];
                 i++;
             }
-            //[self viewDidAppear:(FALSE)];
         }];
         NSLog(@"YES");
         [self viewDidAppear:(FALSE)];
@@ -152,7 +246,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"count of array %d",[self.array count]);
     return [self.array count];
 }
 
@@ -180,9 +273,12 @@
     cell.textLabel.text = [@"" stringByAppendingString:[self.array
                            objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+<<<<<<< HEAD
     NSString *path = @"glyphicons-44-group";
     thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
     NSLog(@"%i",indexPath.row);
+=======
+>>>>>>> origin/fb_bo
     return cell;
 }
 

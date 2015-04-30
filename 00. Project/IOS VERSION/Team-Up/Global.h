@@ -10,5 +10,6 @@
 #define Team_Up_Global_h
 
 extern NSMutableArray * myGlobalArray;
+extern NSMutableArray * FacebookFriendsArray;
 
 #endif

@@ -8,7 +8,9 @@
 
 #import "LoginViewController.h"
 #import "Parse/parse.h"
+#include <stdlib.h>
 #import "AppDelegate.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 @interface LoginViewController ()
 
 @end
@@ -16,9 +18,13 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+        NSLog(@"linked");
+        [self performSegueWithIdentifier:@"logintoprofile" sender:self];
+    }
     [PFUser logOut];
-    PFUser *currentUser = [PFUser currentUser];
     CGRect frameRect = self.username.frame;
     frameRect.size.height = 45;
     self.username.frame = frameRect;
@@ -27,10 +33,6 @@
     self.password.frame = frameRect;
     self.username.borderStyle = UITextBorderStyleNone;
     self.password.borderStyle = UITextBorderStyleNone;
-    //UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    //self.username.leftView = paddingView;
-    //self.username.leftViewMode = UITextFieldViewModeAlways;
-    //UIView *paddingView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
     UIImageView *arrows = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"glyphicons-4-user.png"]];
     arrows.frame = CGRectMake(0.0, 0.0, arrows.image.size.width+10.0, arrows.image.size.height);
     arrows.contentMode = UIViewContentModeCenter;
@@ -44,15 +46,33 @@
     
     self.password.leftView = arrow;
     self.password.leftViewMode = UITextFieldViewModeAlways;
-    //self.password.leftView = paddingView2;
-    //self.password.leftViewMode = UITextFieldViewModeAlways;
-    // Do any additional setup after loading the view.
     
     UITapGestureRecognizer * tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+   
     
 }
+- (IBAction)goForward:(id)sender{
+     [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+}
+
+- (IBAction)fbLogin:(id)sender {
+    NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_friends"];
+    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        if (!user) {
+        } else {
+            if (user.isNew) {
+                NSLog(@"User with facebook signed up and logged in!");
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+
+            } else {
+                NSLog(@"User with facebook logged in!");
+                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+            }
+        }
+    }];
+    }
 //Sign In Action Button method
 -(IBAction)signin:(id)sender{
     PFUser *user = [PFUser user];
