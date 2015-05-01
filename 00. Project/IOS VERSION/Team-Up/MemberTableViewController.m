@@ -133,8 +133,10 @@
     [adminbutton addTarget:self
                     action:@selector(admin:)
           forControlEvents:UIControlEventTouchDown];
-    [adminbutton setTitle:@"ADMIN" forState:UIControlStateNormal];
-    adminbutton.frame = CGRectMake(190.0f, 5.0f, 50.0f, 30.0f);
+    [adminbutton setTitle:@" ADMIN " forState:UIControlStateNormal];
+    adminbutton.layer.borderWidth = 1.0f;
+    adminbutton.layer.cornerRadius = 4.0f;
+    adminbutton.frame = CGRectMake(175.0f, 5.0f, 65.0f, 30.0f);
     [adminbutton addTarget:self action:@selector(admin:) forControlEvents:UIControlEventTouchUpInside];
     [adminbutton setTag:indexPath.row];
     [cell addSubview:adminbutton];
@@ -143,8 +145,10 @@
     [kickButton addTarget:self
                    action:@selector(kick:)
          forControlEvents:UIControlEventTouchDown];
-    [kickButton setTitle:@"KICK" forState:UIControlStateNormal];
-    kickButton.frame = CGRectMake(260.0f, 5.0f, 50.0f, 30.0f);
+    [kickButton setTitle:@" KICK " forState:UIControlStateNormal];
+    kickButton.layer.borderWidth = 1.0f;
+    kickButton.layer.cornerRadius = 4.0f;
+    kickButton.frame = CGRectMake(245.0f, 5.0f, 65.0f, 30.0f);
     [kickButton setTag:indexPath.row];
     [cell addSubview:kickButton];
     return cell;

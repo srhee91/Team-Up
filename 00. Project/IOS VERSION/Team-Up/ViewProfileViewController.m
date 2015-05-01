@@ -173,7 +173,7 @@
             currentUser[@"initial"] = [NSNumber numberWithBool:YES];
             currentUser[@"buttonIndex"] = [NSNumber numberWithBool:NO];
             sleep(1);
-            //[self viewDidLoad];
+            [self viewDidLoad];
 
         }
         else{
