@@ -53,6 +53,7 @@
                 [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (!error) {
                         NSLog(@"successful");
+                        user[@"initial"] = [NSNumber numberWithBool:YES];
                         // Now Sign Up successful, continue to onto next page
                         AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
                         ad.storePassword = self.pw.text;

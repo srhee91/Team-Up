@@ -56,20 +56,26 @@
 
 - (IBAction)fbLogin:(id)sender {
      PFUser *currentUser = [PFUser currentUser];
-    NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_friends"];
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        if (!user) {
-        } else {
-            if (user.isNew) {
-                NSLog(@"User with facebook signed up and logged in!");
-                [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
 
-            } else {
-                NSLog(@"User with facebook logged in!");
+    if([PFFacebookUtils isLinkedWithUser: currentUser]){
                 [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+    }
+    else{
+        NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_friends"];
+        [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+            if (!user) {
+            } else {
+                if (user.isNew) {
+                    NSLog(@"User with facebook signed up and logged in!");
+                    [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+                    
+                } else {
+                    NSLog(@"User with facebook logged in!");
+                    [self performSegueWithIdentifier:@"logintoprofile" sender:sender];
+                }
             }
-        }
-    }];
+        }];
+    }
     }
 //Sign In Action Button method
 -(IBAction)signin:(id)sender{
