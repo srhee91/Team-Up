@@ -291,7 +291,8 @@
         
         thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,15.0,15.0,15.0)];
         thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-        [cell.contentView addSubview:thumbnail];
+    [cell.contentView addSubview:thumbnail];
+    cell.imageView.image = [UIImage imageNamed:@"glyphicons-44-group.png"];
     //}
     
     // Configure the cell.

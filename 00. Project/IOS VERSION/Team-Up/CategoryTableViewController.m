@@ -213,7 +213,7 @@
     
     //Category
     if(indexPath.row < self.filteredCategories.count && [[[self.filteredCategories objectAtIndex:indexPath.row] parseClassName] isEqualToString:@"Catogery"]){
-        cell.textLabel.text = [@"        " stringByAppendingString:[[self.filteredCategories objectAtIndex:indexPath.row]
+        cell.textLabel.text = [@"" stringByAppendingString:[[self.filteredCategories objectAtIndex:indexPath.row]
                                objectForKey:@"categoryname"]];
         cell.textLabel.textColor = [UIColor blackColor];
         cell.imageView.image = [UIImage imageNamed:@"glyphicons-145-folder-open.png"];
@@ -222,7 +222,7 @@
     }
     else{ //Group
         uint i = indexPath.row - self.filteredCategories.count;
-        cell.textLabel.text = [@"        " stringByAppendingString:[[self.filteredGroups objectAtIndex:i]
+        cell.textLabel.text = [@"" stringByAppendingString:[[self.filteredGroups objectAtIndex:i]
                                objectForKey:@"groupname"]];
         cell.textLabel.textColor = [UIColor blackColor];
         cell.imageView.image = [UIImage imageNamed:@"glyphicons-44-group.png"];

@@ -94,12 +94,12 @@ int *obj;
         
         thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,10.0,24.0,20.0)];
         thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
-        //[cell.contentView addSubview:thumbnail];
-        cell.imageView.image = [UIImage imageNamed:@"glyphicons-145-folder-open.png"];
+    //[cell.contentView addSubview:thumbnail];
+    cell.imageView.image = [UIImage imageNamed:@"glyphicons-44-group.png"];
     //}
     
     // Configure the cell.
-    cell.textLabel.text = [@"        " stringByAppendingString:[self.array
+    cell.textLabel.text = [@"" stringByAppendingString:[self.array
                            objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSString *path = @"glyphicons-44-group";

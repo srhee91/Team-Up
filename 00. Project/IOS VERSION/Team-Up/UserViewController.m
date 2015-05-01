@@ -124,7 +124,7 @@
     
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    //if (cell == nil) {
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
@@ -132,10 +132,11 @@
         thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0.0,15.0,15.0,15.0)];
         thumbnail.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:thumbnail];
-    }
+        cell.imageView.image = [UIImage imageNamed:@"glyphicons-44-group.png"];
+    //}
     
     // Configure the cell.
-    cell.textLabel.text = [@"     " stringByAppendingString:[self.array
+    cell.textLabel.text = [@"" stringByAppendingString:[self.array
                            objectAtIndex: [indexPath row]][@"groupname"]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSString *path = @"glyphicons-44-group";
