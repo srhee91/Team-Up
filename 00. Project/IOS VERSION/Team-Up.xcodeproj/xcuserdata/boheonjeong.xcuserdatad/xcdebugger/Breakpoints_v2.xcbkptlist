@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Team-Up/ViewProfileViewController.m"
-            timestampString = "452191160.701483"
+            timestampString = "452195620.741493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

@@ -27,6 +27,7 @@
         alertView.tag = 2;
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+        currentUser[@"buttonIndex"] = [NSNumber numberWithBool:YES];
         [alertView show];
     }
     NSMutableArray * m_allFriends;
@@ -154,25 +155,7 @@
     PFUser *currentUser = [PFUser currentUser];
     if(buttonIndex == 0) {
         NSLog(@" button 0");
-        if([currentUser[@"initial"]intValue] == 1){
-            PFObject *member = [PFObject objectWithClassName:@"Member"];
-            member[@"username"] = currentUser.username;
-            member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
-            [member saveInBackground];
-            PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
-            [invite whereKey:@"invitee" equalTo:currentUser.username];
-            [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
-            [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-                int i = 0;
-                while (i < results.count) {
-                    [[results objectAtIndex:i] deleteInBackground];
-                    i++;
-                }
-            }];
-            NSLog(@"YES");
-            [self viewDidLoad];
-        }
-        else{
+        if([currentUser[@"buttonIndex"]intValue] == 1){
             FBRequest *request = [FBRequest requestForMe];
             [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
                 // handle response
@@ -196,12 +179,13 @@
             currentUser[@"initial"] = [NSNumber numberWithBool:YES];
             sleep(1);
             [self viewDidLoad];
+
         }
-        
-    }
-    else if(buttonIndex == 1){
-        NSLog(@" button 1");
-        if([currentUser[@"initial"]intValue] == 1){
+        else{
+            PFObject *member = [PFObject objectWithClassName:@"Member"];
+            member[@"username"] = currentUser.username;
+            member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
+            [member saveInBackground];
             PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
             [invite whereKey:@"invitee" equalTo:currentUser.username];
             [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
@@ -212,10 +196,13 @@
                     i++;
                 }
             }];
-            NSLog(@"NO");
-
+            NSLog(@"YES");
+            [self viewDidLoad];
         }
-        else{
+    }
+    else if(buttonIndex == 1){
+        NSLog(@" button 1");
+        if([currentUser[@"buttonIndex"]intValue] == 1){
             UITextField * alertTextField = [alertView textFieldAtIndex:0];
             NSLog(@"alerttextfiled - %@",alertTextField.text);
             PFUser *currentUser = [PFUser currentUser];
@@ -235,7 +222,20 @@
             
             [self viewDidLoad];
         }
-
+        else{
+            PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
+            [invite whereKey:@"invitee" equalTo:currentUser.username];
+            [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
+            [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                int i = 0;
+                while (i < results.count) {
+                    [[results objectAtIndex:i] deleteInBackground];
+                    i++;
+                }
+            }];
+            NSLog(@"NO");
+ 
+        }
     }
     else{
         

@@ -1671,21 +1671,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kq2-Dp-GIA">
-                                <rect key="frame" x="16" y="296" width="288" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="9iS-U7-cSp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="tWC-lr-7KB">
-                                <rect key="frame" x="16" y="350" width="288" height="33"/>
+                                <rect key="frame" x="16" y="350" width="288" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18445374261074765" green="0.50936055930475066" blue="0.97446001717384823" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Facebook Login">
@@ -1700,6 +1687,19 @@
                                 </state>
                                 <connections>
                                     <action selector="fbLogin:" destination="hco-ni-qTf" eventType="touchUpInside" id="5uX-Ll-r61"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kq2-Dp-GIA">
+                                <rect key="frame" x="16" y="302" width="288" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signin:" destination="hco-ni-qTf" eventType="touchUpInside" id="9iS-U7-cSp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2704,10 +2704,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1DS-zV-ZEN"/>
+        <segue reference="lPq-sh-2cQ"/>
+        <segue reference="CpV-9Y-xOZ"/>
         <segue reference="vvE-nJ-Nqp"/>
         <segue reference="g7U-Qc-t2Z"/>
-        <segue reference="lPq-sh-2cQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
