@@ -25,7 +25,13 @@
     self.myGlobalArray = [[NSMutableArray alloc] init];
     self.storePassword = [[NSMutableString alloc] init];
     self.fb = [[NSMutableString alloc] init];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:0.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           UITextAttributeTextColor: [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
+                                                           UITextAttributeTextShadowColor: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],
+                                                           UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+                                                           UITextAttributeFont: [UIFont fontWithName:@"Arial-Bold" size:0.0],
+                                                           }];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0]];
         [Parse setApplicationId:@"YW9dg2nCBuBU1xZ4tkR36WTkABoVZe3nAowKYXLJ"
                   clientKey:@"XqEclPHvPjeHXKgDXtNsYLUUIjb5NzSfSMhnaEhL"];
