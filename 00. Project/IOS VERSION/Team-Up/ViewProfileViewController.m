@@ -40,7 +40,6 @@
                                                      id result,
                                                      NSError *error
                                                      ) {
-                              NSString *result_friends = [NSString stringWithFormat: @"%@",result];
                               NSArray *friendList = [result objectForKey:@"data"];
                               //Data is in friendList;
                                 AppDelegate *ad=(AppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -149,6 +148,7 @@
             
         }
     }];
+    
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -197,26 +197,42 @@
     }
     else if(buttonIndex == 1){
         NSLog(@" button 1");
+        
         if([currentUser[@"buttonIndex"]intValue] == 1){
             UITextField * alertTextField = [alertView textFieldAtIndex:0];
-            NSLog(@"alerttextfiled - %@",alertTextField.text);
-            PFUser *currentUser = [PFUser currentUser];
-            
-            currentUser[@"initial"] = [NSNumber numberWithBool:YES];
-            currentUser.username = alertTextField.text;
-            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (!error) {
-                    // The currentUser saved successfully.
-                } else {
-                    // There was an error saving the currentUser.
-                    
+            if(alertTextField.text.length == 0 ){
+                currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+
+                [self viewDidLoad];
+            }
+            else{
+                if([alertTextField.text componentsSeparatedByString:@" "].count > 1)
+                {
+                    currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+
+                    [self viewDidLoad];
                 }
-            }];
-            currentUser[@"initial"] = [NSNumber numberWithBool:YES];
-             currentUser[@"buttonIndex"] = [NSNumber numberWithBool:NO];
-            sleep(1);
-            
-            [self viewDidLoad];
+                else{
+                    NSLog(@"alerttextfiled - %@",alertTextField.text);
+                    PFUser *currentUser = [PFUser currentUser];
+                    
+                    currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+                    currentUser.username = alertTextField.text;
+                    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (!error) {
+                            // The currentUser saved successfully.
+                        } else {
+                            // There was an error saving the currentUser.
+                            
+                        }
+                    }];
+                    currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+                    currentUser[@"buttonIndex"] = [NSNumber numberWithBool:NO];
+                    sleep(1);
+                    
+                    [self viewDidLoad];
+                }
+            }
         }
         else{
             PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
