@@ -153,84 +153,92 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     PFUser *currentUser = [PFUser currentUser];
     if(buttonIndex == 0) {
-        NSLog(@"canceled");
-        FBRequest *request = [FBRequest requestForMe];
-        [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
-            // handle response
-            if (!error) {
-                NSDictionary *userData = (NSDictionary *)result;
-                int random = rand()%100;
-                currentUser.username =[NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%@", userData[@"last_name"]], [NSString stringWithFormat:@"%d",random]];
-            }
-            else{
-                NSLog(@"error");
-            }
-        }];
-        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                // The currentUser saved successfully.
-            } else {
-                // There was an error saving the currentUser.
-                NSLog(@"smae user naem");
-            }
-        }];
-        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
-        sleep(1);
-       [self viewDidLoad];
+        NSLog(@" button 0");
+        if([currentUser[@"initial"]intValue] == 1){
+            PFObject *member = [PFObject objectWithClassName:@"Member"];
+            member[@"username"] = currentUser.username;
+            member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
+            [member saveInBackground];
+            PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
+            [invite whereKey:@"invitee" equalTo:currentUser.username];
+            [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
+            [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                int i = 0;
+                while (i < results.count) {
+                    [[results objectAtIndex:i] deleteInBackground];
+                    i++;
+                }
+            }];
+            NSLog(@"YES");
+            [self viewDidLoad];
+        }
+        else{
+            FBRequest *request = [FBRequest requestForMe];
+            [request startWithCompletionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
+                // handle response
+                if (!error) {
+                    NSDictionary *userData = (NSDictionary *)result;
+                    int random = rand()%100;
+                    currentUser.username =[NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%@", userData[@"last_name"]], [NSString stringWithFormat:@"%d",random]];
+                }
+                else{
+                    NSLog(@"error");
+                }
+            }];
+            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    // The currentUser saved successfully.
+                } else {
+                    // There was an error saving the currentUser.
+                    //NSLog(@"smae user naem");
+                }
+            }];
+            currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+            sleep(1);
+            [self viewDidLoad];
+        }
         
     }
     else if(buttonIndex == 1){
-        UITextField * alertTextField = [alertView textFieldAtIndex:0];
-        NSLog(@"alerttextfiled - %@",alertTextField.text);
-        PFUser *currentUser = [PFUser currentUser];
-        currentUser.username = alertTextField.text;
-        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
-        //conditions for duplicate username
-        
-        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                // The currentUser saved successfully.
-            } else {
-                // There was an error saving the currentUser.
-                NSLog(@"error");
-            }
-        }];
-        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
-        sleep(1);
-        
-        [self viewDidLoad];
+        NSLog(@" button 1");
+        if([currentUser[@"initial"]intValue] == 1){
+            PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
+            [invite whereKey:@"invitee" equalTo:currentUser.username];
+            [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
+            [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                int i = 0;
+                while (i < results.count) {
+                    [[results objectAtIndex:i] deleteInBackground];
+                    i++;
+                }
+            }];
+            NSLog(@"NO");
+
+        }
+        else{
+            UITextField * alertTextField = [alertView textFieldAtIndex:0];
+            NSLog(@"alerttextfiled - %@",alertTextField.text);
+            PFUser *currentUser = [PFUser currentUser];
+            
+            currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+            currentUser.username = alertTextField.text;
+            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    // The currentUser saved successfully.
+                } else {
+                    // There was an error saving the currentUser.
+                    
+                }
+            }];
+            currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+            sleep(1);
+            
+            [self viewDidLoad];
+        }
 
     }
-    else if(buttonIndex == 2){
-        PFObject *member = [PFObject objectWithClassName:@"Member"];
-        member[@"username"] = currentUser.username;
-        member[@"groupId"] = [self.inviteArray objectAtIndex:0][@"groupId"];
-        [member saveInBackground];
-        PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
-        [invite whereKey:@"invitee" equalTo:currentUser.username];
-        [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
-        [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-            int i = 0;
-            while (i < results.count) {
-                [[results objectAtIndex:i] deleteInBackground];
-                i++;
-            }
-        }];
-        NSLog(@"YES");
-        [self viewDidLoad];
-    }
-    else {
-        PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
-        [invite whereKey:@"invitee" equalTo:currentUser.username];
-        [invite whereKey:@"groupId" equalTo:[self.inviteArray objectAtIndex:0][@"groupId"]];
-        [invite findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-            int i = 0;
-            while (i < results.count) {
-                [[results objectAtIndex:i] deleteInBackground];
-                i++;
-            }
-        }];
-        NSLog(@"NO");
+    else{
+        
     }
 }
 
