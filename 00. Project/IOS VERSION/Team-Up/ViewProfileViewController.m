@@ -161,8 +161,8 @@
                 // handle response
                 if (!error) {
                     NSDictionary *userData = (NSDictionary *)result;
-                    int random = rand()%100;
-                    currentUser.username =[NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%@", userData[@"last_name"]], [NSString stringWithFormat:@"%d",random]];
+                    int random = rand()%1000;
+                    currentUser.username =[NSString stringWithFormat:@"%@%@%@",  [NSString stringWithFormat:@"%@", userData[@"first_name"]], [NSString stringWithFormat:@"%@", userData[@"last_name"]], [NSString stringWithFormat:@"%d",random]];
                 }
                 else{
                     NSLog(@"error");
@@ -170,14 +170,6 @@
             }];
             currentUser[@"initial"] = [NSNumber numberWithBool:YES];
             NSLog(@"Username %@",currentUser.username);
-            [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (!error) {
-                    // The currentUser saved successfully.
-                } else {
-                    // There was an error saving the currentUser.
-                    //NSLog(@"smae user naem");
-                }
-            }];
             currentUser[@"initial"] = [NSNumber numberWithBool:YES];
             currentUser[@"buttonIndex"] = [NSNumber numberWithBool:NO];
             sleep(1);
