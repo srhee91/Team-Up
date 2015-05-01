@@ -216,15 +216,17 @@
         cell.textLabel.text = [@"        " stringByAppendingString:[[self.filteredCategories objectAtIndex:indexPath.row]
                                objectForKey:@"categoryname"]];
         cell.textLabel.textColor = [UIColor blackColor];
-        NSString *path = @"glyphicons-145-folder-open";
-        thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
+        cell.imageView.image = [UIImage imageNamed:@"glyphicons-145-folder-open.png"];
+        //NSString *path = @"glyphicons-145-folder-open";
+        //thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:path ofType:@".png"]];
     }
     else{ //Group
         uint i = indexPath.row - self.filteredCategories.count;
         cell.textLabel.text = [@"        " stringByAppendingString:[[self.filteredGroups objectAtIndex:i]
                                objectForKey:@"groupname"]];
         cell.textLabel.textColor = [UIColor blackColor];
-        thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"glyphicons-44-group" ofType:@".png"]];
+        cell.imageView.image = [UIImage imageNamed:@"glyphicons-44-group.png"];
+        //thumbnail.image = [UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"glyphicons-44-group" ofType:@".png"]];
         //thumbnail.image = [UIImage imageWithData:[[self.filteredGroups objectAtIndex:i][@"image"] getData]];
     }
     
