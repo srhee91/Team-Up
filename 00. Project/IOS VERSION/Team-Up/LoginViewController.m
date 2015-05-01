@@ -20,10 +20,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        NSLog(@"linked");
-        [self performSegueWithIdentifier:@"logintoprofile" sender:self];
-    }
+    
     [PFUser logOut];
     CGRect frameRect = self.username.frame;
     frameRect.size.height = 45;
@@ -58,6 +55,7 @@
 }
 
 - (IBAction)fbLogin:(id)sender {
+     PFUser *currentUser = [PFUser currentUser];
     NSArray *permissionsArray = @[ @"public_profile", @"email", @"user_birthday", @"user_friends"];
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         if (!user) {

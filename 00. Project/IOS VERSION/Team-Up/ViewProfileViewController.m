@@ -21,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFUser *currentUser = [PFUser currentUser];
-    if([currentUser[@"initial"]intValue] == 1){
+    NSLog(@"%@",currentUser[@"initial"]);
+    if([currentUser[@"initial"]intValue] != 1){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Type in Username or Click Cancel for Automated Username" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil] ;
         alertView.tag = 2;
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -172,7 +173,7 @@
                 NSLog(@"smae user naem");
             }
         }];
-        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
         [self viewDidLoad];
         
     }
