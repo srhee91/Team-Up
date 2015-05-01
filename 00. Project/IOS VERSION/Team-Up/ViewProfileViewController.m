@@ -26,6 +26,7 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Type in Username or Click Cancel for Automated Username" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil] ;
         alertView.tag = 2;
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
         [alertView show];
     }
     NSMutableArray * m_allFriends;
@@ -174,7 +175,8 @@
             }
         }];
         currentUser[@"initial"] = [NSNumber numberWithBool:YES];
-        [self viewDidLoad];
+        sleep(1);
+       [self viewDidLoad];
         
     }
     else if(buttonIndex == 1){
@@ -182,7 +184,7 @@
         NSLog(@"alerttextfiled - %@",alertTextField.text);
         PFUser *currentUser = [PFUser currentUser];
         currentUser.username = alertTextField.text;
-        currentUser[@"initial"] = [NSNumber numberWithBool:NO];
+        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
         //conditions for duplicate username
         
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -193,6 +195,9 @@
                 NSLog(@"error");
             }
         }];
+        currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+        sleep(1);
+        
         [self viewDidLoad];
 
     }
@@ -212,7 +217,7 @@
             }
         }];
         NSLog(@"YES");
-        [self viewDidAppear:(FALSE)];
+        [self viewDidLoad];
     }
     else {
         PFQuery *invite = [PFQuery queryWithClassName:@"Invite"];
