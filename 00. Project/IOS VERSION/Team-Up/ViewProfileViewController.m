@@ -168,6 +168,8 @@
                     NSLog(@"error");
                 }
             }];
+            currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+            NSLog(@"Username %@",currentUser.username);
             [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
                     // The currentUser saved successfully.
@@ -177,6 +179,7 @@
                 }
             }];
             currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+            currentUser[@"buttonIndex"] = [NSNumber numberWithBool:NO];
             sleep(1);
             [self viewDidLoad];
 
@@ -218,6 +221,7 @@
                 }
             }];
             currentUser[@"initial"] = [NSNumber numberWithBool:YES];
+             currentUser[@"buttonIndex"] = [NSNumber numberWithBool:NO];
             sleep(1);
             
             [self viewDidLoad];
